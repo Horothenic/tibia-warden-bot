@@ -78,17 +78,62 @@ test('posting a card attaches the monster gif and the going button', async () =>
   assert.equal(result.type, 4);
   assert.equal(result.data.flags, 32768);
   assert.deepEqual(result.data.allowed_mentions, { parse: ['everyone'] });
-  assert.match(JSON.stringify(result.data.components), /@everyone/);
+  assert.equal(result.data.components[0].content, '@everyone');
+  assert.equal(result.data.components[1].type, 17);
+  assert.equal(JSON.stringify(result.data.components[1]).includes('@everyone'), false);
   assert.equal(result.file.filename, 'monster.gif');
-  const container = result.data.components[0];
+  const container = result.data.components[1];
   assert.equal(container.accent_color, 0x2f6fed);
   assert.match(JSON.stringify(container), new RegExp(monster.locations[0].name));
   assert.match(JSON.stringify(container), /warden:going/);
-  assert.match(JSON.stringify(container), /warden:killed/);
+  assert.match(JSON.stringify(container), /"label":"Killed"/);
+  assert.match(JSON.stringify(container), /warden:close/);
   assert.match(JSON.stringify(container), /<@100>/);
 });
 
-test('only the poster can mark a card killed, and then nobody can join', async () => {
+test('a note sits above the reporter', async () => {
+  const result = await handleInteraction({
+    type: 2,
+    data: {
+      name: 'w',
+      options: [
+        { name: 'monster', value: monsters[0].name },
+        { name: 'note', value: 'hole on the left' },
+      ],
+    },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+
+  const text = result.data.components[1].components
+    .filter((component) => component.content)
+    .map((component) => component.content);
+  const noteAt = text.findIndex((content) => content.startsWith('**Note**'));
+  const reportedAt = text.findIndex((content) => content.startsWith('**Reported by**'));
+  assert.ok(noteAt !== -1 && noteAt < reportedAt);
+});
+
+test('a card closes when the timer has run out', async () => {
+  const posted = await handleInteraction({
+    type: 2,
+    data: { name: 'w', options: [{ name: 'monster', value: monsters[0].name }] },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+  const components = JSON.parse(JSON.stringify(posted.data.components).replace(/<t:\d+:R>/, '<t:1:R>'));
+
+  const late = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:going' },
+    message: { components },
+    member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
+  }, { monsters, loadImage: async () => null });
+
+  const card = JSON.stringify(late.data.components);
+  assert.match(card, /\*\*Closed\*\*/);
+  assert.equal(card.includes('warden:going'), false);
+  assert.equal(card.includes('<@200>'), false);
+});
+
+test('only the poster can close a card, and then nobody can join', async () => {
   const posted = await handleInteraction({
     type: 2,
     data: { name: 'w', options: [{ name: 'monster', value: monsters[0].name }] },
@@ -97,29 +142,29 @@ test('only the poster can mark a card killed, and then nobody can join', async (
 
   const blocked = await handleInteraction({
     type: 3,
-    data: { custom_id: 'warden:killed' },
+    data: { custom_id: 'warden:close' },
     message: { components: posted.data.components },
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
-  assert.equal(blocked.data.content, 'Only the person who posted this can mark it as killed.');
+  assert.equal(blocked.data.content, 'Only the person who posted this can close it.');
 
-  const killed = await handleInteraction({
+  const closed = await handleInteraction({
     type: 3,
-    data: { custom_id: 'warden:killed' },
+    data: { custom_id: 'warden:close' },
     message: { components: posted.data.components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  const card = JSON.stringify(killed.data.components);
-  assert.match(card, /\*\*Killed\*\*/);
+  const card = JSON.stringify(closed.data.components);
+  assert.match(card, /\*\*Closed\*\*/);
   assert.equal(card.includes('warden:going'), false);
 
   const late = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:going' },
-    message: { components: killed.data.components },
+    message: { components: closed.data.components },
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
-  assert.equal(late.data.content, 'This one is already killed.');
+  assert.equal(late.data.content, 'This one is already closed.');
 });
 
 test('a typed location that is not on the list still appears on the card', async () => {
@@ -167,6 +212,22 @@ test('another hunter can join and the reporter cannot', async () => {
   assert.match(JSON.stringify(joined.data.components), /<@200>/);
   const select = JSON.stringify(joined.data.components);
   assert.match(select, /"custom_id":"warden:check"/);
+
+  const checked = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:check', values: ['200'] },
+    message: { components: joined.data.components },
+    member: { user: { id: '300', username: 'scout', global_name: 'Scout' } },
+  }, { monsters, loadImage: async () => null });
+  assert.match(JSON.stringify(checked.data.components), /✅ <@200>/);
+
+  const unchecked = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:check', values: ['200'] },
+    message: { components: checked.data.components },
+    member: { user: { id: '300', username: 'scout', global_name: 'Scout' } },
+  }, { monsters, loadImage: async () => null });
+  assert.equal(JSON.stringify(unchecked.data.components).includes('✅ <@200>'), false);
 });
 
 test('a card with a gif keeps the Discord file fields unnamed except the image', async () => {

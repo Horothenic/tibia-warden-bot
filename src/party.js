@@ -21,7 +21,7 @@ export const MessageFlags = {
 
 const GOING_ID = 'warden:going';
 const CHECK_ID = 'warden:check';
-const KILLED_ID = 'warden:killed';
+const CLOSE_ID = 'warden:close';
 const LIST_LIMIT = 25;
 
 export function actorId(interaction) {
@@ -63,27 +63,47 @@ function isGoingText(component) {
     && String(component.content ?? '').startsWith('**Going**');
 }
 
-function isKilledText(component) {
-  return component.type === ComponentType.TextDisplay
-    && String(component.content ?? '').startsWith('**Killed**');
+function statusOf(component) {
+  if (component?.type !== ComponentType.TextDisplay) return null;
+  const content = String(component.content ?? '');
+  if (content.startsWith('**Closed**') || content.startsWith('**Killed**') || content.startsWith('**Poofed**')) {
+    return 'closed';
+  }
+  return null;
+}
+
+function expiresAtOf(component) {
+  let expiresAt = null;
+  walk(component);
+  return expiresAt;
+
+  function walk(node) {
+    if (!node || typeof node !== 'object') return;
+    if (typeof node.content === 'string') {
+      const match = node.content.match(/<t:(\d+):R>/);
+      if (match) expiresAt = Number(match[1]);
+    }
+    for (const child of node.components ?? []) walk(child);
+    if (node.accessory) walk(node.accessory);
+  }
 }
 
 export function readParty(container) {
   const going = [];
   const names = new Map();
   let posterId = null;
-  let killed = false;
+  let closed = false;
 
   for (const component of container.components ?? []) {
     if (component.type === ComponentType.TextDisplay && typeof component.content === 'string') {
       const poster = component.content.match(/\*\*Reported by\*\*\n<@!?(\d+)>/);
       if (poster) posterId = poster[1];
-      if (isKilledText(component)) killed = true;
+      if (statusOf(component) === 'closed') closed = true;
       if (component.content.startsWith('**Going**\n')) {
         for (const line of component.content.split('\n').slice(1)) {
-          const match = line.match(/^<@!?(\d+)>( ✅)?$/);
+          const match = line.match(/^(?:(✅) )?<@!?(\d+)>(?: (✅))?$/);
           if (!match) continue;
-          going.push({ id: match[1], name: 'Hunter', checked: Boolean(match[2]) });
+          going.push({ id: match[2], name: 'Hunter', checked: Boolean(match[1] || match[3]) });
         }
       }
     }
@@ -101,17 +121,17 @@ export function readParty(container) {
     if (name) person.name = name;
   }
 
-  return { going, posterId, killed };
+  return { going, posterId, closed, expiresAt: expiresAtOf(container) };
 }
 
 function goingText(going) {
   const lines = going.length
-    ? going.map((person) => `<@${person.id}>${person.checked ? ' ✅' : ''}`)
+    ? going.map((person) => `${person.checked ? '✅ ' : ''}<@${person.id}>`)
     : ['—'];
   return { type: ComponentType.TextDisplay, content: `**Going**\n${lines.join('\n')}` };
 }
 
-function partyRows(going, killed) {
+function partyRows(going, status) {
   const rows = [];
   if (going.length) {
     rows.push({
@@ -130,15 +150,15 @@ function partyRows(going, killed) {
       ],
     });
   }
-  if (killed) {
+  if (status) {
     rows.push({
       type: ComponentType.ActionRow,
       components: [
         {
           type: ComponentType.Button,
           style: ButtonStyle.Danger,
-          label: 'Killed',
-          custom_id: KILLED_ID,
+          label: 'Closed',
+          custom_id: CLOSE_ID,
           disabled: true,
         },
       ],
@@ -158,17 +178,17 @@ function partyRows(going, killed) {
         type: ComponentType.Button,
         style: ButtonStyle.Danger,
         label: 'Killed',
-        custom_id: KILLED_ID,
+        custom_id: CLOSE_ID,
       },
     ],
   });
   return rows;
 }
 
-export function withParty(container, going, killed = false) {
+export function withParty(container, going, status = null) {
   const body = [];
   for (const component of container.components ?? []) {
-    if (isGoingText(component) || isKilledText(component)) continue;
+    if (isGoingText(component) || statusOf(component)) continue;
     if (component.type === ComponentType.ActionRow) continue;
     body.push(component);
   }
@@ -177,17 +197,32 @@ export function withParty(container, going, killed = false) {
     component.type === ComponentType.TextDisplay
     && String(component.content ?? '').includes('**Reported by**')
   ));
-  if (killed) {
-    const at = reportedAt();
-    const marker = { type: ComponentType.TextDisplay, content: '**Killed**' };
-    if (at === -1) body.push(marker);
-    else body.splice(at, 0, marker);
+  const noteAt = () => body.findIndex((component) => (
+    component.type === ComponentType.TextDisplay
+    && String(component.content ?? '').startsWith('**Note**')
+  ));
+  if (status) {
+    const anchor = noteAt() === -1 ? reportedAt() : noteAt();
+    const marker = { type: ComponentType.TextDisplay, content: '**Closed**' };
+    if (anchor === -1) body.push(marker);
+    else body.splice(anchor, 0, marker);
   }
   const at = reportedAt();
   const text = goingText(going);
   if (at === -1) body.push(text);
   else body.splice(at + 1, 0, text);
 
-  body.push(...partyRows(going, killed));
+  body.push(...partyRows(going, status));
   return { ...container, components: body };
+}
+
+export function poofComponents(components) {
+  const container = components.find((component) => component.type === ComponentType.Container);
+  if (!container) return null;
+  const party = readParty(container);
+  if (party.closed) return null;
+  if (!party.expiresAt || Math.floor(Date.now() / 1000) < party.expiresAt) return null;
+  const mention = components.find((component) => component.content === '@everyone')
+    ?? { type: ComponentType.TextDisplay, content: '@everyone' };
+  return [mention, withParty(container, party.going, 'closed')];
 }

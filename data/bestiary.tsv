@@ -77,7 +77,7 @@ Rotten Golem	data/images/Rotten_Golem.gif	Rotten Wasteland
 Rustheap Golem	data/images/Rustheap_Golem.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Catacombs|Rathleton New Sewers|Rathleton Slum|Rathleton Workshops
 Shrieking Cry-Stal	data/images/Shrieking_Cry-Stal.gif	Crystal Enigma
 Silverfrost Sentinel	data/images/Silverfrost_Sentinel.gif	Asura Citadel
-Stone Devourer	data/images/Stone_Devourer.gif	Gnomegate Fungus Dungeon (Warzone 1)
+Stone Devourer	data/images/Stone_Devourer.gif	Gnomegate Fungus Dungeon
 Stone Golem	data/images/Stone_Golem.gif	Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Tarpit)|Ashta'daramai|Banuta|Beregar Mines|Dark Cathedral|Demon Forge (The Hall of the Colossi)|Demona|Edron Northern Ruins|Farmine Mines|Forbidden Lands of Tiquanda|Formorgar Mines|Gargoyle Sanctuary|Hellgorge|Kazordoon Dwarf Mines (Splintered Stone)|Kazordoon Underground|Kha'zeel Hydra Falls|Kha'zeel Mountains|Maze of the Lost Souls|Medusa Tower|Stone Golem Cave (Formorgar Glacier)|Stone Golem Cave (Hrodmir)|Ulderek's Rock
 Walker	data/images/Walker.gif	Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers
 Walking Pillar	data/images/Walking_Pillar.gif	Darklight Core
@@ -86,7 +86,7 @@ War Golem	data/images/War_Golem.gif	Fenrock|Lower Glooth Factory|Lower Glooth Fa
 Weeper	data/images/Weeper.gif	Gnomegate Magma Dungeon
 Worker Golem	data/images/Worker_Golem.gif	Lower Glooth Factory South|Rathleton Catacombs|Yalahar Factory Quarter
 Arachnophobica	data/images/Arachnophobica.gif	Buried Cathedral|Haunted Nexus (Cellar)|Dream Labyrinth (Summer Court)|Dream Labyrinth (Winter Court)
-Armadile	data/images/Armadile.gif	Gnomegate Fungus Dungeon (Warzone 1)
+Armadile	data/images/Armadile.gif	Gnomegate Fungus Dungeon
 Bashmu	data/images/Bashmu.gif	Salt Caves
 Blue Djinn	data/images/Blue_Djinn.gif	Ashta'daramai|Edron Forgotten Tomb|Yalahar Magician Quarter
 Bog Raider	data/images/Bog_Raider.gif	Edron Bog Raider Cave|Edron Rotworm Caves|Glooth Factory|Malada|Oramond Catacombs|Ramoa|Rathleton Slime Pits|Talahu|Underground Isle|Vengoth|Yalahar Alchemist Quarter
@@ -352,8 +352,8 @@ Carniphila	data/images/Carniphila.gif	Banuta|Carniphila Cave|Forbidden Lands of 
 Cloak Of Terror	data/images/Cloak_Of_Terror.gif	Furious Crater
 Glooth Anemone	data/images/Glooth_Anemone.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory West|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton New Sewers|Rathleton Slum
 Haunted Treeling	data/images/Haunted_Treeling.gif	Corrupted Gardens|Dryad Gardens|Tiquanda Laboratory|Treeling Dungeon|Vengoth
-Hideous Fungus	data/images/Hideous_Fungus.gif	Gnomegate Fungus Dungeon (Warzone 1)|Rathleton Fungi Sewers|Tiquanda Laboratory
-Humongous Fungus	data/images/Humongous_Fungus.gif	Deep Hub Fungus Dungeon|Gnomegate Fungus Dungeon (Warzone 1)|Rathleton Fungi Sewers|Tiquanda Laboratory
+Hideous Fungus	data/images/Hideous_Fungus.gif	Gnomegate Fungus Dungeon|Rathleton Fungi Sewers|Tiquanda Laboratory
+Humongous Fungus	data/images/Humongous_Fungus.gif	Deep Hub Fungus Dungeon|Gnomegate Fungus Dungeon|Rathleton Fungi Sewers|Tiquanda Laboratory
 Lavafungus	data/images/Lavafungus.gif	Grotto of the Lost
 Leaf Golem	data/images/Leaf_Golem.gif	Cormaya|Dryad Gardens|Forest Furies' Camp|Forsaken Mine|Treeling Dungeon
 Moonspawn Blightspitter	data/images/Moonspawn_Blightspitter.gif	Thalassara Surroundings

@@ -63,7 +63,6 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
   const heading = {
     type: ComponentType.TextDisplay,
     content: [
-      '@everyone',
       `# ${monster.name}`,
       ...(location ? [`## in ${location.name}`] : []),
       `${location ? '###' : '##'} Poof <t:${expiresAt}:R>`,
@@ -89,24 +88,27 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
       allowed_mentions: { parse: ['everyone'] },
       ...(image ? { attachments: [{ id: 0, filename: 'monster.gif' }] } : {}),
       components: [
+        { type: ComponentType.TextDisplay, content: '@everyone' },
         withParty({
           type: ComponentType.Container,
           accent_color: 0x2f6fed,
           components: [
             ...header,
             { type: ComponentType.Separator, divider: true },
-            { type: ComponentType.TextDisplay, content: reported },
             ...(noteText ? [{ type: ComponentType.TextDisplay, content: noteText }] : []),
+            { type: ComponentType.TextDisplay, content: reported },
           ],
         }, []),
       ],
     },
+    expiresAt,
   };
 }
 
 function updateParty(interaction) {
   const customId = interaction.data?.custom_id;
-  if (customId !== 'warden:going' && customId !== 'warden:check' && customId !== 'warden:killed') {
+  const closing = customId === 'warden:close' || customId === 'warden:killed';
+  if (customId !== 'warden:going' && customId !== 'warden:check' && !closing) {
     return ephemeral('This card can no longer be updated.');
   }
 
@@ -116,23 +118,29 @@ function updateParty(interaction) {
   if (!container) return ephemeral('This card can no longer be updated.');
 
   const party = readParty(container);
-  if (customId === 'warden:killed') {
+  const expired = Boolean(party.expiresAt && Math.floor(Date.now() / 1000) >= party.expiresAt);
+  let status = party.closed || expired ? 'closed' : null;
+
+  if (closing && !status) {
     if (!party.posterId || actorId(interaction) !== party.posterId) {
-      return ephemeral('Only the person who posted this can mark it as killed.');
+      return ephemeral('Only the person who posted this can close it.');
     }
-    party.killed = true;
-  } else if (party.killed && customId === 'warden:going') {
-    return ephemeral('This one is already killed.');
-  } else if (customId === 'warden:check') {
-    applyCheck(party.going, interaction.data.values?.[0]);
-  } else if (party.posterId && actorId(interaction) === party.posterId) {
-    return ephemeral('Only other people can join this list.');
-  } else {
+    status = 'closed';
+  } else if (customId === 'warden:going' && status && party.closed) {
+    return ephemeral('This one is already closed.');
+  } else if (customId === 'warden:going' && !status) {
+    if (party.posterId && actorId(interaction) === party.posterId) {
+      return ephemeral('Only other people can join this list.');
+    }
     const result = applyGoing(party.going, {
       id: actorId(interaction),
       name: hunterName(interaction),
     });
     if (result === 'full') return ephemeral('The going list is full (25).');
+  } else if (customId === 'warden:check') {
+    applyCheck(party.going, interaction.data.values?.[0]);
+  } else if (closing && party.closed) {
+    return ephemeral('This one is already closed.');
   }
 
   return {
@@ -140,7 +148,10 @@ function updateParty(interaction) {
     data: {
       flags: MessageFlags.IsComponentsV2,
       allowed_mentions: { parse: [] },
-      components: [withParty(container, party.going, party.killed)],
+      components: [
+        { type: ComponentType.TextDisplay, content: '@everyone' },
+        withParty(container, party.going, status),
+      ],
     },
   };
 }

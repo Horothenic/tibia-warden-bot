@@ -1,3 +1,4 @@
+import { closeSavedCards, closeWhenDue } from './close.js';
 import { handleInteraction, toHttpResponse } from './interactions.js';
 import { parseBestiary } from './monsters.js';
 import { verifyKey } from './verify.js';
@@ -5,7 +6,7 @@ import { verifyKey } from './verify.js';
 let monstersPromise;
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     if (request.method === 'GET') {
       return new Response('Tibia warden is running. Discord sends commands to this address.', {
         headers: { 'content-type': 'text/plain; charset=utf-8' },
@@ -37,6 +38,9 @@ export default {
         monsters,
         loadImage: (assetPath) => loadImage(env, assetPath),
       });
+      if (result.expiresAt && interaction.application_id && interaction.token) {
+        ctx.waitUntil(closeWhenDue(env, interaction, result.expiresAt));
+      }
       return toHttpResponse(result);
     } catch (error) {
       console.error(error);
@@ -45,6 +49,10 @@ export default {
         data: { content: 'Could not handle that action.', flags: 64 },
       });
     }
+  },
+
+  async scheduled(_event, env, ctx) {
+    ctx.waitUntil(closeSavedCards(env));
   },
 };
 

@@ -10,6 +10,15 @@
       "custom_domain": true
     }
   ],
+  "triggers": {
+    "crons": ["* * * * *"]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "CARDS",
+      "id": "0b8181a9c27b403d93c22e3fc41f528a"
+    }
+  ],
   "assets": {
     "directory": "./data",
     "binding": "ASSETS",
