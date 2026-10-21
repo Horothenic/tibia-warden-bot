@@ -133,7 +133,7 @@ function goingText(going) {
 
 function partyRows(going, status) {
   const rows = [];
-  if (going.length) {
+  if (going.length && !status) {
     rows.push({
       type: ComponentType.ActionRow,
       components: [

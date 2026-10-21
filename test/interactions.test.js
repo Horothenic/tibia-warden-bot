@@ -228,6 +228,17 @@ test('another hunter can join and the reporter cannot', async () => {
     member: { user: { id: '300', username: 'scout', global_name: 'Scout' } },
   }, { monsters, loadImage: async () => null });
   assert.equal(JSON.stringify(unchecked.data.components).includes('✅ <@200>'), false);
+
+  const closed = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:close' },
+    message: { components: joined.data.components },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+  const closedCard = JSON.stringify(closed.data.components);
+  assert.match(closedCard, /\*\*Closed\*\*/);
+  assert.match(closedCard, /<@200>/);
+  assert.equal(closedCard.includes('warden:check'), false);
 });
 
 test('a card with a gif keeps the Discord file fields unnamed except the image', async () => {

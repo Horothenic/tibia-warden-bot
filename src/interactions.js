@@ -137,7 +137,7 @@ function updateParty(interaction) {
       name: hunterName(interaction),
     });
     if (result === 'full') return ephemeral('The going list is full (25).');
-  } else if (customId === 'warden:check') {
+  } else if (customId === 'warden:check' && !status) {
     applyCheck(party.going, interaction.data.values?.[0]);
   } else if (closing && party.closed) {
     return ephemeral('This one is already closed.');
