@@ -129,6 +129,7 @@ test('a card closes when the timer has run out', async () => {
 
   const card = JSON.stringify(late.data.components);
   assert.match(card, /\*\*Closed\*\*/);
+  assert.equal(card.includes('Poof'), false);
   assert.equal(card.includes('warden:going'), false);
   assert.equal(card.includes('<@200>'), false);
 });
@@ -156,6 +157,7 @@ test('only the poster can close a card, and then nobody can join', async () => {
   }, { monsters, loadImage: async () => null });
   const card = JSON.stringify(closed.data.components);
   assert.match(card, /\*\*Closed\*\*/);
+  assert.equal(card.includes('Poof'), false);
   assert.equal(card.includes('warden:going'), false);
 
   const late = await handleInteraction({
@@ -238,6 +240,7 @@ test('another hunter can join and the reporter cannot', async () => {
   const closedCard = JSON.stringify(closed.data.components);
   assert.match(closedCard, /\*\*Closed\*\*/);
   assert.match(closedCard, /<@200>/);
+  assert.equal(closedCard.includes('Poof'), false);
   assert.equal(closedCard.includes('warden:check'), false);
 });
 

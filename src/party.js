@@ -185,12 +185,27 @@ function partyRows(going, status) {
   return rows;
 }
 
+function withoutPoof(content) {
+  return content
+    .split('\n')
+    .filter((line) => !/^#{1,3} Poof <t:\d+:R>$/.test(line))
+    .join('\n');
+}
+
+function stripPoof(component) {
+  if (!component || typeof component !== 'object') return component;
+  const next = { ...component };
+  if (typeof next.content === 'string') next.content = withoutPoof(next.content);
+  if (next.components) next.components = next.components.map(stripPoof);
+  return next;
+}
+
 export function withParty(container, going, status = null) {
   const body = [];
   for (const component of container.components ?? []) {
     if (isGoingText(component) || statusOf(component)) continue;
     if (component.type === ComponentType.ActionRow) continue;
-    body.push(component);
+    body.push(status ? stripPoof(component) : component);
   }
 
   const reportedAt = () => body.findIndex((component) => (
