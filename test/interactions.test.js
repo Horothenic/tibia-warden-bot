@@ -85,6 +85,7 @@ test('posting a card attaches the monster gif and the going button', async () =>
   const container = result.data.components[1];
   assert.equal(container.accent_color, 0x2f6fed);
   assert.match(JSON.stringify(container), new RegExp(monster.locations[0].name));
+  assert.match(JSON.stringify(container), /Poof <t:\d+:R> at <t:\d+:t>/);
   assert.match(JSON.stringify(container), /warden:going/);
   assert.match(JSON.stringify(container), /"label":"Killed"/);
   assert.match(JSON.stringify(container), /warden:close/);
@@ -128,7 +129,8 @@ test('a card closes when the timer has run out', async () => {
   }, { monsters, loadImage: async () => null });
 
   const card = JSON.stringify(late.data.components);
-  assert.match(card, /\*\*Closed\*\*/);
+  assert.match(card, /"label":"Closed"/);
+  assert.equal(card.includes('**Closed**'), false);
   assert.equal(card.includes('Poof'), false);
   assert.equal(card.includes('warden:going'), false);
   assert.equal(card.includes('<@200>'), false);
@@ -156,7 +158,8 @@ test('only the poster can close a card, and then nobody can join', async () => {
     ...hunter,
   }, { monsters, loadImage: async () => null });
   const card = JSON.stringify(closed.data.components);
-  assert.match(card, /\*\*Closed\*\*/);
+  assert.match(card, /"label":"Closed"/);
+  assert.equal(card.includes('**Closed**'), false);
   assert.equal(card.includes('Poof'), false);
   assert.equal(card.includes('warden:going'), false);
 
@@ -238,7 +241,8 @@ test('another hunter can join and the reporter cannot', async () => {
     ...hunter,
   }, { monsters, loadImage: async () => null });
   const closedCard = JSON.stringify(closed.data.components);
-  assert.match(closedCard, /\*\*Closed\*\*/);
+  assert.match(closedCard, /"label":"Closed"/);
+  assert.equal(closedCard.includes('**Closed**'), false);
   assert.match(closedCard, /<@200>/);
   assert.equal(closedCard.includes('Poof'), false);
   assert.equal(closedCard.includes('warden:check'), false);

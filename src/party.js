@@ -111,6 +111,7 @@ export function readParty(container) {
     if (component.type !== ComponentType.ActionRow) continue;
     for (const child of component.components ?? []) {
       const customId = child.custom_id ?? child.customId;
+      if ((customId === CLOSE_ID || customId === 'warden:killed') && child.disabled) closed = true;
       if (customId !== CHECK_ID) continue;
       for (const option of child.options ?? []) names.set(option.value, option.label);
     }
@@ -188,7 +189,7 @@ function partyRows(going, status) {
 function withoutPoof(content) {
   return content
     .split('\n')
-    .filter((line) => !/^#{1,3} Poof <t:\d+:R>$/.test(line))
+    .filter((line) => !/^#{1,3} Poof <t:\d+:R>/.test(line))
     .join('\n');
 }
 
@@ -208,21 +209,10 @@ export function withParty(container, going, status = null) {
     body.push(status ? stripPoof(component) : component);
   }
 
-  const reportedAt = () => body.findIndex((component) => (
+  const at = body.findIndex((component) => (
     component.type === ComponentType.TextDisplay
     && String(component.content ?? '').includes('**Reported by**')
   ));
-  const noteAt = () => body.findIndex((component) => (
-    component.type === ComponentType.TextDisplay
-    && String(component.content ?? '').startsWith('**Note**')
-  ));
-  if (status) {
-    const anchor = noteAt() === -1 ? reportedAt() : noteAt();
-    const marker = { type: ComponentType.TextDisplay, content: '**Closed**' };
-    if (anchor === -1) body.push(marker);
-    else body.splice(anchor, 0, marker);
-  }
-  const at = reportedAt();
   const text = goingText(going);
   if (at === -1) body.push(text);
   else body.splice(at + 1, 0, text);

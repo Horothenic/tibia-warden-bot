@@ -65,7 +65,7 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
     content: [
       `# ${monster.name}`,
       ...(location ? [`## in ${location.name}`] : []),
-      `${location ? '###' : '##'} Poof <t:${expiresAt}:R>`,
+      `${location ? '###' : '##'} Poof <t:${expiresAt}:R> at <t:${expiresAt}:t>`,
     ].join('\n'),
   };
   const header = image
