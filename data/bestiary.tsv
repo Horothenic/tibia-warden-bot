@@ -1,0 +1,740 @@
+Azure Frog	data/images/Azure_Frog.gif	Emerald Gardens|Fading Isles|Laguna Islands|Meriana|Murmuring Wilderness|Sparkling Lagoon
+Bog Frog	data/images/Bog_Frog.gif	Drefia|Lake Equivocolao|Shadowthorn
+Coral Frog	data/images/Coral_Frog.gif	Fading Isles|Laguna Islands|Murmuring Wilderness
+Crimson Frog	data/images/Crimson_Frog.gif	Laguna Islands|Meriana|Murmuring Wilderness|Silent Waters
+Filth Toad	data/images/Filth_Toad.gif	Lake Equivocolao
+Green Frog	data/images/Green_Frog.gif	Eclipse|Fading Isles|Gloom Caverns|Kazordoon|Laguna Islands|Meriana|Port Hope|Silent Waters|Silvertides|Sparkling Lagoon|Stardance Mountains
+Infernal Frog	data/images/Infernal_Frog.gif	Deeper Drefia|Isle of Evil
+Makara	data/images/Makara.gif	Temple of the Moon Goddess
+Orchid Frog	data/images/Orchid_Frog.gif	Emerald Gardens|Fading Isles|Laguna Islands|Murmuring Wilderness|Sparkling Lagoon|Pantibian Course V
+Salamander	data/images/Salamander.gif	Deeper Drefia|Salamander's Cave
+Toad	data/images/Toad.gif	Gloom Caverns|Keeper's Lair|Laguna Islands|Port Hope|Shadowthorn|Spirittrails|Tarantula Caves|Yalahar Arena Quarter
+Abyssal Calamary	data/images/Abyssal_Calamary.gif	Seacrest Grounds
+Blood Crab	data/images/Blood_Crab.gif	Femor Hills|Gargoyle Sanctuary|Goroma|Laguna Islands|Mistrock|Port Hope|Thais|Treasure Island
+Calamary	data/images/Calamary.gif	Deepling Outpost|Deepling Temple Complex|Drowned Library|Lava Grotto
+Crab	data/images/Crab.gif	Central Steppe|Edron|Femor Hills|Forbidden Lands of Tiquanda|Goroma|Gray Beach|Issavi|Laguna Islands|Meriana|Nargor|Nykri Delta|Port Hope|Port Hope Swamp Troll Den|Southern Steppe|Thais|Treasure Island|Vandura Quara Caves|Yalahar Arena Quarter|Yalahar Factory Quarter
+Deathling Scout	data/images/Deathling_Scout.gif	Ancient Ancestorial Grounds|Sunken Temple
+Deathling Spellsinger	data/images/Deathling_Spellsinger.gif	Ancient Ancestorial Grounds|Sunken Temple
+Deepling Brawler	data/images/Deepling_Brawler.gif	Hatchery
+Deepling Elite	data/images/Deepling_Elite.gif	Ancestorial Grounds|Drowned Library
+Deepling Guard	data/images/Deepling_Guard.gif	Ancestorial Grounds|Deepling Mining Area|Deepling Temple Complex|Drowned Library|Lava Grotto|Sunken Temple
+Deepling Scout	data/images/Deepling_Scout.gif	Ancient Ancestorial Grounds|Deepling Outpost|Deepling Temple Complex|Drowned Library|Eyes of the Deep
+Deepling Spellsinger	data/images/Deepling_Spellsinger.gif	Ancestorial Grounds|Deepling Temple Complex|Drowned Library|Lava Grotto
+Deepling Warrior	data/images/Deepling_Warrior.gif	Ancestorial Grounds|Ancient Ancestorial Grounds|Deepling Mining Area|Deepling Outpost|Deepling Temple Complex|Drowned Library|Lava Grotto|Sunken Temple
+Deepling Worker	data/images/Deepling_Worker.gif	Deepling Temple Complex|Drowned Library|Hatchery
+Deepsea Blood Crab	data/images/Deepsea_Blood_Crab.gif	Pantibian Course IV|Sea Serpent Area
+Fish (Criatura)	data/images/Fish_(Criatura).gif	Ancestorial Grounds|Deepling Outpost|Deepling Temple Complex|Drowned Library|Lava Grotto
+Jellyfish	data/images/Jellyfish.gif	Ancestorial Grounds|Deepling Outpost|Deepling Temple Complex|Drowned Library|Kha'labal Desert|Krailos Steppe|Lava Grotto|Podzilla Bottom
+Northern Pike (Criatura)	data/images/Northern_Pike_(Criatura).gif	Deepling Outpost|Deepling Temple Complex|Drowned Library|Kha'labal Desert|Lava Grotto
+Quara Constrictor	data/images/Quara_Constrictor.gif	Calassa|Dream Realm|Femor Hills|Frozen Trench|Plains of Havoc|Vandura Quara Caves|Yalahar Arena Quarter|Yalahar Sunken Quarter
+Quara Constrictor Scout	data/images/Quara_Constrictor_Scout.gif	Formorgar Glacier Quara Caves|Malada|Rathleton Slum|Talahu|Treasure Island|Vandura Quara Caves|Yalahar Arena Quarter
+Quara Hydromancer	data/images/Quara_Hydromancer.gif	Calassa|Demon Forge (The Sunken Cave)|Dream Realm|Frozen Trench|Seacrest Grounds|Vandura Quara Caves|Yalahar Sunken Quarter
+Quara Hydromancer Scout	data/images/Quara_Hydromancer_Scout.gif	Formorgar Glacier Quara Caves|Malada|Rathleton Slum|Talahu|Vandura Quara Caves|Water Elemental Caverns (Sul)
+Quara Looter	data/images/Quara_Looter.gif	Podzilla Bottom
+Quara Mantassin	data/images/Quara_Mantassin.gif	Calassa|Frozen Trench|Seacrest Grounds|Vandura Quara Caves|Yalahar Arena Quarter|Yalahar Sunken Quarter
+Quara Mantassin Scout	data/images/Quara_Mantassin_Scout.gif	Formorgar Glacier Quara Caves|Malada|Talahu|Vandura Quara Caves|Water Elemental Caverns (Oeste)|Water Elemental Caverns (Sul)
+Quara Pincher	data/images/Quara_Pincher.gif	Calassa|Demon Forge (The Sunken Cave)|Femor Hills|Frozen Trench|Seacrest Grounds|Vandura Quara Caves|Yalahar Sunken Quarter
+Quara Pincher Scout	data/images/Quara_Pincher_Scout.gif	Formorgar Glacier Quara Caves|Malada|Rathleton Slum|Talahu|Vandura Quara Caves|Water Elemental Caverns (Sul)
+Quara Plunderer	data/images/Quara_Plunderer.gif	Podzilla Bottom
+Quara Predator	data/images/Quara_Predator.gif	Calassa|Demon Forge (The Sunken Cave)|Frozen Trench|Seacrest Grounds|Vandura Quara Caves|Yalahar Alchemist Quarter|Yalahar Sunken Quarter
+Quara Predator Scout	data/images/Quara_Predator_Scout.gif	Formorgar Glacier Quara Caves|Malada|Rathleton Slum|Talahu|Vandura Quara Caves
+Quara Raider	data/images/Quara_Raider.gif	Podzilla Bottom
+Shark	data/images/Shark.gif	Ancestorial Grounds|Deepling Outpost|Deepling Temple Complex|Drowned Library|Kha'labal Desert|Krailos Steppe|Lava Grotto|Pantibian Course IV|Podzilla Bottom|Seacrest Grounds
+Agrestic Chicken	data/images/Agrestic_Chicken.gif	Bounac
+Berserker Chicken	data/images/Berserker_Chicken.gif	Isle of Evil
+Carnivostrich	data/images/Carnivostrich.gif	Deeper Ingol|Ingol
+Cave Parrot	data/images/Cave_Parrot.gif	Desecrated Glade
+Chicken	data/images/Chicken.gif	Carlin|Fibula|Fields of Glory|Greenshore|Ingol|Krimhorn|Meriana|Port Hope|Rookgaard|Stonehome|Thais|Ulderek's Rock|Yalahar Factory Quarter
+Demon Parrot	data/images/Demon_Parrot.gif	Isle of Evil
+Flamingo	data/images/Flamingo.gif	Deeper Drefia|Laguna Islands|Liberty Bay|Meriana|Oskayaat|Port Hope
+Harpy	data/images/Harpy.gif	Deeper Ingol|Ingol
+Headpecker	data/images/Headpecker.gif	Crystal Enigma
+Jungle Moa	data/images/Jungle_Moa.gif	Emerald Gardens|Fading Isles|Moonfall|Murmuring Wilderness|Silent Waters|Sparkling Lagoon|Stardance Mountains
+Marsh Stalker	data/images/Marsh_Stalker.gif	Dryad Gardens|Marshland|Salamander's Cave
+Night Harpy	data/images/Night_Harpy.gif	Arean Outskirts|Isle of Ada|Stag Bastion
+Parrot	data/images/Parrot.gif	Asura Palace|Banuta|Fields of Glory|Liberty Bay|Meriana|Moonfall|Oskayaat|Port Hope|Silvertides|Stardance Mountains
+Penguin	data/images/Penguin.gif	Chyllfroest Chakoya Caves|Formorgar Glacier|Helheim|Grimlund|Nibelor|Svargrond
+Pigeon	data/images/Pigeon.gif	Deeper Drefia|Venore City
+Seagull	data/images/Seagull.gif	Ab'Dendriel|Carlin|Central Steppe|Cormaya|Drefia|Edron|Femor Hills|Fibula|Fields of Glory|Goroma|Green Claw Swamp|Greenshore|Issavi|Kazordoon|Laguna Islands|Liberty Bay|Malada|Meriana|Nykri Delta|Orc Lands|Outlaw Camp|Pits of Inferno|Plains of Havoc|Port Hope|Rookgaard|Rorc Plains|Talahu|Thais|Treasure Island|Venore Southern Swamp|Yalahar Factory Quarter
+Terror Bird	data/images/Terror_Bird.gif	Forbidden Lands of Tiquanda|Port Hope|Yalahar Arena Quarter|Zao Steppe
+Clay Guardian	data/images/Clay_Guardian.gif	Ankrahmun Pharaoh Tombs (Curse)|Medusa Tower|Middle Spike
+Damaged Crystal Golem	data/images/Damaged_Crystal_Golem.gif	Gnomegate Golem Workshop
+Damaged Worker Golem	data/images/Damaged_Worker_Golem.gif	Yalahar Factory Quarter
+Enraged Crystal Golem	data/images/Enraged_Crystal_Golem.gif	Gnomegate Golem Workshop
+Eternal Guardian	data/images/Eternal_Guardian.gif	Banuta|Great Gate
+Gingerbread Man	data/images/Gingerbread_Man.gif	Candia
+Glooth Golem	data/images/Glooth_Golem.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Catacombs|Rathleton New Sewers|Rathleton Slum
+Goggle Cake	data/images/Goggle_Cake.gif	Dessert Dungeons
+Ice Golem	data/images/Ice_Golem.gif	Chyllfroest Lost World|Demon Forge (The Crystal Caves)|Formorgar Glacier|Formorgar Mines|Ice Witch Temple|Nibelor
+Iceplume Strider	data/images/Iceplume_Strider.gif	Asura Citadel
+Infected Weeper	data/images/Infected_Weeper.gif	Gnomegate Magma Dungeon
+Iron Servant Replica	data/images/Iron_Servant_Replica.gif	Cosmic Chamber
+Lava Golem	data/images/Lava_Golem.gif	Gnomegate Magma Dungeon|The Extension Site
+Magma Crawler	data/images/Magma_Crawler.gif	Gnomegate Magma Dungeon
+Metal Gargoyle	data/images/Metal_Gargoyle.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Workshops
+Orewalker	data/images/Orewalker.gif	Gnomegate Crystal Dungeon
+Rotten Golem	data/images/Rotten_Golem.gif	Rotten Wasteland
+Rustheap Golem	data/images/Rustheap_Golem.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Catacombs|Rathleton New Sewers|Rathleton Slum|Rathleton Workshops
+Shrieking Cry-Stal	data/images/Shrieking_Cry-Stal.gif	Crystal Enigma
+Silverfrost Sentinel	data/images/Silverfrost_Sentinel.gif	Asura Citadel
+Stone Devourer	data/images/Stone_Devourer.gif	Gnomegate Fungus Dungeon (Warzone 1)
+Stone Golem	data/images/Stone_Golem.gif	Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Tarpit)|Ashta'daramai|Banuta|Beregar Mines|Dark Cathedral|Demon Forge (The Hall of the Colossi)|Demona|Edron Northern Ruins|Farmine Mines|Forbidden Lands of Tiquanda|Formorgar Mines|Gargoyle Sanctuary|Hellgorge|Kazordoon Dwarf Mines (Splintered Stone)|Kazordoon Underground|Kha'zeel Hydra Falls|Kha'zeel Mountains|Maze of the Lost Souls|Medusa Tower|Stone Golem Cave (Formorgar Glacier)|Stone Golem Cave (Hrodmir)|Ulderek's Rock
+Walker	data/images/Walker.gif	Glooth Factory|Lower Glooth Factory South|Oramond Catacombs|Rathleton Ancient Sewers
+Walking Pillar	data/images/Walking_Pillar.gif	Darklight Core
+Wandering Pillar	data/images/Wandering_Pillar.gif	Gloom Pillars
+War Golem	data/images/War_Golem.gif	Fenrock|Lower Glooth Factory|Lower Glooth Factory South|Rathleton Catacombs|Yalahar Centre|Yalahar Factory Quarter
+Weeper	data/images/Weeper.gif	Gnomegate Magma Dungeon
+Worker Golem	data/images/Worker_Golem.gif	Lower Glooth Factory South|Rathleton Catacombs|Yalahar Factory Quarter
+Arachnophobica	data/images/Arachnophobica.gif	Buried Cathedral|Haunted Nexus (Cellar)|Dream Labyrinth (Summer Court)|Dream Labyrinth (Winter Court)
+Armadile	data/images/Armadile.gif	Gnomegate Fungus Dungeon (Warzone 1)
+Bashmu	data/images/Bashmu.gif	Salt Caves
+Blue Djinn	data/images/Blue_Djinn.gif	Ashta'daramai|Edron Forgotten Tomb|Yalahar Magician Quarter
+Bog Raider	data/images/Bog_Raider.gif	Edron Bog Raider Cave|Edron Rotworm Caves|Glooth Factory|Malada|Oramond Catacombs|Ramoa|Rathleton Slime Pits|Talahu|Underground Isle|Vengoth|Yalahar Alchemist Quarter
+Bonelord	data/images/Bonelord.gif	Alatar Lake|Ancient Temple|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banuta|Beregar Bonelord Dungeons|Beregar Mines|Black Knight Villa|Darashia|Dark Cathedral|Dawnport Underground Dungeons North|Deeper Drefia|Drefia Spirit Grounds|Edron Northern Ruins|Fibula Dungeon|Folda|Ghostlands|Green Claw Swamp|Helheim|Hellgate|Isle of the Kings|Jakundaf Desert|Kazordoon|Maze of the Lost Souls|Mintwallin|Mount Sternum|Outlaw Camp|Plains of Havoc|Port Hope Swamp Troll Den|Thais Northern Dungeon|Triangle Tower|Ulderek's Rock|Vandura Bonelord Dungeons|Vandura Cultist Hideout|Vengoth|Venore|Venore Amazon Camp
+Candy Horror	data/images/Candy_Horror.gif	Chocolate Mines
+Choking Fear	data/images/Choking_Fear.gif	Nightmare Isles|Roshamuul Dream Junkyard|Upper Roshamuul
+Crypt Warden	data/images/Crypt_Warden.gif	Kilmaresh Catacombs
+Crystal Spider	data/images/Crystal_Spider.gif	Bittermor|Chyllfroest Lost World|Demon Forge (The Crystal Caves)|Formorgar Glacier|Formorgar Mines|Gnomegate Mushroom Gardens|Ice Witch Temple|Nargor Crystal Gardens|Nibelor
+Crystalcrusher	data/images/Crystalcrusher.gif	Gnomegate Crystal Grounds|Gnomegate Mushroom Gardens|Nargor Crystal Gardens|Middle Spike
+Darklight Construct	data/images/Darklight_Construct.gif	Gloom Pillars
+Darklight Emitter	data/images/Darklight_Emitter.gif	Gloom Pillars
+Darklight Source	data/images/Darklight_Source.gif	Darklight Core
+Darklight Striker	data/images/Darklight_Striker.gif	Darklight Core
+Dragonling	data/images/Dragonling.gif	Fury Hell|Hellgorge
+Efreet	data/images/Efreet.gif	Banuta|Demon Forge (The Arcanum)|Haunted Nexus|Hellgorge|Mal'ouquah|Yalahar Magician Quarter
+Elder Bonelord	data/images/Elder_Bonelord.gif	Banuta|Beregar Bonelord Dungeons|Beregar Mines|Helheim|Hellgate|Hellgorge|Vandura Bonelord Dungeons|Vandura Cultist Hideout|Vengoth
+Elder Forest Fury	data/images/Elder_Forest_Fury.gif	Dryad Gardens
+Enfeebled Silencer	data/images/Enfeebled_Silencer.gif	Feyrist Mountains|Feyrist Nightmare
+Feral Sphinx	data/images/Feral_Sphinx.gif	Kilmaresh
+Feversleep	data/images/Feversleep.gif	Roshamuul Cistern|Roshamuul Mines
+Forest Fury	data/images/Forest_Fury.gif	Corym Black Market|Dryad Gardens|Forest Furies' Camp|Forsaken Mine
+Frazzlemaw	data/images/Frazzlemaw.gif	Lower Roshamuul|Mawhawk Lair|Upper Roshamuul
+Gargoyle	data/images/Gargoyle.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Tarpit)|Banuta|Demon Forge (The Hall of the Colossi)|Edron Forgotten Tomb|Formorgar Glacier|Formorgar Mines|Gargoyle Sanctuary|Goroma|Isle of Evil|Mal'ouquah|Medusa Tower|Stone Golem Cave (Formorgar Glacier)|Upper Spike|Vengoth
+Gazer	data/images/Gazer.gif	Hellgate|Vandura Bonelord Dungeons
+Girtablilu Warrior	data/images/Girtablilu_Warrior.gif	Ruins of Nuur
+Green Djinn	data/images/Green_Djinn.gif	Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Banuta|Goroma|Mal'ouquah|Serpentine Tower|Yalahar Magician Quarter
+Gryphon	data/images/Gryphon.gif	Kilmaresh Mountains
+Guzzlemaw	data/images/Guzzlemaw.gif	Lower Roshamuul|Mawhawk Lair|Upper Roshamuul
+Juvenile Bashmu	data/images/Juvenile_Bashmu.gif	Salt Caves
+Lamassu	data/images/Lamassu.gif	Kilmaresh Mountains|Nykri Delta|Southern Steppe
+Lumbering Carnivor	data/images/Lumbering_Carnivor.gif	Carnivora's Rocks
+Manticore	data/images/Manticore.gif	Kilmaresh
+Marid	data/images/Marid.gif	Ashta'daramai|Haunted Nexus|Yalahar Magician Quarter
+Medusa	data/images/Medusa.gif	Banuta|Medusa Tower|Talahu|Vandura Mountains
+Menacing Carnivor	data/images/Menacing_Carnivor.gif	Carnivora's Rocks
+Nibblemaw	data/images/Nibblemaw.gif	Chocolate Mines
+Nightmare	data/images/Nightmare.gif	Banuta|Demon Forge (The Battlefield)|Demon Forge (The Hive)|Demon Forge (The Mirror Maze of Madness)|Drefia Spirit Grounds|Formorgar Mines|Grounds of Deceit (Bazir)|Krailos Ruins|Oramond Mountain Hideout|Pits of Inferno (DT City)|Pits of Deceit (Bazir)|Vengoth|Yalahar Alchemist Quarter|Yalahar Cemetery Quarter
+Nightmare Scion	data/images/Nightmare_Scion.gif	Drefia Spirit Grounds|Formorgar Mines|Krailos Ruins|Lower Spike|Underground Isle|Vengoth|Yalahar Alchemist Quarter|Yalahar Arena Quarter|Yalahar Cemetery Quarter
+Nightstalker	data/images/Nightstalker.gif	Drefia Spirit Grounds|Underground Isle|Vengoth|Vandura Mountains|Yalahar Cemetery Quarter
+Phantasm	data/images/Phantasm.gif	Banuta|Demon Forge (The Mirror Maze of Madness)|Demon Forge (The Well of Souls)|Drefia Spirit Grounds|Grounds of Deceit (Bazir)|Pits of Deceit (Bazir)
+Redeemed Soul	data/images/Redeemed_Soul.gif	Gloom Caverns
+Retching Horror	data/images/Retching_Horror.gif	Nightmare Isles|Roshamuul Dream Junkyard|The Extension Site|Upper Roshamuul
+Rorc	data/images/Rorc.gif	Forsaken Mine|Rorc Plains
+Shock Head	data/images/Shock_Head.gif	Lower Roshamuul
+Sight of Surrender	data/images/Sight_of_Surrender.gif	Roshamuul Mountains
+Silencer	data/images/Silencer.gif	Lower Roshamuul|Nightmare Isles|Upper Roshamuul
+Sphinx	data/images/Sphinx.gif	Kilmaresh Catacombs|Nykri Delta|Southern Steppe
+Spiky Carnivor	data/images/Spiky_Carnivor.gif	Carnivora's Rocks
+Tainted Soul	data/images/Tainted_Soul.gif	Gloom Caverns
+Terrorsleep	data/images/Terrorsleep.gif	Nightmare Isles|Roshamuul Cistern|Roshamuul Mines
+Thanatursus	data/images/Thanatursus.gif	Haunted Nexus (Temple)|Dream Labyrinth (Summer Court)|Dream Labyrinth (Winter Court)
+Venerable Girtablilu	data/images/Venerable_Girtablilu.gif	Ruins of Nuur
+Weakened Frazzlemaw	data/images/Weakened_Frazzlemaw.gif	Feyrist Mountains|Feyrist Nightmare
+Askarak Demon	data/images/Askarak_Demon.gif	Demonwar Dungeon
+Brachiodemon	data/images/Brachiodemon.gif	Claustrophobic Inferno
+Brinebrute Inferniarch	data/images/Brinebrute_Inferniarch.gif	Castle Catacombs
+Broodrider Inferniarch	data/images/Broodrider_Inferniarch.gif	Azzilon Castle
+Dark Torturer	data/images/Dark_Torturer.gif	Demon Forge (The Blood Halls)|Demon Forge (The Battlefield)|Grounds of Damnation (Tafariel)|Halls of Ascension|Infected Area|Oramond Mountain Hideout|Pits of Damnation (Tafariel)|Pits of Inferno (DT City)|Rathleton Catacombs|Roshamuul Prison|Vengoth
+Dawnfire Asura	data/images/Dawnfire_Asura.gif	Asura Palace|Asura Vaults
+Demon	data/images/Demon.gif	Chyllfroest Icefire Caves|Demon Forge (The Arcanum)|Demon Forge (The Hive)|Demon Forge (The Shadow Nexus)|Edron Northern Ruins|Formorgar Mines|Hell Hub|Hellgorge|Infected Area|Kharos|Oramond Catacombs|Pits of Destruction (Apocalypse)|Pits of Undeath (Ashfalor)|Pits of Deceit (Bazir)|Pits of Fire (Infernatil)|Pits of Despair (Pumin)|Pits of Damnation (Tafariel)|Rathleton Catacombs|Razachai|The Extension Site|Yalahar Alchemist Quarter|Yalahar Magician Quarter
+Demon Outcast	data/images/Demon_Outcast.gif	Roshamuul Prison
+Destroyer	data/images/Destroyer.gif	Demon Forge (The Battlefield)|Demon Forge (The Foundry)|Formorgar Mines|Pits of Destruction (Apocalypse)|Pits of Inferno (DT City)|Rathleton Catacombs|Yalahar Alchemist Quarter
+Diabolic Imp	data/images/Diabolic_Imp.gif	Beregar Mines|Demon Forge (The Arcanum)|Fenrock|Fury Hell|Hellgorge|Pits of Inferno (DT City)
+Fire Devil	data/images/Fire_Devil.gif	Ancient Temple|Ankrahmun Pharaoh Tombs (Shadow)|Banshee Temple|Beregar Mines|Demon Forge Hub|Isle of Evil|Hellgorge|Jakundaf Desert|Magician Tower|Plains of Havoc|Spike Sword Quest
+Floating Savant	data/images/Floating_Savant.gif	The Extension Site
+Frost Flower Asura	data/images/Frost_Flower_Asura.gif	Asura Palace|Asura Vaults
+Fury	data/images/Fury.gif	Demon Forge (The Battlefield)|Demon Forge (The Foundry)|Demon Forge (The Shadow Nexus)|Fury Hell|Grounds of Destruction (Apocalypse)|Grounds of Fire (Infernatil)|Halls of Ascension|Oramond Mountain Hideout|Pits of Destruction (Apocalypse)|The Extension Site|Vengoth
+Gorger Inferniarch	data/images/Gorger_Inferniarch.gif	Azzilon Castle
+Gozzler	data/images/Gozzler.gif	Beregar Bonelord Dungeons|Farmine Mines|Isle of Evil|Yalahar Magician Quarter
+Grimeleech	data/images/Grimeleech.gif	Grounds of Damnation (Tafariel)|Grounds of Deceit (Bazir)|Grounds of Despair (Pumin)|Grounds of Fire (Infernatil)|Grounds of Plague (Verminor)|Halls of Ascension|Hell Hub
+Hellfire Fighter	data/images/Hellfire_Fighter.gif	Demon Forge (The Battlefield)|Demon Forge (The Dark Path)|Demon Forge (The Foundry)|Demon Forge Hub|Fury Hell|Lower Glooth Factory|Hellgorge|Grounds of Fire (Infernatil)|Pits of Inferno (DT City)|Pits of Fire (Infernatil)
+Hellflayer	data/images/Hellflayer.gif	Grounds of Damnation (Tafariel)|Grounds of Despair (Pumin)|Grounds of Destruction (Apocalypse)|Grounds of Fire (Infernatil)|Grounds of Plague (Verminor)|Grounds of Undeath (Ashfalor)|Halls of Ascension|Hell Hub
+Hellhound	data/images/Hellhound.gif	Asura Vaults|Chyllfroest Icefire Caves|Demon Forge (The Battlefield)|Demon Forge (The Hive)|Demon Forge (The Shadow Nexus)|Fury Hell|Hellgorge|Grounds of Fire (Infernatil)|Halls of Ascension|Pits of Fire (Infernatil)|Rathleton Catacombs|Roshamuul Prison|The Extension Site
+Hellhunter Inferniarch	data/images/Hellhunter_Inferniarch.gif	Castle Catacombs
+Hellspawn	data/images/Hellspawn.gif	Asura Palace|Asura Vaults|Banuta|Chyllfroest Icefire Caves|Formorgar Mines|Rathleton Catacombs|Vengoth|Yalahar Magician Quarter
+Infernal Demon	data/images/Infernal_Demon.gif	Claustrophobic Inferno
+Juggernaut	data/images/Juggernaut.gif	Demon Forge (The Battlefield)|Demon Forge (The Foundry)|Demon Forge (The Hall of the Colossi)|Demon Forge (The Hive)|Demon Forge (The Shadow Nexus)|Formorgar Mines|Grounds of Destruction (Apocalypse)|Halls of Ascension|Pits of Destruction (Apocalypse)|Rathleton Catacombs|Roshamuul Prison
+Many Faces	data/images/Many_Faces.gif	Mirrored Nightmare
+Midnight Asura	data/images/Midnight_Asura.gif	Asura Palace|Asura Vaults
+Plaguesmith	data/images/Plaguesmith.gif	Demon Forge (The Foundry)|Demon Forge (The Vats)|Formorgar Mines|Grounds of Plague (Verminor)|Halls of Ascension|Pits of Inferno (DT City)|Pits of Plague (Verminor)|Roshamuul Prison|Yalahar Alchemist Quarter|Yalahar Magician Quarter
+Shaburak Demon	data/images/Shaburak_Demon.gif	Demonwar Dungeon
+Sineater Inferniarch	data/images/Sineater_Inferniarch.gif	Azzilon Castle
+Spellreaper Inferniarch	data/images/Spellreaper_Inferniarch.gif	Castle Catacombs
+True Dawnfire Asura	data/images/True_Dawnfire_Asura.gif	Asura Vaults|Forbidden Gardens
+True Feverbloom Asura	data/images/True_Feverbloom_Asura.gif	Forbidden Gardens
+True Frost Flower Asura	data/images/True_Frost_Flower_Asura.gif	Asura Citadel|Asura Vaults
+True Midnight Asura	data/images/True_Midnight_Asura.gif	Asura Citadel|Asura Vaults
+Vexclaw	data/images/Vexclaw.gif	Grounds of Damnation (Tafariel)|Grounds of Deceit (Bazir)|Grounds of Despair (Pumin)|Grounds of Destruction (Apocalypse)|Grounds of Fire (Infernatil)|Grounds of Undeath (Ashfalor)|Halls of Ascension|Hell Hub
+Acolyte of the Cult	data/images/Acolyte_of_the_Cult.gif	Forbidden Temple|Formorgar Mines|Hellgorge|Vandura Cultist Hideout|Yalahar Magician Quarter
+Adept of the Cult	data/images/Adept_of_the_Cult.gif	Forbidden Temple|Formorgar Mines|Hellgorge|Vandura Cultist Hideout|Yalahar Magician Quarter
+Adventurer	data/images/Adventurer.gif	Marshland
+Amazon	data/images/Amazon.gif	Ankrahmun Pharaoh Tombs (Oasis)|Carlin Amazon Camp|Corym Black Market|Fields of Glory|Laguna Islands|Venore Amazon Camp|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Assassin	data/images/Assassin.gif	Dark Cathedral|Yalahar Factory Quarter|Yalahar Trade Quarter
+Bandit	data/images/Bandit.gif	Bandit Caves|Dark Cathedral|Formorgar Mines|Grimvale|Kha'zeel Mountains|Northport Pirate Caves|Outlaw Camp|Plains of Havoc|Thais|Tyrsung|Yalahar Factory Quarter|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Barbarian Bloodwalker	data/images/Barbarian_Bloodwalker.gif	Bittermor|Krimhorn|Ragnir|Svargrond|Yalahar Arena Quarter
+Barbarian Brutetamer	data/images/Barbarian_Brutetamer.gif	Bittermor|Fenrock|Krimhorn|Ragnir
+Barbarian Headsplitter	data/images/Barbarian_Headsplitter.gif	Bittermor|Fenrock|Krimhorn|Ragnir|Svargrond|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Barbarian Skullhunter	data/images/Barbarian_Skullhunter.gif	Bittermor|Fenrock|Krimhorn|Ragnir|Svargrond|Yalahar Trade Quarter
+Black Sphinx Acolyte	data/images/Black_Sphinx_Acolyte.gif	Issavi Sewers|Kilmaresh Catacombs|Kilmaresh Mountains|Kilmaresh Puzzle
+Blood Hand	data/images/Blood_Hand.gif	Deeper Drefia|Drefia Vampire Crypts
+Blood Priest	data/images/Blood_Priest.gif	Deeper Drefia|Drefia Vampire Crypts|Edron Hero Fortress
+Burning Gladiator	data/images/Burning_Gladiator.gif	Issavi Sewers|Kilmaresh Catacombs|Kilmaresh Mountains|Kilmaresh Puzzle
+Cobra Assassin	data/images/Cobra_Assassin.gif	Cobra Bastion
+Cobra Scout	data/images/Cobra_Scout.gif	Cobra Bastion
+Cobra Vizier	data/images/Cobra_Vizier.gif	Cobra Bastion
+Crazed Beggar	data/images/Crazed_Beggar.gif	Yalahar Factory Quarter|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Cult Believer	data/images/Cult_Believer.gif	Cults of Tibia (The Humans)
+Cult Enforcer	data/images/Cult_Enforcer.gif	Cults of Tibia (The Humans)
+Cult Scholar	data/images/Cult_Scholar.gif	Cults of Tibia (The Humans)
+Dark Apprentice	data/images/Dark_Apprentice.gif	Ankrahmun Pharaoh Tombs (Curse)|Dark Cathedral|Edron Northern Ruins|Magician Tower|Yalahar Magician Quarter
+Dark Carnisylvan	data/images/Dark_Carnisylvan.gif	Forest of Life
+Dark Magician	data/images/Dark_Magician.gif	Dark Cathedral|Eclipse|Edron Northern Ruins|Magician Tower|Yalahar Magician Quarter
+Dark Monk	data/images/Dark_Monk.gif	Dark Cathedral|Vandura Cultist Hideout|Yalahar Foreigner Quarter
+Devoted Radiant Acolyte	data/images/Devoted_Radiant_Acolyte.gif	Radiant Skyhold
+Devoted Radiant Inquisitor	data/images/Devoted_Radiant_Inquisitor.gif	Radiant Ascendancy
+Devoted Radiant Paragon	data/images/Devoted_Radiant_Paragon.gif	Radiant Skyhold
+Devoted Radiant Templar	data/images/Devoted_Radiant_Templar.gif	Radiant Ascendancy
+Devoted Radiant Warden	data/images/Devoted_Radiant_Warden.gif	Radiant Skyhold
+Devoted Radiant Zealot	data/images/Devoted_Radiant_Zealot.gif	Radiant Ascendancy
+Enlightened of the Cult	data/images/Enlightened_of_the_Cult.gif	Forbidden Temple|Formorgar Mines|Hellgorge|Yalahar Magician Quarter
+Gang Member	data/images/Gang_Member.gif	Yalahar Foreigner Quarter|Yalahar Factory Quarter|Yalahar Trade Quarter
+Gladiator	data/images/Gladiator.gif	Yalahar Arena Quarter|Yalahar Trade Quarter
+Glooth Bandit	data/images/Glooth_Bandit.gif	Glooth Factory
+Glooth Brigand	data/images/Glooth_Brigand.gif	Glooth Factory
+Goldhanded Cultist	data/images/Goldhanded_Cultist.gif	Cults of Tibia (Prosperity)
+Goldhanded Cultist Bride	data/images/Goldhanded_Cultist_Bride.gif	Cults of Tibia (Prosperity)
+Hero	data/images/Hero.gif	Edron Northern Ruins|Edron Hero Fortress|Yalahar Magician Quarter
+Hulking Carnisylvan	data/images/Hulking_Carnisylvan.gif	Forest of Life
+Hunter	data/images/Hunter.gif	Amazon Camp|Dark Cathedral|Edron|Edron Northern Ruins|Elvenbane|Femor Hills|Ferngrims Gate|Formorgar Mines|Isle of Merriment|Hunter Camp|Maze of the Lost Souls|Mount Sternum|Outlaw Camp|Plains of Havoc|Poacher Lair|Port Hope|Tyrsung|Yalahar Alchemist Quarter|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Ice Witch	data/images/Ice_Witch.gif	Bittermor|Formorgar Glacier|Formorgar Mines|Ice Witch Temple|Krimhorn|Yalahar Magician Quarter
+Infernalist	data/images/Infernalist.gif	Demona|Edron Northern Ruins|Fury Hell|Yalahar Magician Quarter
+Mad Scientist	data/images/Mad_Scientist.gif	Isle of Evil|Tiquanda Laboratory|Yalahar Magician Quarter|Yalahar Trade Quarter|Yalahar Factory Quarter
+Monk (Criatura)	data/images/Monk_(Criatura).gif	Dark Cathedral|Edron Northern Ruins|Falcon Bastion|Isle of the Kings|Maze of the Lost Souls|Triangle Tower|Yalahar Trade Quarter
+Moonstone Excavator	data/images/Moonstone_Excavator.gif	Moonstone Crater
+Moonstone Overseer	data/images/Moonstone_Overseer.gif	Moonstone Crater
+Mutated Human	data/images/Mutated_Human.gif	Deeper Ingol|Tiquanda Laboratory|Underground Isle|Yalahar Alchemist Quarter|Yalahar Factory Quarter
+Necromancer	data/images/Necromancer.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Beregar Mines|Black Sphinx Estate|Daramian Scarab Lairs|Deeper Drefia|Edron Hero Fortress|Edron Northern Ruins|Edron Undead Lairs|Ramoa|Talahu|Yalahar Cemetery Quarter|Yalahar Magician Quarter|Drefia Vampire Crypts|Drefia Grim Reaper Halls
+Nomad	data/images/Nomad.gif	Ankrahmun Pharaoh Tombs (Curse)|Deeper Drefia|Devourer Desert|Kha'labal Desert|Kha'zeel Mountains|Nomad Cave|Yalahar Foreigner Quarter
+Nomad (Blue)	data/images/Nomad_(Blue).gif	Drefia
+Nomad (Female)	data/images/Nomad_(Female).gif	Drefia
+Novice of the Cult	data/images/Novice_of_the_Cult.gif	Forbidden Temple|Formorgar Glacier|Formorgar Mines|Vandura Cultist Hideout|Yalahar Magician Quarter
+Pirate Buccaneer	data/images/Pirate_Buccaneer.gif	Fields of Glory|Isle of Evil|Krailos Shipwreck|Liberty Bay|Nargor|Tyrsung|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Pirate Cook	data/images/Pirate_Cook.gif	Aragonia|Goroma
+Pirate Corsair	data/images/Pirate_Corsair.gif	Nargor|Krailos Shipwreck|Liberty Bay|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Pirate Cutthroat	data/images/Pirate_Cutthroat.gif	Isle of Evil|Krailos Shipwreck|Liberty Bay|Nargor|Northport Pirate Caves|Tyrsung|Yalahar Foreigner Quarter
+Pirate Gunner	data/images/Pirate_Gunner.gif	Aragonia|Goroma
+Pirate Marauder	data/images/Pirate_Marauder.gif	Isle of Evil|Krailos Shipwreck|Liberty Bay|Nargor|Northport Pirate Caves|Tyrsung|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Pirate Navigator	data/images/Pirate_Navigator.gif	Aragonia|Goroma
+Pirate Quartermaster	data/images/Pirate_Quartermaster.gif	Aragonia|Goroma
+Poacher	data/images/Poacher.gif	Ab'Dendriel|Amazon Camp|Ferngrims Gate|Fields of Glory|Hunter Camp|Poacher Lair|Rorc Plains|Yalahar Factory Quarter|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Poisonous Carnisylvan	data/images/Poisonous_Carnisylvan.gif	Forest of Life
+Priestess	data/images/Priestess.gif	Ankrahmun Pharaoh Tombs (Mountain)|Corym Black Market|Deeper Drefia|Hellgorge|Edron Northern Ruins|Ramoa|Talahu|Vengoth|Yalahar Magician Quarter
+Priestess Of The Wild Sun	data/images/Priestess_Of_The_Wild_Sun.gif	Issavi Sewers|Kilmaresh Catacombs|Kilmaresh Mountains|Kilmaresh Puzzle
+Radiant Acolyte	data/images/Radiant_Acolyte.gif	Radiant Skyhold
+Radiant Inquisitor	data/images/Radiant_Inquisitor.gif	Radiant Ascendancy
+Radiant Paragon	data/images/Radiant_Paragon.gif	Radiant Skyhold
+Radiant Templar	data/images/Radiant_Templar.gif	Radiant Ascendancy
+Radiant Warden	data/images/Radiant_Warden.gif	Radiant Skyhold
+Radiant Zealot	data/images/Radiant_Zealot.gif	Radiant Ascendancy
+Raubritter Chastener	data/images/Raubritter_Chastener.gif	Adaean Crystal Mines|Adaean Shore|Adaean Silver Mines|Arean Outskirts|Bloodfire Gorge|Isle of Ada|Stag Bastion
+Raubritter Marksman	data/images/Raubritter_Marksman.gif	Adaean Crystal Mines|Adaean Shore|Adaean Silver Mines|Arean Outskirts|Bloodfire Gorge|Isle of Ada|Stag Bastion
+Raubritter Skirmisher	data/images/Raubritter_Skirmisher.gif	Adaean Crystal Mines|Adaean Shore|Adaean Silver Mines|Arean Outskirts|Bloodfire Gorge|Isle of Ada|Stag Bastion
+Renegade Knight	data/images/Renegade_Knight.gif	Black Sphinx Estate|Cults of Tibia (The Humans)|Edron Hero Fortress
+Shadow Pupil	data/images/Shadow_Pupil.gif	Deeper Drefia|Drefia Grim Reaper Halls
+Smuggler	data/images/Smuggler.gif	Bandit Caves|Dark Cathedral|Nargor|Northport Pirate Caves|Outlaw Camp|Tyrsung|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Stalker	data/images/Stalker.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Curse)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Deeper Drefia|Drefia|Edron Northern Ruins|Ghostlands|Isle of the Kings|Kazordoon|Mal'ouquah|Triangle Tower|White Flower Temple|Yalahar Foreigner Quarter|Yalahar Trade Quarter|Drefia Vampire Crypts
+Usurper Archer	data/images/Usurper_Archer.gif	Bounac
+Usurper Knight	data/images/Usurper_Knight.gif	Bounac
+Usurper Warlock	data/images/Usurper_Warlock.gif	Bounac
+Valkyrie	data/images/Valkyrie.gif	Carlin Amazon Camp|Fields of Glory|Venore Amazon Camp|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Vicious Squire	data/images/Vicious_Squire.gif	Black Sphinx Estate|Cults of Tibia (The Humans)|Edron Hero Fortress
+Vile Grandmaster	data/images/Vile_Grandmaster.gif	Black Sphinx Estate|Cults of Tibia (The Humans)|Edron Hero Fortress
+Warlock	data/images/Warlock.gif	Ankrahmun Pharaoh Tombs (Oasis)|Banshee Temple|Beregar Mines|Black Sphinx Estate|Demon Forge (The Arcanum)|Demona|Edron Northern Ruins|Ghostlands|Kharos|Yalahar Magician Quarter
+Wild Warrior	data/images/Wild_Warrior.gif	Corym Black Market|Cyclopolis|Dark Cathedral|Edron|Edron Northern Ruins|Femor Hills|Ghostlands|Maze of the Lost Souls|Outlaw Camp|Thais|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Witch	data/images/Witch.gif	Corym Black Market|Dark Cathedral|Eclipse|Edron Northern Ruins|Fields of Glory|Gloom Caverns|Green Claw Swamp|Hellgorge|Isle of Evil|Isle of the Kings|Kazordoon|Kazordoon Underground|Mammoth Shearing Factory|Necromant House|Treeling Dungeon|Triangle Tower|Vandura Cultist Hideout|Venore Amazon Camp|Yalahar Trade Quarter
+Behemoth	data/images/Behemoth.gif	Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Tarpit)|Chyllfroest Icefire Caves|Cyclopolis|Demon Forge (The Hall of the Colossi)|Forbidden Lands of Tiquanda|Formorgar Mines|Lower Glooth Factory West|Lower Spike|Medusa Tower|Vandura Mountains|Yalahar Arena Quarter
+Cyclops	data/images/Cyclops.gif	Ab'Dendriel Underground|Ancient Temple|Cyclopolis|Cyclops Camp|Dwacatra|Femor Hills|Forsaken Mine|Kazordoon|Maze of the Lost Souls|Mistrock|Mount Sternum|Outlaw Camp|Plains of Havoc|Shadowthorn|Thais Northern Dungeon|Ulderek's Rock|Yalahar Foreigner Quarter
+Cyclops Drone	data/images/Cyclops_Drone.gif	Cyclopolis|Forsaken Mine|Mistrock|Mount Sternum
+Cyclops Smith	data/images/Cyclops_Smith.gif	Cyclopolis|Forsaken Mine|Mistrock|Mount Sternum
+Frost Giant	data/images/Frost_Giant.gif	Chyllfroest Island|Chyllfroest Lost World|Tyrsung|Mammoth Shearing Factory
+Frost Giantess	data/images/Frost_Giantess.gif	Chakoya Iceberg|Chyllfroest Island|Chyllfroest Lost World|Tyrsung
+Hulking Prehemoth	data/images/Hulking_Prehemoth.gif	Sparkling Pools
+Ogre Brute	data/images/Ogre_Brute.gif	Krailos Shipwreck|Krailos Steppe
+Ogre Rowdy	data/images/Ogre_Rowdy.gif	Central Steppe|Kilmaresh Mountains|Kilmaresh Puzzle
+Ogre Ruffian	data/images/Ogre_Ruffian.gif	Central Steppe|Kilmaresh Mountains|Kilmaresh Puzzle
+Ogre Sage	data/images/Ogre_Sage.gif	Central Steppe|Kilmaresh Mountains|Kilmaresh Puzzle
+Ogre Savage	data/images/Ogre_Savage.gif	Krailos Shipwreck|Krailos Steppe
+Ogre Shaman	data/images/Ogre_Shaman.gif	Krailos Shipwreck|Krailos Steppe
+Orclops Doomhauler	data/images/Orclops_Doomhauler.gif	Desecrated Glade|Edron Orc Lands
+Orclops Ravager	data/images/Orclops_Ravager.gif	Desecrated Glade
+Angry Sugar Fairy	data/images/Angry_Sugar_Fairy.gif	Dessert Dungeons
+Arctic Faun	data/images/Arctic_Faun.gif	Ice Islands
+Boogy	data/images/Boogy.gif	Feyrist Meadows|Feyrist Mountains|Feyrist Underground
+Cream Blob	data/images/Cream_Blob.gif	Candia
+Dark Faun	data/images/Dark_Faun.gif	Fae Village|Feyrist Meadows|Feyrist Mountains|Feyrist Underground
+Faun	data/images/Faun.gif	Fae Village|Feyrist Meadows|Feyrist Mountains
+Fruit Drop	data/images/Fruit_Drop.gif	Candia
+Nymph	data/images/Nymph.gif	Feyrist Meadows
+Pixie	data/images/Pixie.gif	Feyrist Meadows
+Pooka	data/images/Pooka.gif	Feyrist Meadows
+Sugar Cube	data/images/Sugar_Cube.gif	Candia
+Sugar Cube Worker	data/images/Sugar_Cube_Worker.gif	Candia
+Swan Maiden	data/images/Swan_Maiden.gif	Feyrist Meadows
+Truffle	data/images/Truffle.gif	Candia
+Truffle Cook	data/images/Truffle_Cook.gif	Candia
+Twisted Pooka	data/images/Twisted_Pooka.gif	Feyrist Meadows|Feyrist Underground
+Wisp	data/images/Wisp.gif	Ab'Dendriel Surroundings|Bittermor|Edron Orc Lands|Edron Surroundings|Feyrist Meadows|Formorgar Glacier|Kazordoon Surroundings|Krimhorn|Port Hope Surroundings|Thais Surroundings|Venore Southern Swamp|Venore Surroundings
+Breach Brood	data/images/Breach_Brood.gif	The Void (Ankrahmun)|The Void (Svargrond)|The Void (Zao)
+Courage Leech	data/images/Courage_Leech.gif	Furious Crater
+Dread Intruder	data/images/Dread_Intruder.gif	The Void (Ankrahmun)|The Void (Svargrond)|The Void (Zao)
+Instable Breach Brood	data/images/Instable_Breach_Brood.gif	The Void (Kazordoon)
+Instable Sparkion	data/images/Instable_Sparkion.gif	The Void (Kazordoon)
+Mitmah Scout	data/images/Mitmah_Scout.gif	Iksupan Last Stand|Iksupan Occupied Sanctuary|Iksupan Undercity|Iksupan Waterways
+Mitmah Seer	data/images/Mitmah_Seer.gif	Iksupan Last Stand|Iksupan Occupied Sanctuary|Iksupan Undercity|Iksupan Waterways
+Reality Reaver	data/images/Reality_Reaver.gif	The Void
+Sparkion	data/images/Sparkion.gif	The Void (Ankrahmun)|The Void (Svargrond)|The Void (Zao)
+Stabilizing Dread Intruder	data/images/Stabilizing_Dread_Intruder.gif	The Void (Edron)
+Stabilizing Reality Reaver	data/images/Stabilizing_Reality_Reaver.gif	The Void (Edron)
+Yielothax	data/images/Yielothax.gif	Another Dimension
+Massive Earth Elemental	data/images/Massive_Earth_Elemental.gif	Forbidden Lands of Tiquanda|Gnomegate Mushroom Gardens|Gnomegate Truffels Grounds|Nargor Crystal Gardens|Lower Spike|Oramond Catacombs|Rathleton Ancient Sewers|Yalahar Arena Quarter
+Earth Elemental	data/images/Earth_Elemental.gif	Banuta|Dryad Gardens|Earth Elemental Cave|Forbidden Lands of Tiquanda|Gnomegate Crystal Grounds|Kazordoon Dwarf Mines (Splintered Stone)|Kazordoon Underground|Middle Spike|Nargor Crystal Gardens|Oramond Catacombs|Rathleton Ancient Sewers|Tiquanda|Underground Isle|Vandura Mountains|Vengoth
+Massive Fire Elemental	data/images/Massive_Fire_Elemental.gif	Banuta|Demon Forge (The Dark Path)|Edron Northern Ruins|Fury Hell|Gnomegate Lava Hot Spot|Hellgorge|Lower Glooth Factory
+Energy Elemental	data/images/Energy_Elemental.gif	Kha'zeel Mountains|Vandura Mountains|Vengoth
+Fire Elemental	data/images/Fire_Elemental.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Shadow)|Ashta'daramai|Banuta|Beregar Mines|Cyclopolis|Demon Forge Hub|Dragon Lair (Ankrahmun)|Edron Northern Ruins|Hellgorge|Kharos|Serpentine Tower|Yalahar Factory Quarter
+Massive Water Elemental	data/images/Massive_Water_Elemental.gif	Calassa|Demon Forge (The Sunken Cave)|Frozen Trench|Water Elemental Caverns (Sul)
+Water Elemental	data/images/Water_Elemental.gif	Banuta|Folda Water Elemental Cavern|Krailos Steppe|Malada|Nargor Crystal Gardens|Outlaw Camp Water Elemental Cavern|Ramoa|Talahu|Water Elemental Caverns (Oeste)|Water Elemental Caverns (Sul)
+Massive Energy Elemental	data/images/Massive_Energy_Elemental.gif	Kha'zeel Mountains
+Ironblight	data/images/Ironblight.gif	Gnomegate Crystal Dungeon
+Cliff Strider	data/images/Cliff_Strider.gif	Gnomegate Crystal Dungeon
+High Voltage Elemental	data/images/High_Voltage_Elemental.gif	Deep Hub Crystal Dungeon|Lower Glooth Factory South
+Furious Fire Elemental	data/images/Furious_Fire_Elemental.gif	Hellgate
+Ravenous Lava Lurker	data/images/Ravenous_Lava_Lurker.gif	Deep Hub Magma Dungeon
+Turbulent Elemental	data/images/Turbulent_Elemental.gif	Ebb and Flow
+Lava Lurker	data/images/Lava_Lurker.gif	Deep Hub Crystal Dungeon|Deep Hub Fungus Dungeon|Deep Hub Magma Dungeon
+Knowledge Elemental	data/images/Knowledge_Elemental.gif	Secret Library Energy Section
+Sulphur Spouter	data/images/Sulphur_Spouter.gif	Monster Graveyard
+Foam Stalker	data/images/Foam_Stalker.gif	Great Pearl Fan Reef
+Converter	data/images/Converter.gif	Gloom Pillars
+Candy Floss Elemental	data/images/Candy_Floss_Elemental.gif	Dessert Dungeons
+Infernoid Blob	data/images/Infernoid_Blob.gif	Crimson Court
+Infernoid Soul	data/images/Infernoid_Soul.gif	Crimson Court
+Infernoid Hound	data/images/Infernoid_Hound.gif	Crimson Court
+Infernoid Spiritual	data/images/Infernoid_Spiritual.gif	Crimson Court
+Dragolisk	data/images/Dragolisk.gif	Nimmersatt's Breeding Ground
+Dragon	data/images/Dragon.gif	Ancient Temple|Ankrahmun Pharaoh Tombs (Shadow)|Beregar Mines|Cyclopolis|Darama Dragon Lair|Dawnport Underground Dungeons North|Draconia|Dragonblaze Peaks|Dragon Lair (Ankrahmun)|Dragon Lair (Fenrock)|Dragon Lair (Kazordoon)|Dragon Lair (Kazordoon Dwarf Mines)|Dragon Lair (Kha'zeel)|Dragon Lair (Mount Sternum)|Dragon Lair (Pits of Inferno)|Edron Dragon Lair|Edron Northern Ruins|Elvenbane|Fibula Dungeon|Hellgorge|Kazordoon|Krailos Steppe|Maze of the Lost Souls|Mintwallin|Plains of Havoc|Shadowthorn|The First Dragon's Lair|Ulderek's Rock|Venore Dragon Lair|Yalahar Foreigner Quarter
+Dragon Hatchling	data/images/Dragon_Hatchling.gif	Beregar Mines|Darama Dragon Lair|Dragonblaze Peaks|Dragon Lair (Ankrahmun)|Dragon Lair (Carlin)|Dragon Lair (Fenrock)|Dragon Lair (Kazordoon Dwarf Mines)|Dragon Lair (Kha'zeel)|Dragon Lair (Thais)|Edron Dragon Lair|Edron Northern Ruins|Emperor's Castle|Hellgorge|Krailos Steppe|Venore Dragon Lair
+Dragon Lord	data/images/Dragon_Lord.gif	Ankrahmun Pharaoh Tombs (Shadow)|Banshee Temple|Beregar Mines|Cyclopolis|Darama Dragon Lair|Dawnport Underground Dungeons North|Draconia|Dragonblaze Peaks|Dragon Lair (Ankrahmun)|Dragon Lair (Fenrock)|Dragon Lair (Goroma)|Dragon Lair (Kazordoon)|Dragon Lair (Kazordoon Dwarf Mines)|Dragon Lair (Kha'zeel)|Dragon Lair (Pits of Inferno)|Dragon Lair (Thais)|Edron Dragon Lair|Fibula Dungeon|Fury Hell|Gnomegate Lava Hot Spot|Hellgorge|Isle of the Kings|Krailos Steppe|Maze of the Lost Souls|Plains of Havoc|The First Dragon's Lair|Venore Dragon Lair|Yalahar Arena Quarter
+Dragon Lord Hatchling	data/images/Dragon_Lord_Hatchling.gif	Dawnport Underground Dungeons|Dragonblaze Peaks|Dragon Lair (Fenrock)|Dragon Lair (Kha'zeel)|Dragon Lair (Thais)|Edron Dragon Lair|Emperor's Castle|Hellgorge|Venore Dragon Lair
+Draken Abomination	data/images/Draken_Abomination.gif	Razachai
+Draken Elite	data/images/Draken_Elite.gif	Emperor's Castle|Razachai
+Draken Spellweaver	data/images/Draken_Spellweaver.gif	Black Serpent Dungeon|Razachai|Temple Complex|Zao Palace|Zzaion
+Draken Warmaster	data/images/Draken_Warmaster.gif	Chazorai|Emperor's Castle|Razachai|Temple Complex|Zao Palace|Zzaion
+Elder Wyrm	data/images/Elder_Wyrm.gif	Deep Hub Magma Dungeon|Drefia Wyrm Caves|Lower Glooth Factory West|Vandura Wyrm Lairs
+Frost Dragon	data/images/Frost_Dragon.gif	Chyllfroest Icefire Caves|Dragonblaze Peaks|Ice Witch Temple|Nargor Crystal Gardens|Okolnir|Yakchal Crypt
+Frost Dragon Hatchling	data/images/Frost_Dragon_Hatchling.gif	Chyllfroest Icefire Caves|Dragonblaze Peaks|Ice Witch Temple|Okolnir|Yalahar Factory Quarter
+Ghastly Dragon	data/images/Ghastly_Dragon.gif	Banuta|Black Serpent Dungeon|Chyllfroest Icefire Caves|Ghastly Dragon Lair|Razachai|Zao Palace
+Hydra	data/images/Hydra.gif	Banuta|Chor|Dawnport Underground Dungeons North|Forbidden Lands of Tiquanda|Glooth Factory|Kha'zeel Hydra Falls|Kha'zeel Hydra Lair|Kharos|Malada|Rathleton Slime Pits|Talahu|Tiquanda|Yalahar Arena Quarter|Yalahar Foreigner Quarter
+Mega Dragon	data/images/Mega_Dragon.gif	Nimmersatt's Breeding Ground
+Wardragon	data/images/Wardragon.gif	Nimmersatt's Breeding Ground
+Wyrm	data/images/Wyrm.gif	Beregar Mines|Daramian Wyrm Hills|Drefia Wyrm Caves|Emperor's Castle|Lower Glooth Factory West|Lower Spike|Vandura Mountains|Vandura Wyrm Lairs|Yalahar Arena Quarter
+Branchy Crawler	data/images/Branchy_Crawler.gif	Rotten Wasteland
+Carniphila	data/images/Carniphila.gif	Banuta|Carniphila Cave|Forbidden Lands of Tiquanda|Tiquanda Laboratory|Yalahar Arena Quarter
+Cloak Of Terror	data/images/Cloak_Of_Terror.gif	Furious Crater
+Glooth Anemone	data/images/Glooth_Anemone.gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory West|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton New Sewers|Rathleton Slum
+Haunted Treeling	data/images/Haunted_Treeling.gif	Corrupted Gardens|Dryad Gardens|Tiquanda Laboratory|Treeling Dungeon|Vengoth
+Hideous Fungus	data/images/Hideous_Fungus.gif	Gnomegate Fungus Dungeon (Warzone 1)|Rathleton Fungi Sewers|Tiquanda Laboratory
+Humongous Fungus	data/images/Humongous_Fungus.gif	Deep Hub Fungus Dungeon|Gnomegate Fungus Dungeon (Warzone 1)|Rathleton Fungi Sewers|Tiquanda Laboratory
+Lavafungus	data/images/Lavafungus.gif	Grotto of the Lost
+Leaf Golem	data/images/Leaf_Golem.gif	Cormaya|Dryad Gardens|Forest Furies' Camp|Forsaken Mine|Treeling Dungeon
+Moonspawn Blightspitter	data/images/Moonspawn_Blightspitter.gif	Thalassara Surroundings
+Moonspawn Oozecrown	data/images/Moonspawn_Oozecrown.gif	Thalassara Surroundings
+Omnivora	data/images/Omnivora.gif	Medusa Tower
+Rootthing Amber Shaper	data/images/Rootthing_Amber_Shaper.gif	Podzilla Stalk
+Rootthing Bug Tracker	data/images/Rootthing_Bug_Tracker.gif	Podzilla Stalk
+Rootthing Nutshell	data/images/Rootthing_Nutshell.gif	Podzilla Stalk
+Spit Nettle	data/images/Spit_Nettle.gif	Chor|Deep Hub Fungus Dungeon|Forbidden Lands of Tiquanda|Tiquanda|Tiquanda Laboratory|Trapwood|Yalahar Alchemist Quarter
+Stalking Stalk	data/images/Stalking_Stalk.gif	Monster Graveyard
+Swampling	data/images/Swampling.gif	Marshland|Salamander's Cave|Tiquanda Laboratory|Treeling Dungeon
+Wilting Leaf Golem	data/images/Wilting_Leaf_Golem.gif	Dryad Gardens|Forest Furies' Camp|Forsaken Mine
+Banshee	data/images/Banshee.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Banshee Temple|Demon Hell|Drefia Grim Reaper Halls|Drefia Spirit Grounds|Drefia Vampire Crypts|Ghostlands|Infected Area|Jakundaf Desert|Pits of Damnation (Tafariel)|Underground Isle|Vengoth|White Flower Temple|Yalahar Cemetery Quarter
+Betrayed Wraith	data/images/Betrayed_Wraith.gif	Demon Forge (The Blood Halls)|Demon Forge (The Well of Souls)|Helheim|Infected Area|Oramond Mountain Hideout|Pits of Despair (Pumin)|Roshamuul Prison
+Blightwalker	data/images/Blightwalker.gif	Demon Forge (The Vats)|Infected Area|Grounds of Undeath (Ashfalor)|Pits of Plague (Verminor)|Roshamuul Prison
+Blood Beast	data/images/Blood_Beast.gif	Lower Glooth Factory|Oramond Marshes|Rathleton Slum
+Bonebeast	data/images/Bonebeast.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banuta|Beregar Mines|Caverna Exanima|Daramian Scarab Lairs|Demon Forge (The Hive)|Edron Forgotten Tomb|Edron Hero Fortress|Edron Undead Lairs|Helheim|Infected Area|Lion's Rock|Middle Spike|Ramoa|Talahu|Underground Isle|Vandura Mountains|Vengoth|Yalahar Cemetery Quarter
+Bony Sea Devil	data/images/Bony_Sea_Devil.gif	Ebb and Flow
+Braindeath	data/images/Braindeath.gif	Beregar Bonelord Dungeons|Dawnport Underground Dungeons North|Demon Forge (The Arcanum)|Drefia Spirit Grounds|Fenrock|Helheim|Infected Area|Vandura Bonelord Dungeons|Yalahar Cemetery Quarter|Yalahar Alchemist Quarter
+Burster Spectre	data/images/Burster_Spectre.gif	Buried Cathedral|Haunted Nexus (Tomb)
+Capricious Phantom	data/images/Capricious_Phantom.gif	Ebb and Flow
+Corrupted Ghost	data/images/Corrupted_Ghost.gif	Corrupted Mines|Yalahar Cemetery Quarter
+Corrupted Skeleton	data/images/Corrupted_Skeleton.gif	Corrupted Mines|Yalahar Cemetery Quarter
+Creepy Crawler	data/images/Creepy_Crawler.gif	Unhallowed Crypt
+Crypt Construct	data/images/Crypt_Construct.gif	Unhallowed Crypt|Forgotten Crypt
+Crypt Fiend	data/images/Crypt_Fiend.gif	Unhallowed Crypt
+Crypt Mage	data/images/Crypt_Mage.gif	Forsaken Crypt
+Crypt Shambler	data/images/Crypt_Shambler.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Darashia Catacombs|Edron Forgotten Tomb|Helheim|Hellgate|Lion's Rock|Mount Sternum|Ramoa|Trapwood|Treasure Island|Upper Spike|Yalahar Cemetery Quarter
+Crypt Warrior	data/images/Crypt_Warrior.gif	Bounac|Bounacean Lion
+Cursed Ape	data/images/Cursed_Ape.gif	Iksupan|Iksupan Undercity|Iksupan Waterways
+Cursed Prospector	data/images/Cursed_Prospector.gif	Barren Drift
+Cyclursus	data/images/Cyclursus.gif	Forsaken Crypt
+Demon Skeleton	data/images/Demon_Skeleton.gif	Ancient Temple|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banshee Temple|Dark Cathedral|Deeper Drefia|Draconia|Drefia|Drefia Grim Reaper Halls|Drefia Vampire Crypts|Edron Forgotten Tomb|Edron Northern Ruins|Edron Undead Lairs|Elvenbane|Femor Hills|Fibula Dungeon|Ghostlands|Ghostship|Ghoul Hill|Helheim|Hellgate|Hellgorge|Isle of Evil|Isle of the Kings|Kazordoon|Lion's Rock|Maze of the Lost Souls|Mintwallin|Mount Sternum|Outlaw Camp|Pits of Inferno|Plains of Havoc|Ramoa|Shadowthorn|Talahu|Thais Northern Dungeon|Thais|Triangle Tower|Upper Spike|Vengoth|White Flower Temple|Yalahar Cemetery Quarter
+Distorted Phantom	data/images/Distorted_Phantom.gif	Mirrored Nightmare
+Druid's Apparition	data/images/Druid's_Apparition.gif	Mirrored Nightmare
+Dworc Shadowstalker	data/images/Dworc_Shadowstalker.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Evil Prospector	data/images/Evil_Prospector.gif	Barren Drift
+Falcon Knight	data/images/Falcon_Knight.gif	Falcon Bastion
+Falcon Paladin	data/images/Falcon_Paladin.gif	Falcon Bastion
+Flimsy Lost Soul	data/images/Flimsy_Lost_Soul.gif	Brain Grounds|Netherworld|Zarganash
+Freakish Lost Soul	data/images/Freakish_Lost_Soul.gif	Brain Grounds|Netherworld|Zarganash
+Gazer Spectre	data/images/Gazer_Spectre.gif	Buried Cathedral|Haunted Nexus (Temple)
+Ghost	data/images/Ghost.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banshee Temple|Dark Cathedral|Deeper Drefia|Drefia|Drefia Spirit Grounds|Formorgar Mines|Ghostlands|Ghostship|Goroma|Isle of the Kings|Kazordoon Dwarf Mines (Splintered Stone)|Mount Sternum|Plains of Havoc|Ramoa|Talahu|Treasure Island|Upper Spike
+Ghoul	data/images/Ghoul.gif	Ab'Dendriel Underground|Alatar Lake|Ancient Temple|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banshee Temple|Beregar Bonelord Dungeons|Darashia Catacombs|Dark Cathedral|Drefia|Drefia Spirit Grounds|Eclipse|Edron|Edron Forgotten Tomb|Edron Undead Lairs|Ghostlands|Ghostship|Ghoul Hill|Hellgate|Isle of the Kings|Lion's Rock|Maze of the Lost Souls|Mintwallin|Mount Sternum|Nargor|Necromant House|Northport Pirate Caves|Paradox Tower|Plains of Havoc|Treasure Island|Triangle Tower|Vengoth Mountain Caves|Venore Amazon Camp|White Flower Temple|Yalahar Cemetery Quarter
+Gloom Maw	data/images/Gloom_Maw.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Gravedigger	data/images/Gravedigger.gif	Drefia|Drefia Grim Reaper Halls|Drefia Vampire Crypts
+Grim Reaper	data/images/Grim_Reaper.gif	Drefia Wyrm Caves|Drefia Grim Reaper Halls|Edron Northern Ruins|Infected Area|Oramond Catacombs|Rathleton Catacombs|Yalahar Cemetery Quarter
+Hand of Cursed Fate	data/images/Hand_of_Cursed_Fate.gif	Demon Forge (The Arcanum)|Demon Forge (The Battlefield)|Demon Forge (The Blood Halls)|Demon Forge (The Crystal Caves)|Grounds of Despair (Pumin)|Infected Area|Pits of Despair (Pumin)
+Haunted Hunter	data/images/Haunted_Hunter.gif	Forgotten Crypt
+Iks Aucar	data/images/Iks_Aucar.gif	Iksupan
+Iks Chuka	data/images/Iks_Chuka.gif	Iksupan
+Iks Pututu	data/images/Iks_Pututu.gif	Iksupan
+Iks Yapunac	data/images/Iks_Yapunac.gif	Iksupan Last Stand|Iksupan Occupied Sanctuary|Iksupan Undercity|Iksupan Waterways
+Infernal Phantom	data/images/Infernal_Phantom.gif	Claustrophobic Inferno
+Knight's Apparition	data/images/Knight's_Apparition.gif	Mirrored Nightmare
+Lich	data/images/Lich.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Beregar Mines|Black Sphinx Estate|Darashia|Deeper Drefia|Demon Forge (The Arcanum)|Drefia|Drefia Vampire Crypts|Edron Hero Fortress|Hyaena Lairs|Infected Area|Kharos|Pits of Undeath (Ashfalor)|Ramoa|Talahu|Yalahar Cemetery Quarter|Drefia Grim Reaper Halls
+Lost Soul	data/images/Lost_Soul.gif	Demon Forge (The Blood Halls)|Demon Forge (The Well of Souls)|Formorgar Mines|Helheim|Oramond Mountain Hideout|Pits of Damnation (Tafariel)|Roshamuul Prison
+Mean Lost Soul	data/images/Mean_Lost_Soul.gif	Brain Grounds|Netherworld|Zarganash
+Monk's Apparition	data/images/Monk's_Apparition.gif	Mirrored Nightmare
+Mould Phantom	data/images/Mould_Phantom.gif	Rotten Wasteland
+Mummy	data/images/Mummy.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Banshee Temple|Daramian Minotaur Pyramid|Daramian Scarab Lairs|Dark Cathedral|Deeper Drefia|Draconia|Drefia Grim Reaper Halls|Drefia Spirit Grounds|Edron Forgotten Tomb|Edron Undead Lairs|Green Claw Swamp|Helheim|Isle of the Kings|Kilmaresh Mountains|Lion's Rock|Mal'ouquah|Maze of the Lost Souls|Mount Sternum|Talahu|Upper Spike|Venore Amazon Camp
+Oozing Carcass	data/images/Oozing_Carcass.gif	Putrefactory
+Oozing Corpus	data/images/Oozing_Corpus.gif	Jaded Roots
+Orclops Bloodbreaker	data/images/Orclops_Bloodbreaker.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Paladin's Apparition	data/images/Paladin's_Apparition.gif	Mirrored Nightmare
+Pirate Ghost	data/images/Pirate_Ghost.gif	Chyllfroest Chakoya Caves|Drefia|Goroma|Liberty Bay|Nargor|Nargor Crystal Gardens|Northport Pirate Caves|Treasure Island
+Pirate Skeleton	data/images/Pirate_Skeleton.gif	Chyllfroest Chakoya Caves|Drefia|Goroma|Nargor|Nargor Crystal Gardens|Northport Pirate Caves|Podzilla Bottom|Treasure Island
+Putrid Mummy	data/images/Putrid_Mummy.gif	Caverna Exanima
+Ripper Spectre	data/images/Ripper_Spectre.gif	Buried Cathedral|Haunted Nexus (Cellar)
+Roaming Dread	data/images/Roaming_Dread.gif	Forsaken Crypt
+Rot Elemental	data/images/Rot_Elemental.gif	Glooth Factory|Lower Glooth Factory|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Slum
+Skeleton	data/images/Skeleton.gif	Ab'Dendriel Underground|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Ancient Temple|Beregar Mines|Black Knight Villa|Bounac|Darashia Catacombs|Dark Cathedral|Dawnport Underground Dungeons North|Dawnport Underground Dungeons West|Deeper Drefia|Draconia|Drefia|Edron|Edron Forgotten Tomb|Edron Northern Ruins|Edron Undead Lairs|Femor Hills|Fibula|Ghostlands|Goroma|Green Claw Swamp|Helheim|Hellgate|Isle of the Kings|Kazordoon|Lion's Rock|Maze of the Lost Souls|Mount Sternum|Outlaw Camp|Plains of Havoc|Port Hope|Port Hope Swamp Troll Den|Rookgaard|Thais Northern Dungeon|Thais Trolls' Cave|Tiquanda|Treasure Island|Vengoth|Vengoth Mountain Caves|Venore Swamp Troll Den|White Flower Temple|Yalahar Cemetery Quarter
+Skeleton Elite Warrior	data/images/Skeleton_Elite_Warrior.gif	Deep Desert
+Skeleton Warrior	data/images/Skeleton_Warrior.gif	Beregar Mines|Bounac|Deeper Drefia|Drefia|Edron Undead Lairs|Ghostlands|Isle of Destiny
+Sopping Carcass	data/images/Sopping_Carcass.gif	Putrefactory
+Sopping Corpus	data/images/Sopping_Corpus.gif	Jaded Roots
+Sorcerer's Apparition	data/images/Sorcerer's_Apparition.gif	Mirrored Nightmare
+Souleater	data/images/Souleater.gif	Banuta|Drefia Spirit Grounds|Razachai|Spirittrails
+Spectre	data/images/Spectre.gif	Demon Forge (The Crystal Caves)|Demon Forge (The Well of Souls)|Drefia Grim Reaper Halls|Drefia Spirit Grounds|Grounds of Despair (Pumin)|Oramond Mountain Hideout|Pits of Despair (Pumin)|Vengoth
+Tarnished Spirit	data/images/Tarnished_Spirit.gif	Deeper Drefia|Drefia|Drefia Vampire Crypts|Drefia Grim Reaper Halls
+Undead Dragon	data/images/Undead_Dragon.gif	Chyllfroest Icefire Caves|Demon Forge (The Arcanum)|Demon Forge (The Shadow Nexus)|Emperor's Castle|Grounds of Undeath (Ashfalor)|Helheim|Infected Area|Oramond Mountain Hideout|Pits of Undeath (Ashfalor)|Razachai
+Undead Elite Gladiator	data/images/Undead_Elite_Gladiator.gif	Deep Desert
+Undead Gladiator	data/images/Undead_Gladiator.gif	Black Sphinx Estate|Edron Hero Fortress|Krailos Ruins|Yalahar Arena Quarter
+Undead Mine Worker	data/images/Undead_Mine_Worker.gif	Lost Mines
+Undead Prospector	data/images/Undead_Prospector.gif	Lost Mines
+Vampire	data/images/Vampire.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Deeper Drefia|Drefia Grim Reaper Halls|Drefia Vampire Crypts|Edron Forgotten Tomb|Edron Undead Lairs|Ghostlands|Ghostship|Plains of Havoc|Ramoa|Talahu|Serpentine Tower|Vandura Cultist Hideout|Vengoth|Yalahar Centre
+Vampire Bride	data/images/Vampire_Bride.gif	Ankrahmun Pharaoh Tombs (Peninsula)|Drefia Vampire Crypts|Edron Undead Lairs|Vengoth
+Vampire Pig	data/images/Vampire_Pig.gif	Isle of Evil
+Vampire Viscount	data/images/Vampire_Viscount.gif	Drefia Vampire Crypts|Edron Undead Lairs
+Vibrant Phantom	data/images/Vibrant_Phantom.gif	Furious Crater
+Walking Dread	data/images/Walking_Dread.gif	Forgotten Crypt
+White Shade	data/images/White_Shade.gif	Deeper Drefia|Drefia Grim Reaper Halls|Drefia Vampire Crypts
+Zombie	data/images/Zombie.gif	Beregar Mines|Deeper Drefia|Drefia|Drefia Grim Reaper Halls|Drefia Vampire Crypts|Edron Undead Lairs|Isle of Evil|Treasure Island|Upper Spike|Vengoth|Yalahar Cemetery Quarter
+Badger	data/images/Badger.gif	Bittermor|Cormaya|Dawnport Coast Meadows|Deepling Temple Complex|Edron|Formorgar Glacier|Grimvale|Krimhorn|Ragnir|Svargrond|Yalahar Factory Quarter
+Bat	data/images/Bat.gif	Ab'Dendriel Underground|Banuta|Black Knight Villa|Bounac|Carlin|Cormaya|Corym Black Market|Dark Cathedral|Deeper Drefia|Draconia|Drefia|Drefia Vampire Crypts|Edron|Edron Castle|Edron Forgotten Tomb|Edron Northern Ruins|Edron Orc Lands|Edron Undead Lairs|Femor Hills|Fenrock|Fields of Glory|Folda|Ghostlands|Horned Fox Lair|Isle of Destiny|Jakundaf Desert|Kazordoon|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Troll Den|Kha'labal Desert|Kha'zeel Mountains|Kilmaresh Mountains|Lion's Rock|Meriana|Mount Sternum|Northern Darama Desert|Outlaw Camp|Port Hope|Stardance Mountains|Stonehome|Thais|Thais Northern Dungeon|Vengoth|Vengoth Mountain Caves|Venore|Venore Corym Dungeons|Venore Southern Swamp|Yalahar Centre
+Bear	data/images/Bear.gif	Ab'Dendriel|Bear Cave|Bounac|Carlin|Dawnport Coast Meadows|Deepling Temple Complex|Edron|Edron Troll Den|Femor Hills|Ferngrims Gate|Fields of Glory|Green Claw Swamp|Isle of Destiny|Jakundaf Desert|Kazordoon|Maze of the Lost Souls|Outlaw Camp|Plains of Havoc|Poacher Lair|Rookgaard|Thais|Ulderek's Rock|Venore Southern Swamp|Yalahar Arena Quarter
+Black Sheep	data/images/Black_Sheep.gif	Deeper Drefia|Femor Hills|Plains of Havoc|Vandura Cultist Hideout
+Boar	data/images/Boar.gif	Outlaw Camp|Poacher Lair
+Cat	data/images/Cat.gif	Carlin|Eclipse|Yalahar Centre|Yalahar Factory Quarter|Yalahar Foreigner Quarter|Yalahar Magician Quarter|Kazordoon|Rookgaard|Thais
+Cave Rat	data/images/Cave_Rat.gif	Ankrahmun Pharaoh Tombs|Ankrahmun|Corym Black Market|Dark Cathedral|Dawnport Underground Dungeons North|Dawnport Underground Dungeons West|Deeper Drefia|Eclipse|Edron Castle|Edron Undead Lairs|Fibula|Ghostlands|Greenshore|Kazordoon|Mount Sternum|Northern Darama Desert|Outlaw Camp|Port Hope|Port Hope Swamp Troll Den|Rookgaard|Thais|Thais Northern Dungeon|Venore|Venore Amazon Camp|Venore Corym Dungeons|Venore Swamp Troll Den|White Flower Temple|Yalahar Alchemist Quarter|Yalahar Arena Quarter|Yalahar Centre|Zao Orc Fortress
+Clomp	data/images/Clomp.gif	Central Steppe|Kilmaresh Mountains|Krailos Steppe|Ogre Village|Southern Steppe
+Deer	data/images/Deer.gif	Ab'Dendriel Surroundings|Bittermor|Bounac|Carlin Surroundings|Cormaya|Dawnport Coast Meadows|Dawnport High Hills|Deepling Temple Complex|Dryad Gardens|Edron Orc Lands|Edron Surroundings|Ferngrims Gate|Fields of Glory|Folda|Green Claw Swamp|Kazordoon Surroundings|Krimhorn|Muglex Camp|Northern Darama Desert|Orc Lands|Outlaw Camp|Plains of Havoc|Ragnir|Rookgaard|Rorc Plains|Southern Darama Desert|Svargrond Surroundings|Thais Northern Dungeon|Thais Surroundings|Vega|Venore Southern Swamp
+Dog	data/images/Dog.gif	Beregar Mines|Bounac|Carlin|Edron Castle|Isle of the Kings|Issavi|Liberty Bay City|Mintwallin|Thais|Thais City|Yalahar Factory Quarter|Yalahar Foreigner Quarter
+Doom Deer	data/images/Doom_Deer.gif	Isle of Evil
+Dromedary	data/images/Dromedary.gif	Darashia|Kha'labal Desert
+Elephant	data/images/Elephant.gif	Forbidden Lands of Tiquanda|Mammoth Shearing Factory|Tiquanda|Yalahar Arena Quarter
+Evil Sheep	data/images/Evil_Sheep.gif	Isle of Evil
+Evil Sheep Lord	data/images/Evil_Sheep_Lord.gif	Isle of Evil
+Exotic Bat	data/images/Exotic_Bat.gif	Trail to Rascacoon
+Fox	data/images/Fox.gif	Cormaya|Stonehome
+Gloom Wolf	data/images/Gloom_Wolf.gif	Gloom Caverns|Poacher Lair
+Gnarlhound	data/images/Gnarlhound.gif	Zao Steppe
+Gorerilla	data/images/Gorerilla.gif	Sparkling Pools
+Horse (Cinza)	data/images/Horse_(Cinza).gif	Deeper Drefia|Rathleton City|Thais|Venore
+Horse (Marrom)	data/images/Horse_(Marrom).gif	Rathleton Slum|Thais|Venore
+Hot Dog	data/images/Hot_Dog.gif	Isle of Evil
+Husky	data/images/Husky.gif	Svargrond|Nibelor
+Hyaena	data/images/Hyaena.gif	Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Stone)|Central Steppe|Devourer Desert|Drefia|Green Belt|Kha'labal Desert|Kha'zeel Mountains|Kilmaresh Mountains|Mal'ouquah|Southern Steppe|Yalahar Arena Quarter|Zao Steppe
+Jaracal	data/images/Jaracal.gif	
+Killer Rabbit	data/images/Killer_Rabbit.gif	Isle of Evil
+Kongra	data/images/Kongra.gif	Banuta|Corym Black Market|Port Hope|Yalahar Arena Quarter
+Lion	data/images/Lion.gif	Amazon Camp|Ankrahmun Pharaoh Tombs (Peninsula)|Ashta'daramai|Central Steppe|Daramian Wyrm Hills|Green Belt|Jakundaf Desert|Kha'zeel Mountains|Southern Steppe|Yalahar Arena Quarter
+Mammoth	data/images/Mammoth.gif	Bittermor|Chyllfroest Island|Formorgar Glacier|Formorgar Mines|Krimhorn|Mammoth Shearing Factory|Ragnir|Svargrond|Tyrsung
+Merlkin	data/images/Merlkin.gif	Banuta|Port Hope
+Modified Gnarlhound	data/images/Modified_Gnarlhound.gif	Edron
+Mole	data/images/Mole.gif	Deep Hub Fungus Dungeon|Deep Hub Magma Dungeon
+Mushroom Sniffer	data/images/Mushroom_Sniffer.gif	Gnomegate Truffels Grounds
+Mutated Bat	data/images/Mutated_Bat.gif	Corrupted Gardens|Middle Spike|Muggy Plains|Spirittrails|Temple Complex|Vengoth|Yalahar Alchemist Quarter|Yalahar Arena Quarter|Yalahar Cemetery Quarter
+Mutated Rat	data/images/Mutated_Rat.gif	Gnomegate Mushroom Gardens|Middle Spike|Razachai|Spirittrails|Underground Isle|Vengoth|Yalahar Alchemist Quarter|Yalahar Arena Quarter
+Mutated Tiger	data/images/Mutated_Tiger.gif	Muggy Plains|Spirittrails|Temple Complex|Yalahar Alchemist Quarter|Yalahar Arena Quarter
+Nighthunter	data/images/Nighthunter.gif	Monster Graveyard
+Noble Lion	data/images/Noble_Lion.gif	Lion's Rock
+Panda	data/images/Panda.gif	Port Hope|Yalahar Arena Quarter
+Parder	data/images/Parder.gif	Emerald Gardens|Fading Isles|Moonfall|Murmuring Wilderness|Silent Waters|Sparkling Lagoon|Stardance Mountains
+Pig	data/images/Pig.gif	Abandoned Headquarters|Bounac|Carlin|Deeper Drefia|Femor Hills|Ingol|Isle of the Kings|Liberty Bay|Mintwallin|Nargor|Orc Lands|Pits of Damnation (Tafariel)|Rookgaard|Thais|Ulderek's Rock|Venore|Yalahar Factory Quarter|Yalahar Foreigner Quarter
+Polar Bear	data/images/Polar_Bear.gif	Bittermor|Chakoya Iceberg|Chyllfroest Chakoya Caves|Folda|Formorgar Glacier|Formorgar Mines|Grimlund|Ice Islands|Inukaya|Krimhorn|Nibelor|Ragnir|Svargrond|Tyrsung|Vega
+Rabbit	data/images/Rabbit.gif	Carlin Surroundings|Cormaya|Dawnport Coast Meadows|Dawnport High Hills|Deeper Drefia|Deepling Temple Complex|Dryad Gardens|Edron Castle|Edron Surroundings|Femor Hills|Fields of Glory|Folda|Ghostlands|Green Claw Swamp|Isle of Destiny|Isle of the Kings|Kazordoon Surroundings|Orc Lands|Outlaw Camp|Plains of Havoc|Rookgaard|Rookgaard Underground|Senja|Thais Peninsula|Thais Surroundings|Vega|Venore Southern Swamp|Venore Surroundings|Yalahar Factory Quarter|Yalahar Magician Quarter|Yalahar Sunken Quarter
+Rabid Wolf	data/images/Rabid_Wolf.gif	Thais Wolf Den
+Ragged Rabid Wolf	data/images/Ragged_Rabid_Wolf.gif	Thais Wolf Den
+Rat	data/images/Rat.gif	Ab'Dendriel|Blue Valley|Dawnport Underground Dungeons North|Deeper Drefia|Edron|Edron Troll Den|Edron Undead Lairs|Fibula|Fields of Glory|Folda|Formorgar Mines|Ghostlands|Green Claw Swamp|Greenshore|Hellgate|Jakundaf Desert|Kazordoon|Kazordoon Troll Den|Liberty Bay|Maze of the Lost Souls|Meriana|Mount Sternum|Nibelor|Noodles Academy of Modern Magic|Northern Darama Desert|Outlaw Camp|Plains of Havoc|Rookgaard|Salgadora|Thais|Thais Northern Dungeon|Thais Trolls' Cave|Vengoth|Venore|Venore Corym Dungeons|White Flower Temple|Yalahar Centre|Yalahar Factory Quarter
+Roaring Lion	data/images/Roaring_Lion.gif	Lion's Rock
+Sabretooth (Criatura)	data/images/Sabretooth_(Criatura).gif	Sparkling Pools
+Sheep	data/images/Sheep.gif	Abandoned Headquarters|Carlin Surroundings|Dawnport High Hills|Edron Surroundings|Femor Hills|Greenshore|Nykri Delta|Pits of Damnation (Tafariel)|Rookgaard|Rookgaard Underground|Thais City
+Sibang	data/images/Sibang.gif	Banuta|Port Hope
+Silver Rabbit	data/images/Silver_Rabbit.gif	Banor's Eye|Bittermor|Formorgar Glacier|Formorgar Mines|Ice Islands|Krimhorn|Nibelor|Ragnir|Svargrond|Tyrsung
+Skunk	data/images/Skunk.gif	Liberty Bay|Port Hope|Thais
+Squirrel	data/images/Squirrel.gif	Edron|Ferngrims Gate|Fields of Glory|Kazordoon|Plains of Havoc|Thais|Yalahar Centre|Yalahar Arena Quarter
+Stag	data/images/Stag.gif	Outskirts
+Stone Rhino	data/images/Stone_Rhino.gif	Lore Keeper Ruins
+Terrified Elephant	data/images/Terrified_Elephant.gif	Tiquanda
+Tiger	data/images/Tiger.gif	Blue Valley|Forbidden Lands of Tiquanda|Kha'labal Desert|Meriana|Oskayaat|Port Hope|Yalahar Arena Quarter
+Vulcongra	data/images/Vulcongra.gif	Gnomegate Lava Hot Spot|Lower Glooth Factory|Lower Spike
+War Wolf	data/images/War_Wolf.gif	Magician Tower|Orc Lands|Orc Peninsula|Plains of Havoc|Poacher Lair|Rorc Plains|Thais|Ulderek's Rock|Vengoth|Wolf Dungeon|Zao Steppe
+White Lion	data/images/White_Lion.gif	Lion Sanctum|Lion's Rock
+White Tiger	data/images/White_Tiger.gif	Oskayaat
+Winged Jaracal	data/images/Winged_Jaracal.gif	Asura Citadel
+Winter Wolf	data/images/Winter_Wolf.gif	Bittermor|Folda|Formorgar Glacier|Grimlund|Inukaya|Krimhorn
+Wolf	data/images/Wolf.gif	Ab'Dendriel|Carlin|Dawnport Coast Meadows|Dawnport Underground Dungeons South|Edron|Femor Hills|Ferngrims Gate|Fibula|Fields of Glory|Green Claw Swamp|Greenshore|Isle of Destiny|Kazordoon|Maze of the Lost Souls|Orc Lands|Outlaw Camp|Plains of Havoc|Port Hope City|Port Hope|Rookgaard|Rorc Plains|Thais|Thalassara Surroundings|Ulderek's Rock|Venore Southern Swamp|Yalahar Arena Quarter|Yalahar Factory Quarter
+Cunning Werepanther	data/images/Cunning_Werepanther.gif	Oskayaat|Oskayaat Undercity
+Feral Werecrocodile	data/images/Feral_Werecrocodile.gif	Oskayaat|Murky Caverns
+Werebadger	data/images/Werebadger.gif	Edron|Grimvale|Lycanthrope Grounds (Cormaya)|Lycanthrope Grounds (Edron)
+Werebear	data/images/Werebear.gif	Grimvale|Lycanthrope Grounds (Cormaya)|Lycanthrope Grounds (Edron)
+Wereboar	data/images/Wereboar.gif	Edron|Grimvale|Lycanthrope Grounds (Cormaya)|Lycanthrope Grounds (Edron)
+Werecrocodile	data/images/Werecrocodile.gif	Oskayaat|Murky Caverns
+Werefox	data/images/Werefox.gif	Edron|Lycanthrope Grounds (Cormaya)|Lycanthrope Grounds (Edron)
+Werehyaena	data/images/Werehyaena.gif	Daramian Wyrm Hills|Hyaena Lairs
+Werehyaena Shaman	data/images/Werehyaena_Shaman.gif	Daramian Wyrm Hills|Hyaena Lairs
+Werelion	data/images/Werelion.gif	Lion Sanctum
+Werelioness	data/images/Werelioness.gif	Lion Sanctum
+Werepanther	data/images/Werepanther.gif	Murky Caverns|Oskayaat
+Weretiger	data/images/Weretiger.gif	Oskayaat|Oskayaat Undercity
+Werewolf	data/images/Werewolf.gif	Deeper Ingol|Grimvale|Lycanthrope Grounds (Cormaya)|Lycanthrope Grounds (Edron)|Vengoth|Werewolf Cave (Vengoth)
+White Weretiger	data/images/White_Weretiger.gif	Oskayaat|Oskayaat Undercity
+Animated Feather	data/images/Animated_Feather.gif	Secret Library Ice Section
+Biting Book	data/images/Biting_Book.gif	Issavi|Secret Library Earth Section|Secret Library Energy Section|Secret Library Fire Section|Secret Library Ice Section
+Bluebeak	data/images/Bluebeak.gif	Book World
+Brain Squid	data/images/Brain_Squid.gif	Secret Library Energy Section
+Bramble Wyrmling	data/images/Bramble_Wyrmling.gif	Book World
+Burning Book	data/images/Burning_Book.gif	Secret Library Fire Section
+Cinder Wyrmling	data/images/Cinder_Wyrmling.gif	Crumbling Caverns
+Crusader	data/images/Crusader.gif	Book World
+Cursed Book	data/images/Cursed_Book.gif	Secret Library Earth Section
+Energetic Book	data/images/Energetic_Book.gif	Secret Library Energy Section
+Energuardian Of Tales	data/images/Energuardian_Of_Tales.gif	Secret Library Energy Section
+Flying Book	data/images/Flying_Book.gif	Secret Library Energy Section|Secret Library Fire Section|Secret Library Ice Section
+Guardian Of Tales	data/images/Guardian_Of_Tales.gif	Secret Library Fire Section
+Hawk Hopper	data/images/Hawk_Hopper.gif	Book World
+Headwalker	data/images/Headwalker.gif	Book World
+Icecold Book	data/images/Icecold_Book.gif	Secret Library Ice Section
+Ink Blob	data/images/Ink_Blob.gif	Secret Library Earth Section|Secret Library Fire Section|Secret Library Ice Section
+Lion Hydra	data/images/Lion_Hydra.gif	Book World
+Rage Squid	data/images/Rage_Squid.gif	Secret Library Fire Section
+Shell Drake	data/images/Shell_Drake.gif	Crumbling Caverns
+Squid Warden	data/images/Squid_Warden.gif	Secret Library Ice Section
+Elf Scout	data/images/Elf_Scout.gif	Ab'Dendriel Elf Cave|Ferngrims Gate|Hellgate|Maze of the Lost Souls|Mount Sternum|Plains of Havoc|Shadowthorn|Yalahar Foreigner Quarter
+Island Troll	data/images/Island_Troll.gif	Goroma
+Goblin Assassin	data/images/Goblin_Assassin.gif	Beregar Mines|Edron Goblin Den|Femor Hills|Isle of Evil|Yalahar Foreigner Quarter
+Elf	data/images/Elf.gif	Ab'Dendriel Elf Cave|Ankrahmun Pharaoh Tombs|Elvenbane|Hellgate|Shadowthorn|Thais|Ulderek's Rock|Yalahar Foreigner Quarter|Yalahar Trade Quarter
+Goblin Scavenger	data/images/Goblin_Scavenger.gif	Beregar Mines|Edron Goblin Den|Femor Hills|Yalahar Foreigner Quarter
+Frost Troll	data/images/Frost_Troll.gif	Bittermor|Edron Troll Den|Folda|Formorgar Glacier|Formorgar Mines|Kazordoon|Krimhorn|Ragnir|Senja
+Troll	data/images/Troll.gif	Ab'Dendriel Underground|Carlin Graveyard|Dwacatra|Edron Troll Den|Elvenbane|Ferngrims Gate|Fields of Glory|Folda|Isle of Destiny|Kazordoon|Kazordoon Troll Den|Maze of the Lost Souls|Outlaw Camp|Rookgaard|Thais|Thais Northern Dungeon|Thais Trolls' Cave|Yalahar Arena Quarter|Yalahar Foreigner Quarter
+Elf Arcanist	data/images/Elf_Arcanist.gif	Ab'Dendriel Elf Cave|Cyclopolis|Demona|Elvenbane|Maze of the Lost Souls|Mount Sternum|Shadowthorn|Yalahar Foreigner Quarter
+Troll Legionnaire	data/images/Troll_Legionnaire.gif	Beregar Mines
+Dwarf Henchman	data/images/Dwarf_Henchman.gif	Mad Technomancers' Laboratory
+Troll Champion	data/images/Troll_Champion.gif	Ab'Dendriel Underground|Edron Troll Den|Isle of Destiny|Kazordoon Troll Den|Thais Trolls' Cave|Yalahar Arena Quarter|Yalahar Foreigner Quarter
+Furious Troll	data/images/Furious_Troll.gif	Beregar Mines
+Dwarf	data/images/Dwarf.gif	Ankrahmun Pharaoh Tombs (Oasis)|Beregar|Beregar Mines|Cormaya|Cormaya Dwarf Mines|Dwacatra|Dwarf Bridge|Elvenbane|Isle of Destiny|Kazordoon|Kazordoon Dwarf Mines (Bright Ledge)|Kazordoon Dwarf Mines (Diggers Depths)|Kazordoon Dwarf Mines (Drunken Fellow)|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Dwarf Mines (Splintered Stone)|Tiquanda Dwarf Mines
+Dwarf Soldier	data/images/Dwarf_Soldier.gif	Beregar|Beregar Mines|Cormaya Dwarf Mines|Cyclopolis|Dwacatra|Dwarf Bridge|Ferngrims Gate|Kazordoon|Kazordoon Dwarf Mines (Bright Ledge)|Kazordoon Dwarf Mines (Diggers Depths)|Kazordoon Dwarf Mines (Drunken Fellow)|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Dwarf Mines (Splintered Stone)|Tiquanda Dwarf Mines
+Swamp Troll	data/images/Swamp_Troll.gif	Green Claw Swamp|Ferngrims Gate|Port Hope|Port Hope Swamp Troll Den|Thais|Venore Swamp Troll Den|Yalahar Foreigner Quarter
+Dwarf Guard	data/images/Dwarf_Guard.gif	Beregar|Beregar Mines|Bog Raider Cave|Cormaya Dwarf Mines|Cyclopolis|Demona|Dwacatra|Ferngrims Gate|Kazordoon|Kazordoon Dwarf Mines (Bright Ledge)|Kazordoon Dwarf Mines (Diggers Depths)|Kazordoon Dwarf Mines (Drunken Fellow)|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Dwarf Mines (Splintered Stone)|Kazordoon Underground|Maze of the Lost Souls|Mount Sternum|Tiquanda Dwarf Mines|Yalahar Foreigner Quarter
+Goblin	data/images/Goblin.gif	Beregar Mines|Edron Goblin Den|Femor Hills|Fields of Glory|Kazordoon Surroundings|Maze of the Lost Souls|Rookgaard Underground|Yalahar Foreigner Quarter
+Orc Marauder	data/images/Orc_Marauder.gif	Zao Orc Fortress|Zao Steppe
+Orc Rider	data/images/Orc_Rider.gif	Plains of Havoc|Orc Peninsula|Ulderek's Rock|Zao Orc Fortress
+Minotaur Guard	data/images/Minotaur_Guard.gif	Ancient Temple|Corym Black Market|Cyclopolis|Daramian Minotaur Pyramid|Demona|Dwacatra|Edron Northern Ruins|Elvenbane|Fibula|Folda|Horned Fox Lair|Jakundaf Desert|Kazordoon Troll Den|Maze of the Lost Souls|Mintwallin|Outlaw Camp|Plains of Havoc|Thais Northern Dungeon|Yalahar Foreigner Quarter
+Dworc Voodoomaster	data/images/Dworc_Voodoomaster.gif	Dworc Camp|Port Hope|Trapwood
+Orc Leader	data/images/Orc_Leader.gif	Cyclopolis|Edron Orc Lands|Maze of the Lost Souls|Plains of Havoc|Ulderek's Rock|Zao Orc Fortress
+Orc Shaman	data/images/Orc_Shaman.gif	Dwacatra|Edron Northern Ruins|Edron Orc Lands|Elvenbane|Maze of the Lost Souls|Orc Camp|Plains of Havoc|Outlaw Camp|Ulderek's Rock|Yalahar Foreigner Quarter|Zao Orc Fortress
+Dworc Fleshhunter	data/images/Dworc_Fleshhunter.gif	Dworc Camp|Port Hope|Trapwood|Yalahar Foreigner Quarter
+Orc Warlord	data/images/Orc_Warlord.gif	Ulderek's Rock|Yalahar Foreigner Quarter|Zao Orc Fortress
+Dwarf Geomancer	data/images/Dwarf_Geomancer.gif	Beregar|Beregar Mines|Cormaya Dwarf Mines|Kazordoon Dwarf Mines (Drunken Fellow)|Mount Sternum|Tiquanda Dwarf Mines|Triangle Tower
+Orc Warrior	data/images/Orc_Warrior.gif	Ancient Temple|Dwacatra|Edron Orc Lands|Elvenbane|Folda|Orc Peninsula|Outlaw Camp|Maze of the Lost Souls|Ulderek's Rock|Yalahar Foreigner Quarter|Zao Orc Fortress
+Minotaur	data/images/Minotaur.gif	Ancient Temple|Daramian Minotaur Pyramid|Dawnport Underground Dungeons West|Dwacatra|Deeper Ingol|Elvenbane|Fibula|Folda|Horned Fox Lair|Kazordoon|Maze of the Lost Souls|Minotaur Hell|Mintwallin|Outlaw Camp|Plains of Havoc|Rookgaard|Thais|Thais Northern Dungeon|Yalahar Foreigner Quarter|Zao Orc Fortress
+Orc Spearman	data/images/Orc_Spearman.gif	Ancient Temple|Dwacatra|Edron Orc Lands|Folda|Orc Camp|Outlaw Camp|Plains of Havoc|Orc Peninsula|Elvenbane|Rookgaard|Ulderek's Rock|Yalahar Foreigner Quarter|Zao Orc Fortress
+Minotaur Mage	data/images/Minotaur_Mage.gif	Corym Black Market|Cyclopolis|Daramian Minotaur Pyramid|Dwacatra|Elvenbane|Folda|Horned Fox Lair|Kazordoon Troll Den|Maze of the Lost Souls|Minotaur Hell|Mintwallin|Plains of Havoc|Yalahar Foreigner Quarter
+Chakoya Windcaller	data/images/Chakoya_Windcaller.gif	Chakoya Iceberg|Chyllfroest Chakoya Caves|Grimlund|Inukaya
+Orc Berserker	data/images/Orc_Berserker.gif	Ancient Temple|Cyclopolis|Dwacatra|Edron Orc Lands|Elvenbane|Jakundaf Desert|Orc Peninsula|Plains of Havoc|Maze of the Lost Souls|Outlaw Camp|Ulderek's Rock|Yalahar Foreigner Quarter|Zao Orc Fortress
+Dworc Venomsniper	data/images/Dworc_Venomsniper.gif	Dworc Camp|Port Hope|Trapwood|Yalahar Foreigner Quarter
+Minotaur Archer	data/images/Minotaur_Archer.gif	Ancient Temple|Corym Black Market|Cyclopolis|Daramian Minotaur Pyramid|Dwacatra|Elvenbane|Fibula|Folda|Horned Fox Lair|Jakundaf Desert|Kazordoon|Kazordoon Troll Den|Maze of the Lost Souls|Mintwallin|Outlaw Camp|Plains of Havoc|Thais Northern Dungeon|Yalahar Foreigner Quarter
+Chakoya Tribewarden	data/images/Chakoya_Tribewarden.gif	Chakoya Iceberg|Chyllfroest Chakoya Caves|Grimlund|Inukaya
+Chakoya Toolshaper	data/images/Chakoya_Toolshaper.gif	Chakoya Iceberg|Chyllfroest Chakoya Caves|Grimlund|Inukaya
+Corym Charlatan	data/images/Corym_Charlatan.gif	Corym Black Market|Deeper Ingol|Kazordoon Corym Dungeons|Port Hope Corym Dungeons|Krailos Shipwreck|Krailos Steppe|Ogre Village|Upper Spike|Venore Corym Dungeons
+Moohtant	data/images/Moohtant.gif	Lower Glooth Factory East|Oramond|Oramond Minotaur Camp|Oramond Mountain Hideout|Rathleton Catacombs
+Lost Berserker	data/images/Lost_Berserker.gif	Gnomegate Magma Dungeon|Gnomegate Crystal Dungeon|Lower Glooth Factory
+Mooh'Tah Warrior	data/images/Mooh'Tah_Warrior.gif	Lower Glooth Factory East|Oramond Marshes|Oramond Minotaur Camp
+Lost Thrower	data/images/Lost_Thrower.gif	Caves of the Lost|Forsaken Mine|Lower Glooth Factory|Lower Spike
+Twisted Shaper	data/images/Twisted_Shaper.gif	Astral Shaper Ruins|Black Sphinx Estate|Formorgar Mines|Lore Keeper Ruins
+Little Corym Charlatan	data/images/Little_Corym_Charlatan.gif	Little Corym's Cave
+Lost Basher	data/images/Lost_Basher.gif	Caves of the Lost|Forsaken Mine|Lower Glooth Factory|Lower Spike
+Minotaur Amazon	data/images/Minotaur_Amazon.gif	Lower Glooth Factory East|Oramond|Oramond Minotaur Camp|Oramond Mountain Hideout|Rathleton Catacombs
+Lost Husher	data/images/Lost_Husher.gif	Caves of the Lost|Forsaken Mine|Lower Glooth Factory|Lower Glooth Factory East|Lower Glooth Factory West|Lower Spike
+Execowtioner	data/images/Execowtioner.gif	Lower Glooth Factory East|Oramond|Oramond Minotaur Camp|Oramond Mountain Hideout|Rathleton Catacombs
+Shaper Matriarch	data/images/Shaper_Matriarch.gif	Black Sphinx Estate|Lore Keeper Ruins
+Minotaur Hunter	data/images/Minotaur_Hunter.gif	Lower Glooth Factory East|Oramond|Oramond Marshes|Oramond Minotaur Camp|Oramond Mountain Hideout
+Enslaved Dwarf	data/images/Enslaved_Dwarf.gif	Caves of the Lost|Lower Glooth Factory|Lower Spike
+Broken Shaper	data/images/Broken_Shaper.gif	Astral Shaper Ruins|Black Sphinx Estate|Lore Keeper Ruins
+Corym Skirmisher	data/images/Corym_Skirmisher.gif	Corym Black Market|Kazordoon Corym Dungeons|Port Hope Corym Dungeons|Upper Spike|Venore Corym Dungeons
+Corym Vanguard	data/images/Corym_Vanguard.gif	Corym Black Market|Kazordoon Corym Dungeons|Port Hope Corym Dungeons|Venore Corym Dungeons
+Worm Priestess	data/images/Worm_Priestess.gif	Lower Glooth Factory East|Oramond Marshes|Oramond Mountain Hideout|Oramond Minotaur Camp
+Orc	data/images/Orc.gif	Ab'Dendriel Surroundings|Ancient Temple|Dawnport Underground Dungeons South|Edron Orc Lands|Elvenbane|Fibula Dungeon|Folda|Jakundaf Desert|Orc Lands|Plains of Havoc|Rookgaard|Rookgaard Underground|Thais Northern Dungeon|Thais Trolls' Cave|Thais Underground|Ulderek's Rock|Venore Surroundings|Yalahar Foreigner Quarter|Zao Orc Fortress|Zao Steppe
+Crazed Summer Rearguard	data/images/Crazed_Summer_Rearguard.gif	Dream Labyrinth (Summer Court)
+Orc Cult Inquisitor	data/images/Orc_Cult_Inquisitor.gif	Edron Orc Lands
+Minotaur Cult Follower	data/images/Minotaur_Cult_Follower.gif	Cults of Tibia (The Minotaurs)
+Crazed Winter Rearguard	data/images/Crazed_Winter_Rearguard.gif	Dream Labyrinth (Winter Court)
+Lost Exile	data/images/Lost_Exile.gif	Deep Hub Crystal Dungeon
+Insane Siren	data/images/Insane_Siren.gif	Dream Labyrinth (Summer Court)
+Barkless Fanatic	data/images/Barkless_Fanatic.gif	Cults of Tibia (The Barkless)
+Minotaur Cult Zealot	data/images/Minotaur_Cult_Zealot.gif	Cults of Tibia (The Minotaurs)
+Orc Cult Minion	data/images/Orc_Cult_Minion.gif	Edron Orc Lands
+Soul-Broken Harbinger	data/images/Soul-Broken_Harbinger.gif	Dream Labyrinth (Winter Court)
+Orc Cult Fanatic	data/images/Orc_Cult_Fanatic.gif	Edron Orc Lands
+Orc Cultist	data/images/Orc_Cultist.gif	Edron Orc Lands
+Pirat Bombardier	data/images/Pirat_Bombardier.gif	The Wreckoning|Trail to Rascacoon
+Pirat Mate	data/images/Pirat_Mate.gif	The Wreckoning
+Barkless Devotee	data/images/Barkless_Devotee.gif	Cults of Tibia (The Barkless)
+Pirat Cutthroat	data/images/Pirat_Cutthroat.gif	The Wreckoning|Trail to Rascacoon
+Misguided Thief	data/images/Misguided_Thief.gif	Misguided Hideout
+Orc Cult Priest	data/images/Orc_Cult_Priest.gif	Edron Orc Lands
+Crazed Summer Vanguard	data/images/Crazed_Summer_Vanguard.gif	Dream Labyrinth (Summer Court)
+Pirat Scoundrel	data/images/Pirat_Scoundrel.gif	The Wreckoning|Trail to Rascacoon
+Minotaur Cult Prophet	data/images/Minotaur_Cult_Prophet.gif	Cults of Tibia (The Minotaurs)
+Crazed Winter Vanguard	data/images/Crazed_Winter_Vanguard.gif	Dream Labyrinth (Winter Court)
+Misguided Bully	data/images/Misguided_Bully.gif	Misguided Hideout
+Bulltaur Brute	data/images/Bulltaur_Brute.gif	Bulltaur Lair
+Liodile	data/images/Liodile.gif	Deeper Ingol|Ingol
+Rhindeer	data/images/Rhindeer.gif	Deeper Ingol|Ingol
+Boar Man	data/images/Boar_Man.gif	Deeper Ingol|Ingol
+Bulltaur Forgepriest	data/images/Bulltaur_Forgepriest.gif	Bulltaur Lair
+Crape Man	data/images/Crape_Man.gif	Deeper Ingol|Ingol
+Bulltaur Alchemist	data/images/Bulltaur_Alchemist.gif	Bulltaur Lair
+Varg	data/images/Varg.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Norcferatu Nightweaver	data/images/Norcferatu_Nightweaver.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Norcferatu Heartless	data/images/Norcferatu_Heartless.gif	Bloody Tusks|Norcferatu Fortress|Norcferatu Dungeons
+Muglex Clan Assassin	data/images/Muglex_Clan_Assassin.gif	Edron Goblin Den|Edron Surroundings|Muglex Camp
+Muglex Clan Footman	data/images/Muglex_Clan_Footman.gif	Edron Goblin Den|Edron Surroundings|Muglex Camp
+Afflicted Strider	data/images/Afflicted_Strider.gif	Antrum of the Fallen
+Ancient Scarab	data/images/Ancient_Scarab.gif	Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Stone)|Beregar Mines|Daramian Mountain Scarab Lair|Daramian Scarab Caves|Daramian Scarab Lairs|Demon Forge (The Hive)|Lion's Rock|Middle Spike|Yalahar Arena Quarter
+Blemished Spawn	data/images/Blemished_Spawn.gif	Antrum of the Fallen
+Bloated Man-Maggot	data/images/Bloated_Man-Maggot.gif	Jaded Roots
+Brimstone Bug	data/images/Brimstone_Bug.gif	Brimstone Bug Cave|Corrupted Gardens|Chyllfroest Lost World|Keeper's Lair|Krailos Spider Lair|Oramond Catacombs|Razachai
+Bug	data/images/Bug.gif	Dworc Camp|Hunter Camp|Rookgaard|Treeling Dungeon|White Flower Temple|Yalahar Arena Quarter
+Butterfly (Azul)	data/images/Butterfly_(Azul).gif	Ab'Dendriel|Carlin|Cormaya|Feyrist Meadows|Grimvale|Isle of Solitude|Issavi|Kazordoon|Liberty Bay|Meriana|Moonfall|Oskayaat|Plains of Havoc|Port Hope|Silvertides|Sparkling Lagoon|Stardance Mountains|Yalahar Arena Quarter|Yalahar Centre|Yalahar Magician Quarter
+Butterfly (Vermelho)	data/images/Butterfly_(Vermelho).gif	Banuta|Carlin|Feyrist Meadows|Grimvale|Isle of Solitude|Liberty Bay|Meriana|Moonfall|Oskayaat|Pantibian Course V|Plains of Havoc|Port Hope|Silvertides|Sparkling Lagoon|Stardance Mountains|Yalahar Arena Quarter|Yalahar Centre|Yalahar Magician Quarter
+Butterfly (Violeta)	data/images/Butterfly_(Violeta).gif	Ab'Dendriel|Alatar Lake|Carlin|Cormaya|Edron|Feyrist Meadows|Fibula|Fields of Glory|Green Claw Swamp|Isle of Solitude|Issavi|Kazordoon|Meriana|Moonfall|Outlaw Camp|Port Hope|Silvertides|Sparkling Lagoon|Stardance Mountains|Stonehome|Thais|Venore|Venore Southern Swamp
+Carrion Worm	data/images/Carrion_Worm.gif	Ancient Temple|Beregar Mines|Bog Raider Cave|Dawnport Underground Dungeons South|Fenrock|Fibula Dungeon|Hellgate|Kazordoon|Daramian Rotworm Caves|Edron Rotworm Caves|Nomad Cave|Port Hope|Vandura Rotworm Caves|Thais Northern Dungeon|Thais Trolls' Cave|Venore|Yalahar Arena Quarter
+Cave Chimera	data/images/Cave_Chimera.gif	Dwelling of the Forgotten
+Cave Devourer	data/images/Cave_Devourer.gif	Deep Hub Crystal Dungeon
+Centipede	data/images/Centipede.gif	Banuta|Chor|Dark Cathedral|Deeper Drefia|Fenrock|Forbidden Lands of Tiquanda|Liberty Bay|Meriana|Port Hope|Razachai|Trapwood|Vandura Rotworm Caves|Venore|Yalahar Arena Quarter|Yalahar Centre|Yalahar Factory Quarter|Yalahar Trade Quarter
+Chasm Spawn	data/images/Chasm_Spawn.gif	Deep Hub Magma Dungeon
+Crawler	data/images/Crawler.gif	Hive Main Structure|Hive Pools|Hive Pyramids|Vandura Hive Outpost
+Deepworm	data/images/Deepworm.gif	Deep Hub Crystal Dungeon|Deep Hub Fungus Dungeon|Deep Hub Magma Dungeon
+Diremaw	data/images/Diremaw.gif	Deep Hub Crystal Dungeon|Deep Hub Fungus Dungeon|Deep Hub Magma Dungeon
+Drillworm	data/images/Drillworm.gif	Deep Hub Magma Dungeon|Forsaken Mine|Kazordoon Underground|Lower Glooth Factory West|Lower Spike|Nargor Crystal Gardens
+Emerald Damselfly	data/images/Emerald_Damselfly.gif	Dryad Gardens|Marshland
+Exotic Cave Spider	data/images/Exotic_Cave_Spider.gif	Trail to Rascacoon
+Eyeless Devourer	data/images/Eyeless_Devourer.gif	Antrum of the Fallen
+Giant Spider	data/images/Giant_Spider.gif	Ankrahmun Pharaoh Tombs (Stone)|Banshee Temple|Beregar Mines|Caverna Exanima|Demon Forge (The Hive)|Demon Forge (The Mirror Maze of Madness)|Edron Northern Ruins|Edron Orc Lands|Fenrock|Forbidden Lands of Tiquanda|Chyllfroest Lost World|Ghostlands|Gnomegate Mushroom Gardens|Green Claw Swamp|Hellgate|Iksupan Undercity|Infected Area|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Underground|Krailos Spider Lair|Malada|Maze of the Lost Souls|Mintwallin|Mount Sternum|Outlaw Camp|Pick 'N Shovel Mine|Plains of Havoc|Ramoa|Tiquanda Spider Caves|Underground Isle|Vandura Mountains|Vengoth|Yalahar Arena Quarter|Yalahar Cemetery Quarter
+Hibernal Moth	data/images/Hibernal_Moth.gif	Dream Labyrinth (Winter Court)
+Insect Swarm	data/images/Insect_Swarm.gif	Ankrahmun Pharaoh Tombs (Curse)|Spirittrails|Zao Steppe
+Insectoid Worker	data/images/Insectoid_Worker.gif	Hive Main Structure|Vandura Hive Outpost|Hive Pools|Hive Pyramids|Hive Secondary Structure
+Lacewing Moth	data/images/Lacewing_Moth.gif	Dream Labyrinth (Summer Court)
+Lancer Beetle	data/images/Lancer_Beetle.gif	Chyllfroest Lost World|Corrupted Gardens|Keeper's Lair|Razachai|Zao Steppe
+Larva	data/images/Larva.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Ashta'daramai|Daramian Scarab Caves|Daramian Scarab Lairs|Deeper Drefia|Devourer Desert|Kha'zeel Mountains|Lion's Rock|Port Hope|Treasure Island|Yalahar Factory Quarter
+Lavaworm	data/images/Lavaworm.gif	Grotto of the Lost
+Mycobiontic Beetle	data/images/Mycobiontic_Beetle.gif	Jaded Roots
+Poison Spider	data/images/Poison_Spider.gif	Ab'Dendriel|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Tarpit)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Oasis)|Beregar Mines|Carlin|Chor|Dark Cathedral|Dawnport Underground Dungeons East|Dawnport Underground Dungeons West|Edron Northern Ruins|Edron Orc Lands|Femor Hills|Fibula|Fields of Glory|Folda|Ghostlands|Green Claw Swamp|Greenshore|Hellgate|Isle of the Kings|Jakundaf Desert|Kazordoon|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Dwarf Mines (Splintered Stone)|Kha'labal Desert|Kharos|Liberty Bay|Maze of the Lost Souls|Mintwallin|Mount Sternum|Northern Darama Desert|Outlaw Camp|Plains of Havoc|Port Hope|Port Hope Swamp Troll Den|Rookgaard|Tarantula Caves|Thais|Tiquanda Spider Caves|Thais Northern Dungeon|Trapwood|Vandura Rotworm Caves|Vengoth|Venore Corym Dungeons|White Flower Temple|Yalahar Centre|Yalahar Factory Quarter
+Rotten Man-Maggot	data/images/Rotten_Man-Maggot.gif	Putrefactory
+Rotworm	data/images/Rotworm.gif	Ab'Dendriel Underground|Ancient Temple|Beregar Mines|Bog Raider Cave|Daramian Rotworm Caves|Dark Cathedral|Dawnport Underground Dungeons South|Draconia|Edron Rotworm Caves|Femor Hills|Fenrock|Ferngrims Gate|Fibula Dungeon|Fields of Glory|Folda|Ghostlands|Green Claw Swamp|Greenshore|Hellgate|Isle of Destiny|Jakundaf Desert|Kazordoon Dwarf Mines (Bright Ledge)|Kazordoon Dwarf Mines (Diggers Depths)|Kazordoon Dwarf Mines (Drunken Fellow)|Kazordoon Dwarf Mines (Old Ore)|Kazordoon Dwarf Mines (Pick 'N Shovel)|Kazordoon Dwarf Mines (Splintered Stone)|Maze of the Lost Souls|Nomad Cave|Outlaw Camp|Plains of Havoc|Rookgaard|Thais Northern Dungeon|Thais Trolls' Cave|Vandura Rotworm Caves|Venore|Venore Swamp Troll Den|White Flower Temple|Yalahar Centre
+Sandcrawler	data/images/Sandcrawler.gif	Darashia|Kha'labal Desert|Zao Steppe
+Scarab	data/images/Scarab.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Ashta'daramai|Beregar Mines|Daramian Mountain Scarab Lair|Daramian Scarab Caves|Daramian Scarab Lairs|Devourer Desert|Kha'zeel Mountains|Port Hope|Lion's Rock|Treasure Island|Yalahar Arena Quarter
+Scorpion	data/images/Scorpion.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Cyclopolis|Darashia|Drefia|Folda|Ghostlands|Gloom Caverns|Green Claw Swamp|Hellgate|Jakundaf Desert|Lion's Rock|Mal'ouquah|Marshland|Maze of the Lost Souls|Nomad Cave|Oskayaat|Plains of Havoc|Ramoa|Treasure Island|Yalahar Arena Quarter
+Slug	data/images/Slug.gif	Slug Cave|Venore Swamp Troll Den
+Spider	data/images/Spider.gif	Beregar Mines|Black Sphinx Estate|Carlin|Cobra Bastion|Dawnport Underground Dungeons East|Dawnport Underground Dungeons West|Edron|Femor Hills|Fields of Glory|Folda|Green Claw Swamp|Greenshore|Hellgate|Isle of Destiny|Jakundaf Desert|Kazordoon|Liberty Bay|Malada|Maze of the Lost Souls|Meriana|Mount Sternum|Outlaw Camp|Port Hope|Port Hope Swamp Troll Den|Rookgaard|Tarantula Caves|Thais|Thais Northern Dungeon|Vengoth|Yalahar Arena Quarter|Yalahar Centre|Yalahar Factory Quarter
+Spitter	data/images/Spitter.gif	Hive Main Structure|Hive Pyramids|Hive Secondary Structure|Vandura Hive Outpost
+Streaked Devourer	data/images/Streaked_Devourer.gif	Grotto of the Lost
+Sulphider	data/images/Sulphider.gif	Monster Graveyard
+Swarmer	data/images/Swarmer.gif	Hive Main Structure|Hive Pools|Hive Pyramids|Vandura Hive Outpost
+Tarantula	data/images/Tarantula.gif	Dark Cathedral|Forbidden Lands of Tiquanda|Gargoyle Sanctuary|Liberty Bay|Plains of Havoc|Tiquanda|Tiquanda Spider Caves|Trapwood|Underground Isle|Vandura Cultist Hideout|Vengoth|Venore Corym Dungeons|Yalahar Cemetery Quarter
+Terramite	data/images/Terramite.gif	Devourer Desert|Lion's Rock|Northern Terramite Tunnels|Razachai|Southern Terramite Tunnels|Zao Steppe
+Tremendous Tyrant	data/images/Tremendous_Tyrant.gif	Dwelling of the Forgotten
+Tunnel Tyrant	data/images/Tunnel_Tyrant.gif	Deep Hub Crystal Dungeon
+Undertaker	data/images/Undertaker.gif	Monster Graveyard
+Varnished Diremaw	data/images/Varnished_Diremaw.gif	Dwelling of the Forgotten
+Wafer Paper Butterfly	data/images/Wafer_Paper_Butterfly.gif	Candia|Carlin|Edron Surroundings|Thais
+Wailing Widow	data/images/Wailing_Widow.gif	Chyllfroest Lost World|Corrupted Gardens|Keeper's Lair|Krailos Spider Lair|Razachai|Zao Steppe
+Wasp	data/images/Wasp.gif	Ab'Dendriel|Cormaya|Dawnport Underground Dungeons East|Dawnport Underground Dungeons West|Devourer Desert|Drefia|Edron Goblin Den|Fading Isles|Fields of Glory|Folda|Gloom Caverns|Green Claw Swamp|Liberty Bay|Maze of the Lost Souls|Meriana|Outlaw Camp|Plains of Havoc|Port Hope|Rookgaard|Rorc Plains|Silent Waters|Stardance Mountains|Thais|Thais Trolls' Cave|Treeling Dungeon|Wasp Tower|White Flower Temple
+Waspoid	data/images/Waspoid.gif	Vandura Hive Outpost|Hive Pools|Hive Pyramids
+Wiggler	data/images/Wiggler.gif	Gnomegate Mushroom Gardens|Gnomegate Truffels Grounds|Nargor Crystal Gardens|Oramond Catacombs
+Acid Blob	data/images/Acid_Blob.gif	Banuta|Yalahar Alchemist Quarter
+Chocolate Blob	data/images/Chocolate_Blob.gif	Candia
+Darklight Matter	data/images/Darklight_Matter.gif	Darklight Core
+Death Blob	data/images/Death_Blob.gif	Deeper Drefia|Muggy Plains|Oramond Catacombs|Spirittrails|Yalahar Alchemist Quarter|Zao Mage's Tower
+Defiler	data/images/Defiler.gif	Demon Forge (The Arcanum)|Demon Forge (The Vats)|Grounds of Plague (Verminor)|Pits of Inferno (DT City)|Pits of Plague (Verminor)|Yalahar Alchemist Quarter
+Devourer (Criatura)	data/images/Devourer_(Criatura).gif	Glooth Factory|Lower Glooth Factory|Lower Glooth Factory West|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton New Sewers|Rathleton Slum
+Glooth Blob	data/images/Glooth_Blob.gif	Glooth Factory|Lower Glooth Factory|Oramond Catacombs|Rathleton Ancient Sewers|Rathleton Slum
+Meandering Mushroom	data/images/Meandering_Mushroom.gif	Putrefactory
+Mercury Blob	data/images/Mercury_Blob.gif	Rathleton Slum|Yalahar Alchemist Quarter
+Slime (Criatura)	data/images/Slime_(Criatura).gif	Ab'Dendriel Underground|Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Curse)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Ankrahmun Pharaoh Tombs (Stone)|Ancient Temple|Dark Cathedral|Drefia|Folda|Ghostlands|Green Claw Swamp|Kazordoon|Kazordoon Dwarf Mines (Splintered Stone)|Kazordoon Troll Den|Kazordoon Underground|Medusa Tower|Nargor|Port Hope|White Flower Temple|Yalahar Alchemist Quarter
+Son of Verminor	data/images/Son_of_Verminor.gif	Demon Forge (The Hive)|Demon Forge (The Vats)|Pits of Plague (Verminor)
+Adult Goanna	data/images/Adult_Goanna.gif	Kilmaresh
+Cobra	data/images/Cobra.gif	Ankrahmun Pharaoh Tombs (Ancient Ruins)|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Stone)|Ankrahmun Pharaoh Tombs (Tarpit)|Central Steppe|Chor|Drefia Grim Reaper Halls|Dworc Camp|Forbidden Lands of Tiquanda|Forbidden Temple|Goroma|Green Belt|Hunter Camp|Kha'zeel Mountains|Lion's Rock|Meriana|Nykri Delta|Oskayaat|Port Hope|Southern Steppe|Talahu|Yalahar Arena Quarter
+Crocodile	data/images/Crocodile.gif	Chor|Emerald Gardens|Fading Isles|Fenrock|Green Belt|Issavi|Laguna Islands|Malada|Meriana|Murmuring Wilderness|Nykri Delta|Oskayaat|Port Hope|Silvertides|Southern Steppe|Sparkling Lagoon|Stardance Mountains|Talahu|Yalahar Arena Quarter|Yalahar Trade Quarter
+Emerald Tortoise	data/images/Emerald_Tortoise.gif	Sparkling Pools
+Gore Horn	data/images/Gore_Horn.gif	Sparkling Pools
+Killer Caiman	data/images/Killer_Caiman.gif	Chyllfroest Lost World|Muggy Plains|Oskayaat|Spirittrails|Zao Steppe
+Lizard Chosen	data/images/Lizard_Chosen.gif	Black Serpent Dungeon|Emperor's Castle|Fire Dragon Dojo|Great Gate|Temple Complex|Temple of Equilibrium
+Lizard Dragon Priest	data/images/Lizard_Dragon_Priest.gif	Black Serpent Dungeon|Chaochai|Chazorai|Corrupted Gardens|Dragonblaze Peaks|Emperor's Castle|Muggy Plains|Razachai|Spirittrails|Temple Complex|Temple of Equilibrium|Zao Palace|Zzaion
+Lizard Executioner	data/images/Lizard_Executioner.gif	Hidden Lizard Temple|Tiquanda
+Lizard Henchman	data/images/Lizard_Henchman.gif	Hidden Lizard Temple|Tiquanda
+Lizard High Guard	data/images/Lizard_High_Guard.gif	Black Serpent Dungeon|Chaochai|Chazorai|Corrupted Gardens|Dragonblaze Peaks|Emperor's Castle|Muggy Plains|Razachai|Spirittrails|Temple Complex|Temple of Equilibrium|Zao Orc Fortress|Zao Palace|Zzaion
+Lizard Legionnaire	data/images/Lizard_Legionnaire.gif	Black Serpent Dungeon|Chaochai|Chazorai|Corrupted Gardens|Dragonblaze Peaks|Muggy Plains|Razachai|Spirittrails|Temple Complex|Temple of Equilibrium|Zao Orc Fortress|Zao Palace|Zzaion
+Lizard Magician	data/images/Lizard_Magician.gif	Hidden Lizard Temple|Tiquanda
+Lizard Magistratus	data/images/Lizard_Magistratus.gif	Razachai
+Lizard Noble	data/images/Lizard_Noble.gif	Razachai
+Lizard Sentinel	data/images/Lizard_Sentinel.gif	Chor|Corym Black Market|Forbidden Temple|Yalahar Foreigner Quarter|Zzaion
+Lizard Snakecharmer	data/images/Lizard_Snakecharmer.gif	Chor|Forbidden Temple|Zzaion
+Lizard Swordmaster	data/images/Lizard_Swordmaster.gif	Hidden Lizard Temple|Tiquanda
+Lizard Templar	data/images/Lizard_Templar.gif	Chor|Forbidden Temple|Yalahar Foreigner Quarter|Zzaion
+Lizard Zaogun	data/images/Lizard_Zaogun.gif	Dragonblaze Peaks|Muggy Plains|Razachai|Temple of Equilibrium|Zao Orc Fortress|Zao Palace|Zzaion
+Mantosaurus	data/images/Mantosaurus.gif	Crystal Enigma
+Mercurial Menace	data/images/Mercurial_Menace.gif	Crystal Enigma
+Naga Archer	data/images/Naga_Archer.gif	Temple of the Moon Goddess
+Naga Warrior	data/images/Naga_Warrior.gif	Temple of the Moon Goddess
+Noxious Ripptor	data/images/Noxious_Ripptor.gif	Crystal Enigma
+Sea Serpent	data/images/Sea_Serpent.gif	Sea Serpent Area|Seacrest Grounds
+Serpent Spawn	data/images/Serpent_Spawn.gif	Banuta|Dawnport Underground Dungeons North|Emperor's Castle|Kharos|Medusa Tower|Razachai|Talahu|Tiquanda|Yalahar Foreigner Quarter|Yalahar Magician Quarter
+Snake	data/images/Snake.gif	Ab'Dendriel|Ankrahmun Pharaoh Tombs (Library)|Ankrahmun Pharaoh Tombs (Mountain)|Ankrahmun Pharaoh Tombs (Oasis)|Ankrahmun Pharaoh Tombs (Peninsula)|Ankrahmun Pharaoh Tombs (Shadow)|Deeper Drefia|Deepling Temple Complex|Drefia|Edron Orc Lands|Edron|Edron Undead Lairs|Femor Hills|Ferngrims Gate|Fields of Glory|Folda|Gloom Caverns|Green Claw Swamp|Jakundaf Desert|Kazordoon|Kazordoon Troll Den|Maze of the Lost Souls|Meriana|Mintwallin|Noodles Academy of Modern Magic|Orc Lands|Outlaw Camp|Plains of Havoc|Port Hope|Rookgaard|Thais|Thais Northern Dungeon|Venore|Venore Southern Swamp|White Flower Temple|Yalahar Arena Quarter|Yalahar Factory Quarter
+Stampor	data/images/Stampor.gif	Chyllfroest Lost World|Stampor Cave
+Stonerefiner	data/images/Stonerefiner.gif	Venore Corym Dungeons
+Thornback Tortoise	data/images/Thornback_Tortoise.gif	Gargoyle Sanctuary|Laguna Islands|Nargor
+Tortoise	data/images/Tortoise.gif	Fenrock|Laguna Islands|Port Hope|Yalahar Arena Quarter
+Two-Headed Turtle	data/images/Two-Headed_Turtle.gif	Great Pearl Fan Reef
+Wyvern	data/images/Wyvern.gif	Beregar Mines|Black Knight Villa|Chor|Chyllfroest Icefire Caves|Chyllfroest Lost World|Drefia|Edron|Edron Hero Fortress|Folda|Formorgar Glacier|Formorgar Mines|Ghostlands|Gnomegate Crystal Grounds|Gnomegate Mushroom Gardens|Gnomegate Truffels Grounds|Green Claw Swamp|Kazordoon Underground|Kha'zeel Mountains|Nargor Crystal Gardens|Paradox Tower|Plains of Havoc|Poacher Lair|Stonehome|Tiquanda|Vandura Mountains|Vega|Venore|Wyvern Hill (Edron)|Wyvern Hill (Ferngrims Gate)|Wyvern Hill (Kazordoon)
+Young Goanna	data/images/Young_Goanna.gif	Kilmaresh
+Young Sea Serpent	data/images/Young_Sea_Serpent.gif	Pantibian Course IV|Sea Serpent Area|Seacrest Grounds

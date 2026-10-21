@@ -11,6 +11,7 @@ export const ComponentType = {
 
 export const ButtonStyle = {
   Success: 3,
+  Danger: 4,
 };
 
 export const MessageFlags = {
@@ -20,6 +21,7 @@ export const MessageFlags = {
 
 const GOING_ID = 'warden:going';
 const CHECK_ID = 'warden:check';
+const KILLED_ID = 'warden:killed';
 const LIST_LIMIT = 25;
 
 export function actorId(interaction) {
@@ -61,15 +63,22 @@ function isGoingText(component) {
     && String(component.content ?? '').startsWith('**Going**');
 }
 
+function isKilledText(component) {
+  return component.type === ComponentType.TextDisplay
+    && String(component.content ?? '').startsWith('**Killed**');
+}
+
 export function readParty(container) {
   const going = [];
   const names = new Map();
   let posterId = null;
+  let killed = false;
 
   for (const component of container.components ?? []) {
     if (component.type === ComponentType.TextDisplay && typeof component.content === 'string') {
       const poster = component.content.match(/\*\*Reported by\*\*\n<@!?(\d+)>/);
       if (poster) posterId = poster[1];
+      if (isKilledText(component)) killed = true;
       if (component.content.startsWith('**Going**\n')) {
         for (const line of component.content.split('\n').slice(1)) {
           const match = line.match(/^<@!?(\d+)>( ✅)?$/);
@@ -92,7 +101,7 @@ export function readParty(container) {
     if (name) person.name = name;
   }
 
-  return { going, posterId };
+  return { going, posterId, killed };
 }
 
 function goingText(going) {
@@ -102,7 +111,7 @@ function goingText(going) {
   return { type: ComponentType.TextDisplay, content: `**Going**\n${lines.join('\n')}` };
 }
 
-function partyRows(going) {
+function partyRows(going, killed) {
   const rows = [];
   if (going.length) {
     rows.push({
@@ -121,6 +130,21 @@ function partyRows(going) {
       ],
     });
   }
+  if (killed) {
+    rows.push({
+      type: ComponentType.ActionRow,
+      components: [
+        {
+          type: ComponentType.Button,
+          style: ButtonStyle.Danger,
+          label: 'Killed',
+          custom_id: KILLED_ID,
+          disabled: true,
+        },
+      ],
+    });
+    return rows;
+  }
   rows.push({
     type: ComponentType.ActionRow,
     components: [
@@ -130,27 +154,40 @@ function partyRows(going) {
         label: "I'm going",
         custom_id: GOING_ID,
       },
+      {
+        type: ComponentType.Button,
+        style: ButtonStyle.Danger,
+        label: 'Killed',
+        custom_id: KILLED_ID,
+      },
     ],
   });
   return rows;
 }
 
-export function withParty(container, going) {
+export function withParty(container, going, killed = false) {
   const body = [];
   for (const component of container.components ?? []) {
-    if (isGoingText(component)) continue;
+    if (isGoingText(component) || isKilledText(component)) continue;
     if (component.type === ComponentType.ActionRow) continue;
     body.push(component);
   }
 
-  const reportedAt = body.findIndex((component) => (
+  const reportedAt = () => body.findIndex((component) => (
     component.type === ComponentType.TextDisplay
     && String(component.content ?? '').includes('**Reported by**')
   ));
+  if (killed) {
+    const at = reportedAt();
+    const marker = { type: ComponentType.TextDisplay, content: '**Killed**' };
+    if (at === -1) body.push(marker);
+    else body.splice(at, 0, marker);
+  }
+  const at = reportedAt();
   const text = goingText(going);
-  if (reportedAt === -1) body.push(text);
-  else body.splice(reportedAt + 1, 0, text);
+  if (at === -1) body.push(text);
+  else body.splice(at + 1, 0, text);
 
-  body.push(...partyRows(going));
+  body.push(...partyRows(going, killed));
   return { ...container, components: body };
 }

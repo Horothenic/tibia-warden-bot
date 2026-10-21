@@ -1,4 +1,5 @@
 import { handleInteraction, toHttpResponse } from './interactions.js';
+import { parseBestiary } from './monsters.js';
 import { verifyKey } from './verify.js';
 
 let monstersPromise;
@@ -49,12 +50,10 @@ export default {
 
 function loadMonsters(env) {
   if (!monstersPromise) {
-    monstersPromise = env.ASSETS.fetch(assetRequest('/creatures.json'))
+    monstersPromise = env.ASSETS.fetch(assetRequest('/bestiary.tsv'))
       .then(async (response) => {
-        if (!response.ok) throw new Error(`creatures.json returned ${response.status}`);
-        const data = await response.json();
-        if (!Array.isArray(data.creatures)) throw new Error('creatures.json has no creature list');
-        return data.creatures;
+        if (!response.ok) throw new Error(`bestiary.tsv returned ${response.status}`);
+        return parseBestiary(await response.text());
       })
       .catch((error) => {
         monstersPromise = undefined;

@@ -44,13 +44,12 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
   const monster = findMonster(monsters, optionValue(interaction, 'monster'));
   if (!monster) return ephemeral('Choose a monster from the list.');
 
-  const typedLocation = optionValue(interaction, 'location');
+  const typedLocation = optionValue(interaction, 'location')?.trim();
   let location = null;
   if (typedLocation) {
     location = monster.locations.find(
-      (entry) => entry.name.toLowerCase() === typedLocation.trim().toLowerCase(),
-    );
-    if (!location) return ephemeral(`Choose a location for ${monster.name} from the list.`);
+      (entry) => entry.name.toLowerCase() === typedLocation.toLowerCase(),
+    ) ?? { name: typedLocation.replace(/[\r\n]+/g, ' ') };
   } else if (monster.locations.length === 1) {
     location = monster.locations[0];
   }
@@ -64,6 +63,7 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
   const heading = {
     type: ComponentType.TextDisplay,
     content: [
+      '@everyone',
       `# ${monster.name}`,
       ...(location ? [`## in ${location.name}`] : []),
       `${location ? '###' : '##'} Poof <t:${expiresAt}:R>`,
@@ -86,6 +86,7 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
     file: image,
     data: {
       flags: MessageFlags.IsComponentsV2,
+      allowed_mentions: { parse: ['everyone'] },
       ...(image ? { attachments: [{ id: 0, filename: 'monster.gif' }] } : {}),
       components: [
         withParty({
@@ -105,7 +106,7 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
 
 function updateParty(interaction) {
   const customId = interaction.data?.custom_id;
-  if (customId !== 'warden:going' && customId !== 'warden:check') {
+  if (customId !== 'warden:going' && customId !== 'warden:check' && customId !== 'warden:killed') {
     return ephemeral('This card can no longer be updated.');
   }
 
@@ -115,7 +116,14 @@ function updateParty(interaction) {
   if (!container) return ephemeral('This card can no longer be updated.');
 
   const party = readParty(container);
-  if (customId === 'warden:check') {
+  if (customId === 'warden:killed') {
+    if (!party.posterId || actorId(interaction) !== party.posterId) {
+      return ephemeral('Only the person who posted this can mark it as killed.');
+    }
+    party.killed = true;
+  } else if (party.killed && customId === 'warden:going') {
+    return ephemeral('This one is already killed.');
+  } else if (customId === 'warden:check') {
     applyCheck(party.going, interaction.data.values?.[0]);
   } else if (party.posterId && actorId(interaction) === party.posterId) {
     return ephemeral('Only other people can join this list.');
@@ -132,7 +140,7 @@ function updateParty(interaction) {
     data: {
       flags: MessageFlags.IsComponentsV2,
       allowed_mentions: { parse: [] },
-      components: [withParty(container, party.going)],
+      components: [withParty(container, party.going, party.killed)],
     },
   };
 }
@@ -176,8 +184,24 @@ export function toHttpResponse(result) {
 
   if (!result.file) return Response.json(payload);
 
-  const form = new FormData();
-  form.append('payload_json', new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-  form.append('files[0]', new File([result.file.bytes], result.file.filename, { type: result.file.contentType }));
-  return new Response(form);
+  const boundary = `----warden${crypto.randomUUID().replaceAll('-', '')}`;
+  const fileBytes = new Uint8Array(result.file.bytes);
+  const encoder = new TextEncoder();
+  const head = encoder.encode(
+    `--${boundary}\r\n`
+    + 'Content-Disposition: form-data; name="payload_json"\r\n'
+    + 'Content-Type: application/json\r\n\r\n'
+    + `${JSON.stringify(payload)}\r\n`
+    + `--${boundary}\r\n`
+    + `Content-Disposition: form-data; name="files[0]"; filename="${result.file.filename}"\r\n`
+    + `Content-Type: ${result.file.contentType}\r\n\r\n`,
+  );
+  const tail = encoder.encode(`\r\n--${boundary}--\r\n`);
+  const body = new Uint8Array(head.length + fileBytes.length + tail.length);
+  body.set(head, 0);
+  body.set(fileBytes, head.length);
+  body.set(tail, head.length + fileBytes.length);
+  return new Response(body, {
+    headers: { 'content-type': `multipart/form-data; boundary=${boundary}` },
+  });
 }

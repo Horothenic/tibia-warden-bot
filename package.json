@@ -9,6 +9,7 @@
   "scripts": {
     "register": "node src/register-commands.js",
     "dev": "wrangler dev",
+    "predeploy": "node scripts/build-bestiary.js",
     "deploy": "wrangler deploy",
     "test": "node --test"
   },

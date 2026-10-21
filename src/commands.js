@@ -14,9 +14,10 @@ export const commands = [
     .addStringOption((option) =>
       option
         .setName('location')
-        .setDescription('Where it is. Filled for you when the monster has one area.')
+        .setDescription('Where it is. Pick an area, or type your own.')
         .setRequired(false)
-        .setAutocomplete(true),
+        .setAutocomplete(true)
+        .setMaxLength(100),
     )
     .addIntegerOption((option) =>
       option
