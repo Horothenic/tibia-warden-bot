@@ -42,8 +42,13 @@ async function remember(env, interaction, expiresAt) {
     console.error('auto-close skipped: Discord had not saved the card yet');
     return;
   }
+  await rememberCard(env, message.channel_id, message.id, expiresAt);
+}
+
+export async function rememberCard(env, channelId, messageId, expiresAt) {
+  if (!env?.CARDS || !channelId || !messageId) return;
   const ttl = Math.max(120, expiresAt - Math.floor(Date.now() / 1000) + 3600);
-  await env.CARDS.put(`card:${message.channel_id}:${message.id}`, String(expiresAt), {
+  await env.CARDS.put(`card:${channelId}:${messageId}`, String(expiresAt), {
     expirationTtl: ttl,
   });
 }
@@ -79,6 +84,17 @@ async function closeSavedCard(env, channelId, messageId, key) {
   });
   if (!edited) return;
   await env.CARDS.delete(key);
+}
+
+export async function dismissInteraction(interaction) {
+  if (!interaction?.application_id || !interaction?.token) return;
+  const path = `/webhooks/${interaction.application_id}/${interaction.token}/messages/@original`;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    if (attempt) await wait(1000);
+    const result = await discord(path, { method: 'DELETE' });
+    if (result && !result.missing) return;
+  }
+  console.error('could not remove the command acknowledgement');
 }
 
 function wait(ms) {

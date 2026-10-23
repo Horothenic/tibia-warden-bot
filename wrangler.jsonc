@@ -10,6 +10,9 @@
       "custom_domain": true
     }
   ],
+  "vars": {
+    "WARDEN_CHANNEL_ID": "1557736230710546482"
+  },
   "triggers": {
     "crons": ["* * * * *"]
   },

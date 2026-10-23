@@ -1,5 +1,5 @@
-import { closeSavedCards, closeWhenDue } from './close.js';
-import { handleInteraction, toHttpResponse } from './interactions.js';
+import { closeSavedCards, closeWhenDue, dismissInteraction, rememberCard } from './close.js';
+import { handleInteraction, postCardMessage, toHttpResponse, WARDEN_CHANNEL_ID } from './interactions.js';
 import { parseBestiary } from './monsters.js';
 import { verifyKey } from './verify.js';
 
@@ -34,11 +34,21 @@ export default {
 
     try {
       const monsters = await loadMonsters(env);
+      const wardenChannelId = env.WARDEN_CHANNEL_ID || WARDEN_CHANNEL_ID;
       const result = await handleInteraction(interaction, {
         monsters,
         loadImage: (assetPath) => loadImage(env, assetPath),
+        wardenChannelId,
+        postCard: (card) => postCardMessage(env.DISCORD_TOKEN, wardenChannelId, card),
       });
-      if (result.expiresAt && interaction.application_id && interaction.token) {
+      if (result.posted) {
+        ctx.waitUntil(Promise.all([
+          dismissInteraction(interaction),
+          result.expiresAt
+            ? rememberCard(env, result.posted.channelId, result.posted.id, result.expiresAt)
+            : Promise.resolve(),
+        ]));
+      } else if (result.expiresAt && interaction.application_id && interaction.token) {
         ctx.waitUntil(closeWhenDue(env, interaction, result.expiresAt));
       }
       return toHttpResponse(result);

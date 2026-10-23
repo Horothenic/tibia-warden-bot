@@ -20,11 +20,20 @@ const InteractionType = {
 const ResponseType = {
   Pong: 1,
   ChannelMessage: 4,
+  DeferredChannelMessage: 5,
   UpdateMessage: 7,
   Autocomplete: 8,
 };
 
-export async function handleInteraction(interaction, { monsters, loadImage }) {
+export const WARDEN_CHANNEL_ID = '1557736230710546482';
+const API = 'https://discord.com/api/v10';
+
+export async function handleInteraction(interaction, {
+  monsters,
+  loadImage,
+  postCard,
+  wardenChannelId = WARDEN_CHANNEL_ID,
+}) {
   if (interaction.type === InteractionType.Ping) {
     return { type: ResponseType.Pong };
   }
@@ -80,7 +89,7 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
       }]
     : [heading];
 
-  return {
+  const card = {
     type: ResponseType.ChannelMessage,
     file: image,
     data: {
@@ -103,6 +112,44 @@ export async function handleInteraction(interaction, { monsters, loadImage }) {
     },
     expiresAt,
   };
+  if (!interaction.channel_id || interaction.channel_id === wardenChannelId) return card;
+
+  const message = postCard ? await postCard(card) : null;
+  if (!message?.id) return ephemeral(`Could not post in <#${wardenChannelId}>.`);
+  return {
+    type: ResponseType.DeferredChannelMessage,
+    data: { flags: MessageFlags.Ephemeral },
+    expiresAt,
+    posted: { id: message.id, channelId: message.channel_id ?? wardenChannelId },
+  };
+}
+
+export async function postCardMessage(token, channelId, card) {
+  if (!token || !channelId) {
+    console.error('could not post the card: missing bot token or channel');
+    return null;
+  }
+  const headers = { authorization: `Bot ${token}` };
+  let body;
+  if (card.file) {
+    const encoded = encodeMultipart(card.data, card.file);
+    headers['content-type'] = encoded.contentType;
+    body = encoded.body;
+  } else {
+    headers['content-type'] = 'application/json';
+    body = JSON.stringify(card.data);
+  }
+  const response = await fetch(`${API}/channels/${channelId}/messages`, {
+    method: 'POST',
+    headers,
+    body,
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    console.error(`could not post the card: ${response.status} ${detail.slice(0, 180)}`);
+    return null;
+  }
+  return response.json();
 }
 
 function updateParty(interaction) {
@@ -195,8 +242,15 @@ export function toHttpResponse(result) {
 
   if (!result.file) return Response.json(payload);
 
+  const encoded = encodeMultipart(payload, result.file);
+  return new Response(encoded.body, {
+    headers: { 'content-type': encoded.contentType },
+  });
+}
+
+function encodeMultipart(payload, file) {
   const boundary = `----warden${crypto.randomUUID().replaceAll('-', '')}`;
-  const fileBytes = new Uint8Array(result.file.bytes);
+  const fileBytes = new Uint8Array(file.bytes);
   const encoder = new TextEncoder();
   const head = encoder.encode(
     `--${boundary}\r\n`
@@ -204,15 +258,13 @@ export function toHttpResponse(result) {
     + 'Content-Type: application/json\r\n\r\n'
     + `${JSON.stringify(payload)}\r\n`
     + `--${boundary}\r\n`
-    + `Content-Disposition: form-data; name="files[0]"; filename="${result.file.filename}"\r\n`
-    + `Content-Type: ${result.file.contentType}\r\n\r\n`,
+    + `Content-Disposition: form-data; name="files[0]"; filename="${file.filename}"\r\n`
+    + `Content-Type: ${file.contentType}\r\n\r\n`,
   );
   const tail = encoder.encode(`\r\n--${boundary}--\r\n`);
   const body = new Uint8Array(head.length + fileBytes.length + tail.length);
   body.set(head, 0);
   body.set(fileBytes, head.length);
   body.set(tail, head.length + fileBytes.length);
-  return new Response(body, {
-    headers: { 'content-type': `multipart/form-data; boundary=${boundary}` },
-  });
+  return { body, contentType: `multipart/form-data; boundary=${boundary}` };
 }

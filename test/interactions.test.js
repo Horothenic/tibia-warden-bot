@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { generateKeyPairSync, sign } from 'node:crypto';
 import test from 'node:test';
-import { handleInteraction, toHttpResponse } from '../src/interactions.js';
+import { handleInteraction, toHttpResponse, WARDEN_CHANNEL_ID } from '../src/interactions.js';
 import { imageAssetPath, parseBestiary } from '../src/monsters.js';
 import { verifyKey } from '../src/verify.js';
 
@@ -90,6 +90,53 @@ test('posting a card attaches the monster gif and the going button', async () =>
   assert.match(JSON.stringify(container), /"label":"Killed"/);
   assert.match(JSON.stringify(container), /warden:close/);
   assert.match(JSON.stringify(container), /<@100>/);
+});
+
+test('a command used outside tibia-wardens posts the card there', async () => {
+  let posted = null;
+  const result = await handleInteraction({
+    type: 2,
+    channel_id: '999',
+    data: { name: 'w', options: [{ name: 'monster', value: monsters[0].name }] },
+    ...hunter,
+  }, {
+    monsters,
+    loadImage: async () => ({ bytes: new Uint8Array([1]), filename: 'monster.gif', contentType: 'image/gif' }),
+    postCard: async (card) => {
+      posted = card;
+      return { id: '50', channel_id: WARDEN_CHANNEL_ID };
+    },
+  });
+
+  assert.equal(result.type, 5);
+  assert.equal(result.data.flags, 64);
+  assert.equal(result.data.content, undefined);
+  assert.equal(result.posted.id, '50');
+  assert.equal(result.posted.channelId, WARDEN_CHANNEL_ID);
+  assert.equal(posted.file.filename, 'monster.gif');
+  assert.equal(posted.data.components[0].content, '@everyone');
+  assert.equal(posted.data.components[1].type, 17);
+});
+
+test('a command used in tibia-wardens answers with the card', async () => {
+  let called = false;
+  const result = await handleInteraction({
+    type: 2,
+    channel_id: WARDEN_CHANNEL_ID,
+    data: { name: 'w', options: [{ name: 'monster', value: monsters[0].name }] },
+    ...hunter,
+  }, {
+    monsters,
+    loadImage: async () => null,
+    postCard: async () => {
+      called = true;
+      return null;
+    },
+  });
+
+  assert.equal(called, false);
+  assert.equal(result.data.flags, 32768);
+  assert.equal(result.posted, undefined);
 });
 
 test('a note sits above the reporter', async () => {
