@@ -6,23 +6,32 @@ export async function closeWhenDue(env, interaction, expiresAt) {
   await remember(env, interaction, expiresAt);
 }
 
+const INDEX_KEY = 'open-cards';
+
 export async function closeSavedCards(env) {
   if (!env.CARDS || !env.DISCORD_TOKEN) {
     console.error('auto-close skipped: the worker has no CARDS store or DISCORD_TOKEN');
     return;
   }
-  let cursor;
+  const cards = await readIndex(env);
   const now = Math.floor(Date.now() / 1000);
-  do {
-    const listed = await env.CARDS.list({ prefix: 'card:', cursor });
-    for (const key of listed.keys) {
-      const expiresAt = Number(await env.CARDS.get(key.name));
-      if (!expiresAt || expiresAt > now) continue;
-      const [, channelId, messageId] = key.name.split(':');
-      await closeSavedCard(env, channelId, messageId, key.name);
+  const waiting = [];
+  let changed = false;
+  for (const card of cards) {
+    if (!card?.expiresAt || card.expiresAt > now) {
+      waiting.push(card);
+      continue;
     }
-    cursor = listed.list_complete ? undefined : listed.cursor;
-  } while (cursor);
+    const closed = await closeSavedCard(env, card.channelId, card.messageId);
+    if (closed) changed = true;
+    else waiting.push(card);
+  }
+  if (!changed) return;
+  if (!waiting.length) {
+    await env.CARDS.delete(INDEX_KEY);
+    return;
+  }
+  await writeIndex(env, waiting);
 }
 
 async function remember(env, interaction, expiresAt) {
@@ -47,31 +56,45 @@ async function remember(env, interaction, expiresAt) {
 
 export async function rememberCard(env, channelId, messageId, expiresAt) {
   if (!env?.CARDS || !channelId || !messageId) return;
-  const ttl = Math.max(120, expiresAt - Math.floor(Date.now() / 1000) + 3600);
-  await env.CARDS.put(`card:${channelId}:${messageId}`, String(expiresAt), {
-    expirationTtl: ttl,
+  const cards = (await readIndex(env)).filter(
+    (card) => card.channelId !== channelId || card.messageId !== messageId,
+  );
+  cards.push({ channelId, messageId, expiresAt });
+  await writeIndex(env, cards);
+}
+
+async function readIndex(env) {
+  const raw = await env.CARDS.get(INDEX_KEY);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+async function writeIndex(env, cards) {
+  const now = Math.floor(Date.now() / 1000);
+  const latest = cards.reduce((max, card) => Math.max(max, Number(card.expiresAt) || 0), now);
+  await env.CARDS.put(INDEX_KEY, JSON.stringify(cards), {
+    expirationTtl: Math.max(120, latest - now + 3600),
   });
 }
 
-async function closeSavedCard(env, channelId, messageId, key) {
+async function closeSavedCard(env, channelId, messageId) {
   const message = await discord(`/channels/${channelId}/messages/${messageId}`, {
     headers: { authorization: `Bot ${env.DISCORD_TOKEN}` },
   });
-  if (!message) return;
-  if (message.missing) {
-    await env.CARDS.delete(key);
-    return;
-  }
+  if (!message) return false;
+  if (message.missing) return true;
   const container = message.components?.find((component) => component.type === ComponentType.Container);
-  if (!container) return;
-  if (readParty(container).closed) {
-    await env.CARDS.delete(key);
-    return;
-  }
+  if (!container) return false;
+  if (readParty(container).closed) return true;
   const components = poofComponents(message.components);
   if (!components) {
-    console.error(`auto-close could not read the timer on ${key}`);
-    return;
+    console.error(`auto-close could not read the timer on ${channelId}:${messageId}`);
+    return false;
   }
   const edited = await discord(`/channels/${channelId}/messages/${messageId}`, {
     method: 'PATCH',
@@ -82,8 +105,7 @@ async function closeSavedCard(env, channelId, messageId, key) {
       components,
     }),
   });
-  if (!edited) return;
-  await env.CARDS.delete(key);
+  return Boolean(edited);
 }
 
 export async function dismissInteraction(interaction) {
