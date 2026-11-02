@@ -125,6 +125,26 @@ export function readParty(container) {
   return { going, posterId, closed, expiresAt: expiresAtOf(container) };
 }
 
+export function allowedMentions(components, { everyone = false } = {}) {
+  const users = [];
+  const seen = new Set();
+  for (const component of components ?? []) collectMentions(component);
+  return { parse: everyone ? ['everyone'] : [], users };
+
+  function collectMentions(node) {
+    if (!node || typeof node !== 'object') return;
+    if (typeof node.content === 'string') {
+      for (const match of node.content.matchAll(/<@!?(\d+)>/g)) {
+        if (seen.has(match[1]) || users.length >= 100) continue;
+        seen.add(match[1]);
+        users.push(match[1]);
+      }
+    }
+    for (const child of node.components ?? []) collectMentions(child);
+    if (node.accessory) collectMentions(node.accessory);
+  }
+}
+
 function goingText(going) {
   const lines = going.length
     ? going.map((person) => `${person.checked ? '✅ ' : ''}<@${person.id}>`)

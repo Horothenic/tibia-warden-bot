@@ -1,4 +1,4 @@
-import { ComponentType, MessageFlags, poofComponents, readParty } from './party.js';
+import { allowedMentions, ComponentType, MessageFlags, poofComponents, readParty } from './party.js';
 
 const API = 'https://discord.com/api/v10';
 
@@ -101,7 +101,7 @@ async function closeSavedCard(env, channelId, messageId) {
     headers: { authorization: `Bot ${env.DISCORD_TOKEN}` },
     body: JSON.stringify({
       flags: MessageFlags.IsComponentsV2,
-      allowed_mentions: { parse: [] },
+      allowed_mentions: allowedMentions(components),
       components,
     }),
   });

@@ -77,7 +77,7 @@ test('posting a card attaches the monster gif and the going button', async () =>
 
   assert.equal(result.type, 4);
   assert.equal(result.data.flags, 32768);
-  assert.deepEqual(result.data.allowed_mentions, { parse: ['everyone'] });
+  assert.deepEqual(result.data.allowed_mentions, { parse: ['everyone'], users: ['100'] });
   assert.equal(result.data.components[0].content, '@everyone');
   assert.equal(result.data.components[1].type, 17);
   assert.equal(JSON.stringify(result.data.components[1]).includes('@everyone'), false);
@@ -260,7 +260,7 @@ test('another hunter can join and the reporter cannot', async () => {
   }, { monsters, loadImage: async () => null });
 
   assert.equal(joined.type, 7);
-  assert.deepEqual(joined.data.allowed_mentions, { parse: [] });
+  assert.deepEqual(joined.data.allowed_mentions, { parse: [], users: ['100', '200'] });
   assert.match(JSON.stringify(joined.data.components), /<@200>/);
   const select = JSON.stringify(joined.data.components);
   assert.match(select, /"custom_id":"warden:check"/);

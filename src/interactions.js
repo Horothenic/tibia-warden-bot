@@ -6,6 +6,7 @@ import {
   ComponentType,
   hunterName,
   MessageFlags,
+  allowedMentions,
   readParty,
   withParty,
 } from './party.js';
@@ -89,26 +90,27 @@ export async function handleInteraction(interaction, {
       }]
     : [heading];
 
+  const components = [
+    { type: ComponentType.TextDisplay, content: '@everyone' },
+    withParty({
+      type: ComponentType.Container,
+      accent_color: 0x2f6fed,
+      components: [
+        ...header,
+        { type: ComponentType.Separator, divider: true },
+        ...(noteText ? [{ type: ComponentType.TextDisplay, content: noteText }] : []),
+        { type: ComponentType.TextDisplay, content: reported },
+      ],
+    }, []),
+  ];
   const card = {
     type: ResponseType.ChannelMessage,
     file: image,
     data: {
       flags: MessageFlags.IsComponentsV2,
-      allowed_mentions: { parse: ['everyone'] },
+      allowed_mentions: allowedMentions(components, { everyone: true }),
       ...(image ? { attachments: [{ id: 0, filename: 'monster.gif' }] } : {}),
-      components: [
-        { type: ComponentType.TextDisplay, content: '@everyone' },
-        withParty({
-          type: ComponentType.Container,
-          accent_color: 0x2f6fed,
-          components: [
-            ...header,
-            { type: ComponentType.Separator, divider: true },
-            ...(noteText ? [{ type: ComponentType.TextDisplay, content: noteText }] : []),
-            { type: ComponentType.TextDisplay, content: reported },
-          ],
-        }, []),
-      ],
+      components,
     },
     expiresAt,
   };
@@ -190,15 +192,16 @@ function updateParty(interaction) {
     return ephemeral('This one is already closed.');
   }
 
+  const components = [
+    { type: ComponentType.TextDisplay, content: '@everyone' },
+    withParty(container, party.going, status),
+  ];
   return {
     type: ResponseType.UpdateMessage,
     data: {
       flags: MessageFlags.IsComponentsV2,
-      allowed_mentions: { parse: [] },
-      components: [
-        { type: ComponentType.TextDisplay, content: '@everyone' },
-        withParty(container, party.going, status),
-      ],
+      allowed_mentions: allowedMentions(components),
+      components,
     },
   };
 }
