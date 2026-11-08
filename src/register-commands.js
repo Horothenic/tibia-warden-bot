@@ -15,4 +15,4 @@ const rest = new REST({ version: '10' }).setToken(token);
 const body = commands.map((command) => command.toJSON());
 
 await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body });
-console.log('Registered /w on your server.');
+console.log('Registered /w, /alarm, and /update on your server.');

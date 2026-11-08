@@ -1,4 +1,13 @@
+import { missingWardens } from './draptor.js';
 import { findMonster, imageAssetPath, searchLocations, searchMonsters } from './monsters.js';
+import {
+  applySync,
+  notifyIfNeeded,
+  quotaBlock,
+  readHunter,
+  rememberAlarm,
+  writeHunter,
+} from './hunters.js';
 import {
   actorId,
   applyCheck,
@@ -7,6 +16,7 @@ import {
   hunterName,
   MessageFlags,
   allowedMentions,
+  huntName,
   readParty,
   withParty,
 } from './party.js';
@@ -34,6 +44,8 @@ export async function handleInteraction(interaction, {
   loadImage,
   postCard,
   wardenChannelId = WARDEN_CHANNEL_ID,
+  cards,
+  fetchMissing = missingWardens,
 }) {
   if (interaction.type === InteractionType.Ping) {
     return { type: ResponseType.Pong };
@@ -47,7 +59,17 @@ export async function handleInteraction(interaction, {
     return updateParty(interaction);
   }
 
-  if (interaction.type !== InteractionType.ApplicationCommand || interaction.data?.name !== 'w') {
+  if (interaction.type !== InteractionType.ApplicationCommand) {
+    return ephemeral('Unknown command.');
+  }
+
+  if (interaction.data?.name === 'alarm') {
+    return saveAlarm(interaction, cards);
+  }
+  if (interaction.data?.name === 'update') {
+    return queueUpdate(interaction, { cards, fetchMissing });
+  }
+  if (interaction.data?.name !== 'w') {
     return ephemeral('Unknown command.');
   }
 
@@ -113,6 +135,7 @@ export async function handleInteraction(interaction, {
       components,
     },
     expiresAt,
+    hunt: { name: monster.name, place: location?.name ?? null },
   };
   if (!interaction.channel_id || interaction.channel_id === wardenChannelId) return card;
 
@@ -123,6 +146,7 @@ export async function handleInteraction(interaction, {
     data: { flags: MessageFlags.Ephemeral },
     expiresAt,
     posted: { id: message.id, channelId: message.channel_id ?? wardenChannelId },
+    hunt: card.hunt,
   };
 }
 
@@ -167,6 +191,7 @@ function updateParty(interaction) {
   if (!container) return ephemeral('This card can no longer be updated.');
 
   const party = readParty(container);
+  const wasClosed = party.closed;
   const expired = Boolean(party.expiresAt && Math.floor(Date.now() / 1000) >= party.expiresAt);
   let status = party.closed || expired ? 'closed' : null;
 
@@ -203,6 +228,12 @@ function updateParty(interaction) {
       allowed_mentions: allowedMentions(components),
       components,
     },
+    ...(status === 'closed' && !wasClosed ? {
+      caught: {
+        monsterName: huntName(container),
+        userIds: party.going.map((person) => person.id),
+      },
+    } : {}),
   };
 }
 
@@ -236,6 +267,67 @@ function ephemeral(content) {
     type: ResponseType.ChannelMessage,
     data: { content, flags: MessageFlags.Ephemeral },
   };
+}
+
+const ALARM_ID = /^[A-Za-z0-9_-]{1,64}$/;
+
+async function saveAlarm(interaction, cards) {
+  const topic = String(optionValue(interaction, 'id') ?? '').trim();
+  if (!ALARM_ID.test(topic)) {
+    return ephemeral('The alarm id can use letters, numbers, dashes, and underscores.');
+  }
+  if (!cards) return ephemeral('The hunter list is not available yet.');
+  const discordUserId = actorId(interaction);
+  const hunter = await readHunter(cards, discordUserId);
+  await writeHunter(cards, {
+    discordUserId,
+    alarm: topic,
+    characters: hunter?.characters ?? [],
+    day: hunter?.day ?? null,
+    updatesToday: hunter?.updatesToday ?? 0,
+    syncedAt: hunter?.syncedAt ?? null,
+  });
+  await rememberAlarm(cards, discordUserId);
+  return ephemeral('Phone alarm saved. A hunt notifies you only when you still need that warden.');
+}
+
+function queueUpdate(interaction, { cards, fetchMissing }) {
+  const account = cleanName(optionValue(interaction, 'account'));
+  const character = cleanName(optionValue(interaction, 'character'));
+  if (!account || !character) {
+    return ephemeral('Both the account name and the character name are required.');
+  }
+  if (!cards) return ephemeral('The hunter list is not available yet.');
+  return {
+    type: ResponseType.DeferredChannelMessage,
+    data: { flags: MessageFlags.Ephemeral },
+    job: async () => {
+      const hunter = await readHunter(cards, actorId(interaction));
+      const block = quotaBlock(hunter);
+      if (block?.reason === 'daily') {
+        return 'Sync limit reached for today. It resets at midnight, Mexico City time.';
+      }
+      if (block?.reason === 'cooldown') {
+        const minutes = block.minutes === 1 ? '1 minute' : `${block.minutes} minutes`;
+        return `Wait ${minutes} before syncing again.`;
+      }
+      try {
+        const result = await fetchMissing(account, character);
+        const next = applySync(hunter, actorId(interaction), account, character, result);
+        await writeHunter(cards, next);
+        if (!result.missing.length) return `Saved ${character}. You have every warden on that character.`;
+        const count = result.missing.length === 1 ? '1 warden' : `${result.missing.length} wardens`;
+        return `Saved ${character}. ${count} still missing.`;
+      } catch (error) {
+        return error.code ? error.message : 'TibiaDraptor did not answer. Nothing was saved.';
+      }
+    },
+  };
+}
+
+function cleanName(value) {
+  const name = String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
+  return name.slice(0, 50);
 }
 
 export function toHttpResponse(result) {

@@ -33,4 +33,32 @@ export const commands = [
         .setDescription('How to get to the monster')
         .setRequired(false),
     ),
+  new SlashCommandBuilder()
+    .setName('alarm')
+    .setDescription('Save the ntfy topic that should receive your hunt alarms')
+    .addStringOption((option) =>
+      option
+        .setName('id')
+        .setDescription('Your ntfy topic')
+        .setRequired(true)
+        .setMinLength(1)
+        .setMaxLength(64),
+    ),
+  new SlashCommandBuilder()
+    .setName('update')
+    .setDescription('Replace one character with the wardens TibiaDraptor says you still need')
+    .addStringOption((option) =>
+      option
+        .setName('account')
+        .setDescription('TibiaDraptor account name')
+        .setRequired(true)
+        .setMaxLength(50),
+    )
+    .addStringOption((option) =>
+      option
+        .setName('character')
+        .setDescription('Character name on that account')
+        .setRequired(true)
+        .setMaxLength(50),
+    ),
 ];

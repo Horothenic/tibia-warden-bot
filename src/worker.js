@@ -1,5 +1,7 @@
-import { closeSavedCards, closeWhenDue, dismissInteraction, rememberCard } from './close.js';
+import { closeSavedCards, closeWhenDue, dismissInteraction, editOriginal, rememberCard } from './close.js';
+import { missingWardens } from './draptor.js';
 import { handleInteraction, postCardMessage, toHttpResponse, WARDEN_CHANNEL_ID } from './interactions.js';
+import { notifyIfNeeded, markHuntCaught, huntersToNotify } from './hunters.js';
 import { parseBestiary } from './monsters.js';
 import { verifyKey } from './verify.js';
 
@@ -40,17 +42,24 @@ export default {
         loadImage: (assetPath) => loadImage(env, assetPath),
         wardenChannelId,
         postCard: (card) => postCardMessage(env.DISCORD_TOKEN, wardenChannelId, card),
+        cards: env.CARDS,
+        fetchMissing: (account, character) => missingWardens(account, character),
       });
-      if (result.posted) {
-        ctx.waitUntil(Promise.all([
-          dismissInteraction(interaction),
-          result.expiresAt
-            ? rememberCard(env, result.posted.channelId, result.posted.id, result.expiresAt)
-            : Promise.resolve(),
-        ]));
-      } else if (result.expiresAt && interaction.application_id && interaction.token) {
-        ctx.waitUntil(closeWhenDue(env, interaction, result.expiresAt));
+      const jobs = [];
+      if (result.job) {
+        jobs.push(finishJob(interaction, result.job));
       }
+      if (result.posted) {
+        jobs.push(dismissInteraction(interaction));
+        if (result.expiresAt) {
+          jobs.push(rememberCard(env, result.posted.channelId, result.posted.id, result.expiresAt));
+        }
+      } else if (result.expiresAt && interaction.application_id && interaction.token) {
+        jobs.push(closeWhenDue(env, interaction, result.expiresAt));
+      }
+      if (result.hunt) jobs.push(notifyHunt(env, result.hunt));
+      if (result.caught) jobs.push(markHuntCaught(env.CARDS, result.caught.userIds, result.caught.monsterName));
+      if (jobs.length) ctx.waitUntil(Promise.all(jobs));
       return toHttpResponse(result);
     } catch (error) {
       console.error(error);
@@ -65,6 +74,25 @@ export default {
     ctx.waitUntil(closeSavedCards(env));
   },
 };
+
+async function finishJob(interaction, job) {
+  try {
+    const content = await job();
+    await editOriginal(interaction, content);
+  } catch (error) {
+    console.error(error);
+    await editOriginal(interaction, 'TibiaDraptor did not answer. Nothing was saved.');
+  }
+}
+
+async function notifyHunt(env, hunt) {
+  try {
+    const hunters = await huntersToNotify(env.CARDS, hunt.name);
+    await Promise.all(hunters.map((hunter) => notifyIfNeeded(hunter, hunt.name, hunt.place)));
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 function loadMonsters(env) {
   if (!monstersPromise) {

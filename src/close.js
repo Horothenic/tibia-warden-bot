@@ -1,4 +1,5 @@
-import { allowedMentions, ComponentType, MessageFlags, poofComponents, readParty } from './party.js';
+import { allowedMentions, ComponentType, huntName, MessageFlags, poofComponents, readParty } from './party.js';
+import { markHuntCaught } from './hunters.js';
 
 const API = 'https://discord.com/api/v10';
 
@@ -90,7 +91,10 @@ async function closeSavedCard(env, channelId, messageId) {
   if (message.missing) return true;
   const container = message.components?.find((component) => component.type === ComponentType.Container);
   if (!container) return false;
-  if (readParty(container).closed) return true;
+  if (readParty(container).closed) {
+    await markCaught(env, container);
+    return true;
+  }
   const components = poofComponents(message.components);
   if (!components) {
     console.error(`auto-close could not read the timer on ${channelId}:${messageId}`);
@@ -105,7 +109,28 @@ async function closeSavedCard(env, channelId, messageId) {
       components,
     }),
   });
-  return Boolean(edited);
+  if (!edited) return false;
+  await markCaught(env, container);
+  return true;
+}
+
+async function markCaught(env, container) {
+  const party = readParty(container);
+  await markHuntCaught(env.CARDS, party.going.map((person) => person.id), huntName(container));
+}
+
+export async function editOriginal(interaction, content) {
+  if (!interaction?.application_id || !interaction?.token) return;
+  const path = `/webhooks/${interaction.application_id}/${interaction.token}/messages/@original`;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    if (attempt) await wait(1000);
+    const result = await discord(path, {
+      method: 'PATCH',
+      body: JSON.stringify({ content }),
+    });
+    if (result && !result.missing) return;
+  }
+  console.error('could not finish the command reply');
 }
 
 export async function dismissInteraction(interaction) {

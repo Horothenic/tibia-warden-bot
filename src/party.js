@@ -241,6 +241,22 @@ export function withParty(container, going, status = null) {
   return { ...container, components: body };
 }
 
+export function huntName(container) {
+  let name = null;
+  walk(container);
+  return name;
+
+  function walk(node) {
+    if (!node || typeof node !== 'object' || name) return;
+    if (typeof node.content === 'string') {
+      const line = node.content.split('\n').find((entry) => entry.startsWith('# '));
+      if (line) name = line.slice(2).trim();
+    }
+    for (const child of node.components ?? []) walk(child);
+    if (node.accessory) walk(node.accessory);
+  }
+}
+
 export function poofComponents(components) {
   const container = components.find((component) => component.type === ComponentType.Container);
   if (!container) return null;
