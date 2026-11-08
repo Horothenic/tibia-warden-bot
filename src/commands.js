@@ -1,9 +1,12 @@
 import { SlashCommandBuilder } from 'discord.js';
 
-export const commands = [
-  new SlashCommandBuilder()
-    .setName('w')
-    .setDescription('Post a card for a monster you found')
+// Flip this, then run `npm run register`, to show or hide /w-test.
+export const testCommandEnabled = true;
+
+function huntCommand(name, description) {
+  return new SlashCommandBuilder()
+    .setName(name)
+    .setDescription(description)
     .addStringOption((option) =>
       option
         .setName('monster')
@@ -32,7 +35,11 @@ export const commands = [
         .setName('note')
         .setDescription('How to get to the monster')
         .setRequired(false),
-    ),
+    );
+}
+
+export const commands = [
+  huntCommand('w', 'Post a card for a monster you found'),
   new SlashCommandBuilder()
     .setName('alarm')
     .setDescription('Save the ntfy topic that should receive your hunt alarms')
@@ -61,4 +68,5 @@ export const commands = [
         .setRequired(true)
         .setMaxLength(50),
     ),
+  ...(testCommandEnabled ? [huntCommand('w-test', 'Post a practice card in #tests')] : []),
 ];

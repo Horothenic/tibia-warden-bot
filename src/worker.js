@@ -1,6 +1,6 @@
 import { closeSavedCards, closeWhenDue, dismissInteraction, editOriginal, rememberCard } from './close.js';
 import { missingWardens } from './draptor.js';
-import { handleInteraction, postCardMessage, toHttpResponse, WARDEN_CHANNEL_ID } from './interactions.js';
+import { handleInteraction, postCardMessage, toHttpResponse, TEST_CHANNEL_ID, WARDEN_CHANNEL_ID } from './interactions.js';
 import { notifyIfNeeded, markHuntCaught, huntersToNotify } from './hunters.js';
 import { parseBestiary } from './monsters.js';
 import { verifyKey } from './verify.js';
@@ -41,7 +41,8 @@ export default {
         monsters,
         loadImage: (assetPath) => loadImage(env, assetPath),
         wardenChannelId,
-        postCard: (card) => postCardMessage(env.DISCORD_TOKEN, wardenChannelId, card),
+        testChannelId: env.TEST_CHANNEL_ID || TEST_CHANNEL_ID,
+        postCard: (channelId, card) => postCardMessage(env.DISCORD_TOKEN, channelId, card),
         cards: env.CARDS,
         fetchMissing: (account, character) => missingWardens(account, character),
       });

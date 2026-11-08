@@ -37,6 +37,7 @@ const ResponseType = {
 };
 
 export const WARDEN_CHANNEL_ID = '1557736230710546482';
+export const TEST_CHANNEL_ID = '1568983434586628358';
 const API = 'https://discord.com/api/v10';
 
 export async function handleInteraction(interaction, {
@@ -44,6 +45,7 @@ export async function handleInteraction(interaction, {
   loadImage,
   postCard,
   wardenChannelId = WARDEN_CHANNEL_ID,
+  testChannelId = TEST_CHANNEL_ID,
   cards,
   fetchMissing = missingWardens,
 }) {
@@ -69,9 +71,28 @@ export async function handleInteraction(interaction, {
   if (interaction.data?.name === 'update') {
     return queueUpdate(interaction, { cards, fetchMissing });
   }
-  if (interaction.data?.name !== 'w') {
-    return ephemeral('Unknown command.');
+  if (interaction.data?.name === 'w' || interaction.data?.name === 'w-test') {
+    const practice = interaction.data.name === 'w-test';
+    return postHunt(interaction, {
+      monsters,
+      loadImage,
+      postCard,
+      wardenChannelId: practice ? testChannelId : wardenChannelId,
+      reporterId: practice ? randomReporterId(actorId(interaction)) : actorId(interaction),
+      notify: true,
+    });
   }
+  return ephemeral('Unknown command.');
+}
+
+async function postHunt(interaction, {
+  monsters,
+  loadImage,
+  postCard,
+  wardenChannelId,
+  reporterId,
+  notify,
+}) {
 
   const monster = findMonster(monsters, optionValue(interaction, 'monster'));
   if (!monster) return ephemeral('Choose a monster from the list.');
@@ -90,7 +111,7 @@ export async function handleInteraction(interaction, {
   const note = optionValue(interaction, 'note');
   const expiresAt = Math.floor(Date.now() / 1000) + minutes * 60;
   const image = await loadImage(imageAssetPath(monster));
-  const reported = `**Reported by**\n<@${actorId(interaction)}>`;
+  const reported = `**Reported by**\n<@${reporterId}>`;
   const noteText = note ? `**Note**\n${note}` : null;
   const heading = {
     type: ComponentType.TextDisplay,
@@ -135,11 +156,11 @@ export async function handleInteraction(interaction, {
       components,
     },
     expiresAt,
-    hunt: { name: monster.name, place: location?.name ?? null },
+    ...(notify ? { hunt: { name: monster.name, place: location?.name ?? null } } : {}),
   };
   if (!interaction.channel_id || interaction.channel_id === wardenChannelId) return card;
 
-  const message = postCard ? await postCard(card) : null;
+  const message = postCard ? await postCard(wardenChannelId, card) : null;
   if (!message?.id) return ephemeral(`Could not post in <#${wardenChannelId}>.`);
   return {
     type: ResponseType.DeferredChannelMessage,
@@ -237,8 +258,16 @@ function updateParty(interaction) {
   };
 }
 
+function randomReporterId(realId) {
+  const stamp = (BigInt(Date.now()) - 1420070400000n) << 22n;
+  const noise = BigInt(Math.floor(Math.random() * 4096));
+  let id = (stamp + noise).toString();
+  if (id === realId) id = (stamp + noise + 1n).toString();
+  return id;
+}
+
 function suggest(interaction, monsters) {
-  if (interaction.data?.name !== 'w') return [];
+  if (interaction.data?.name !== 'w' && interaction.data?.name !== 'w-test') return [];
   const focused = interaction.data?.options?.find((entry) => entry.focused);
   if (!focused) return [];
 

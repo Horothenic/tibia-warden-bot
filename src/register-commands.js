@@ -14,5 +14,6 @@ if (!token || !clientId || !guildId || token.startsWith('paste-')) {
 const rest = new REST({ version: '10' }).setToken(token);
 const body = commands.map((command) => command.toJSON());
 
+const names = commands.map((command) => `/${command.toJSON().name}`).join(', ');
 await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body });
-console.log('Registered /w, /alarm, and /update on your server.');
+console.log(`Registered ${names} on your server.`);

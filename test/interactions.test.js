@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { generateKeyPairSync, sign } from 'node:crypto';
 import test from 'node:test';
-import { handleInteraction, toHttpResponse, WARDEN_CHANNEL_ID } from '../src/interactions.js';
+import { handleInteraction, toHttpResponse, TEST_CHANNEL_ID, WARDEN_CHANNEL_ID } from '../src/interactions.js';
+import { commands, testCommandEnabled } from '../src/commands.js';
 import { imageAssetPath, parseBestiary } from '../src/monsters.js';
 import { verifyKey } from '../src/verify.js';
 
@@ -102,9 +103,10 @@ test('a command used outside tibia-wardens posts the card there', async () => {
   }, {
     monsters,
     loadImage: async () => ({ bytes: new Uint8Array([1]), filename: 'monster.gif', contentType: 'image/gif' }),
-    postCard: async (card) => {
+    postCard: async (channelId, card) => {
+      assert.equal(channelId, WARDEN_CHANNEL_ID);
       posted = card;
-      return { id: '50', channel_id: WARDEN_CHANNEL_ID };
+      return { id: '50', channel_id: channelId };
     },
   });
 
@@ -137,6 +139,53 @@ test('a command used in tibia-wardens answers with the card', async () => {
   assert.equal(called, false);
   assert.equal(result.data.flags, 32768);
   assert.equal(result.posted, undefined);
+});
+
+test('w-test posts in #tests as someone else so the caller can join', async () => {
+  const posted = await handleInteraction({
+    type: 2,
+    channel_id: TEST_CHANNEL_ID,
+    data: { name: 'w-test', options: [{ name: 'monster', value: monsters[0].name }] },
+    ...hunter,
+  }, {
+    monsters,
+    loadImage: async () => null,
+    postCard: async () => {
+      throw new Error('the card is already in #tests');
+    },
+  });
+
+  assert.equal(posted.hunt.name, monsters[0].name);
+  const card = JSON.stringify(posted.data.components);
+  assert.equal(card.includes('<@100>'), false);
+  assert.match(card, /Reported by/);
+
+  const joined = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:going' },
+    message: { components: posted.data.components },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+  assert.equal(joined.type, 7);
+  assert.match(JSON.stringify(joined.data.components), /<@100>/);
+
+  const reporter = card.match(/<@(\d+)>/)[1];
+  const closed = await handleInteraction({
+    type: 3,
+    channel_id: TEST_CHANNEL_ID,
+    data: { custom_id: 'warden:close' },
+    message: { components: joined.data.components },
+    member: { user: { id: reporter, username: 'practice' } },
+  }, { monsters, loadImage: async () => null });
+  assert.deepEqual(closed.caught, {
+    monsterName: monsters[0].name,
+    userIds: ['100'],
+  });
+});
+
+test('the practice command is included only while its switch is on', () => {
+  const names = commands.map((command) => command.toJSON().name);
+  assert.equal(names.includes('w-test'), testCommandEnabled);
 });
 
 test('a note sits above the reporter', async () => {

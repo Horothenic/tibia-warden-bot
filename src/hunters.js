@@ -138,6 +138,7 @@ export async function notifyIfNeeded(hunter, monsterName, place, fetchImpl = fet
     headers: { Title: 'Warden' },
     body: place ? `${monsterName} in ${place}` : monsterName,
   });
+  if (!response.ok) console.error(`ntfy rejected ${monsterName}: ${response.status}`);
   return response.ok;
 }
 
