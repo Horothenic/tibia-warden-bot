@@ -2,7 +2,7 @@ import { missingWardens } from './draptor.js';
 import { findMonster, imageAssetPath, searchLocations, searchMonsters } from './monsters.js';
 import {
   applySync,
-  notifyIfNeeded,
+  PUSHOVER_USER_KEY,
   quotaBlock,
   readHunter,
   rememberAlarm,
@@ -298,12 +298,10 @@ function ephemeral(content) {
   };
 }
 
-const ALARM_ID = /^[A-Za-z0-9_-]{1,64}$/;
-
 async function saveAlarm(interaction, cards) {
-  const topic = String(optionValue(interaction, 'id') ?? '').trim();
-  if (!ALARM_ID.test(topic)) {
-    return ephemeral('The alarm id can use letters, numbers, dashes, and underscores.');
+  const topic = String(optionValue(interaction, 'key') ?? '').trim();
+  if (!PUSHOVER_USER_KEY.test(topic)) {
+    return ephemeral('Paste the 30-character user key from pushover.net.');
   }
   if (!cards) return ephemeral('The hunter list is not available yet.');
   const discordUserId = actorId(interaction);

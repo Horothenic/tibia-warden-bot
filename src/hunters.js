@@ -1,4 +1,7 @@
 const ALARM_INDEX = 'alarm-index';
+const PUSHOVER_API = 'https://api.pushover.net/1/messages.json';
+
+export const PUSHOVER_USER_KEY = /^[A-Za-z0-9]{30}$/;
 const DAY_FORMAT = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'America/Mexico_City',
   year: 'numeric',
@@ -131,14 +134,25 @@ export async function markHuntCaught(kv, userIds, monsterName) {
   }
 }
 
-export async function notifyIfNeeded(hunter, monsterName, place, fetchImpl = fetch) {
+export async function notifyIfNeeded(hunter, monsterName, place, token, fetchImpl = fetch) {
   if (!hunter?.alarm || !needsMonster(hunter, monsterName)) return false;
-  const response = await fetchImpl(`https://ntfy.sh/${encodeURIComponent(hunter.alarm)}`, {
+  if (!token || !PUSHOVER_USER_KEY.test(hunter.alarm)) {
+    console.error('pushover skipped: missing application token or user key');
+    return false;
+  }
+  const response = await fetchImpl(PUSHOVER_API, {
     method: 'POST',
-    headers: { Title: 'Warden' },
-    body: place ? `${monsterName} in ${place}` : monsterName,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      token,
+      user: hunter.alarm,
+      title: 'Warden',
+      message: place ? `${monsterName} in ${place}` : monsterName,
+      priority: '1',
+      sound: 'siren',
+    }),
   });
-  if (!response.ok) console.error(`ntfy rejected ${monsterName}: ${response.status}`);
+  if (!response.ok) console.error(`pushover rejected ${monsterName}: ${response.status}`);
   return response.ok;
 }
 

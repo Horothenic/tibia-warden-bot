@@ -69,21 +69,28 @@ test('catching a monster removes it from every character', async () => {
 test('an alarm is sent only while the warden is still missing', async () => {
   const calls = [];
   const hunter = {
-    alarm: 'private-topic',
+    alarm: 'Abcdefghij1234567890Abcdefghij',
     characters: [{ missing: ['Ghoul'] }],
   };
-  const sent = await notifyIfNeeded(hunter, 'Ghoul', 'Drefia', async (url, options) => {
+  const sent = await notifyIfNeeded(hunter, 'Ghoul', 'Drefia', 'app-token', async (url, options) => {
     calls.push({ url, body: options.body });
     return { ok: true };
   });
+  const params = new URLSearchParams(calls[0].body);
   assert.equal(sent, true);
-  assert.equal(calls[0].url, 'https://ntfy.sh/private-topic');
-  assert.equal(calls[0].body, 'Ghoul in Drefia');
+  assert.equal(calls[0].url, 'https://api.pushover.net/1/messages.json');
+  assert.equal(params.get('token'), 'app-token');
+  assert.equal(params.get('user'), hunter.alarm);
+  assert.equal(params.get('title'), 'Warden');
+  assert.equal(params.get('message'), 'Ghoul in Drefia');
+  assert.equal(params.get('priority'), '1');
+  assert.equal(params.get('sound'), 'siren');
 
   const skipped = await notifyIfNeeded(
     catchMonster(hunter, 'Ghoul'),
     'Ghoul',
     'Drefia',
+    'app-token',
     async () => {
       throw new Error('should not notify');
     },
@@ -137,12 +144,12 @@ test('a hunt notifies every person who still needs that warden', async () => {
   const kv = memoryKv();
   await writeHunter(kv, {
     discordUserId: '1',
-    alarm: 'a',
+    alarm: 'Abcdefghij1234567890Abcdefghij',
     characters: [{ missing: ['Ghoul'] }],
   });
   await writeHunter(kv, {
     discordUserId: '2',
-    alarm: 'b',
+    alarm: 'Bbcdefghij1234567890Bbcdefghij',
     characters: [{ missing: ['Rat'] }],
   });
   await rememberAlarm(kv, '1');
@@ -155,7 +162,7 @@ test('any member can save an alarm and sync a character', async () => {
   const kv = memoryKv();
   const saved = await handleInteraction({
     type: 2,
-    data: { name: 'alarm', options: [{ name: 'id', value: 'my-topic' }] },
+    data: { name: 'alarm', options: [{ name: 'key', value: 'Abcdefghij1234567890Abcdefghij' }] },
     member: { user: { id: '999' } },
   }, { monsters: [], cards: kv, loadImage: async () => null });
   assert.match(saved.data.content, /Phone alarm saved/);
@@ -184,7 +191,7 @@ test('any member can save an alarm and sync a character', async () => {
   assert.equal(await queued.job(), 'Saved Knight. 1 warden still missing.');
   assert.equal(called, true);
   const hunter = await readHunter(kv, '999');
-  assert.equal(hunter.alarm, 'my-topic');
+  assert.equal(hunter.alarm, 'Abcdefghij1234567890Abcdefghij');
   assert.deepEqual(hunter.characters[0].missing, ['Ghoul']);
 });
 

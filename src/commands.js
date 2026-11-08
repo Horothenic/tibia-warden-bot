@@ -42,14 +42,14 @@ export const commands = [
   huntCommand('w', 'Post a card for a monster you found'),
   new SlashCommandBuilder()
     .setName('alarm')
-    .setDescription('Save the ntfy topic that should receive your hunt alarms')
+    .setDescription('Save the Pushover user key that receives your hunt alarms')
     .addStringOption((option) =>
       option
-        .setName('id')
-        .setDescription('Your ntfy topic')
+        .setName('key')
+        .setDescription('Your Pushover user key')
         .setRequired(true)
-        .setMinLength(1)
-        .setMaxLength(64),
+        .setMinLength(30)
+        .setMaxLength(30),
     ),
   new SlashCommandBuilder()
     .setName('update')

@@ -89,7 +89,9 @@ async function finishJob(interaction, job) {
 async function notifyHunt(env, hunt) {
   try {
     const hunters = await huntersToNotify(env.CARDS, hunt.name);
-    await Promise.all(hunters.map((hunter) => notifyIfNeeded(hunter, hunt.name, hunt.place)));
+    await Promise.all(hunters.map((hunter) => (
+      notifyIfNeeded(hunter, hunt.name, hunt.place, env.PUSHOVER_TOKEN)
+    )));
   } catch (error) {
     console.error(error);
   }
