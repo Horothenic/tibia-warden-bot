@@ -58,7 +58,7 @@ export async function handleInteraction(interaction, {
   }
 
   if (interaction.type === InteractionType.MessageComponent) {
-    return updateParty(interaction);
+    return updateParty(interaction, testChannelId);
   }
 
   if (interaction.type !== InteractionType.ApplicationCommand) {
@@ -199,7 +199,7 @@ export async function postCardMessage(token, channelId, card) {
   return response.json();
 }
 
-function updateParty(interaction) {
+function updateParty(interaction, testChannelId) {
   const customId = interaction.data?.custom_id;
   const closing = customId === 'warden:close' || customId === 'warden:killed';
   if (customId !== 'warden:going' && customId !== 'warden:check' && !closing) {
@@ -217,7 +217,8 @@ function updateParty(interaction) {
   let status = party.closed || expired ? 'closed' : null;
 
   if (closing && !status) {
-    if (!party.posterId || actorId(interaction) !== party.posterId) {
+    const practice = interaction.channel_id === testChannelId;
+    if (!practice && (!party.posterId || actorId(interaction) !== party.posterId)) {
       return ephemeral('Only the person who posted this can close it.');
     }
     status = 'closed';

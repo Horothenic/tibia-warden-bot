@@ -169,13 +169,12 @@ test('w-test posts in #tests as someone else so the caller can join', async () =
   assert.equal(joined.type, 7);
   assert.match(JSON.stringify(joined.data.components), /<@100>/);
 
-  const reporter = card.match(/<@(\d+)>/)[1];
   const closed = await handleInteraction({
     type: 3,
     channel_id: TEST_CHANNEL_ID,
     data: { custom_id: 'warden:close' },
     message: { components: joined.data.components },
-    member: { user: { id: reporter, username: 'practice' } },
+    ...hunter,
   }, { monsters, loadImage: async () => null });
   assert.deepEqual(closed.caught, {
     monsterName: monsters[0].name,
