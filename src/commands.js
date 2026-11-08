@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from 'discord.js';
 
 // Flip this, then run `npm run register`, to show or hide /w-test.
-export const testCommandEnabled = true;
+export const testCommandEnabled = false;
 
 function huntCommand(name, description) {
   return new SlashCommandBuilder()
