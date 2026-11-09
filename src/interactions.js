@@ -201,28 +201,36 @@ export async function postCardMessage(token, channelId, card) {
 
 function updateParty(interaction, testChannelId) {
   const customId = interaction.data?.custom_id;
-  const closing = customId === 'warden:close' || customId === 'warden:killed';
-  if (customId !== 'warden:going' && customId !== 'warden:check' && !closing) {
-    return ephemeral('This card can no longer be updated.');
-  }
-
   const container = interaction.message?.components?.find(
     (component) => component.type === ComponentType.Container,
   );
+  const finishing = customId === 'warden:killed' || (customId === 'warden:close' && killsOnClose(container));
+  const locking = customId === 'warden:close' && !finishing;
+  if (customId !== 'warden:going' && customId !== 'warden:check' && !finishing && !locking) {
+    return ephemeral('This card can no longer be updated.');
+  }
   if (!container) return ephemeral('This card can no longer be updated.');
 
   const party = readParty(container);
-  const wasClosed = party.closed;
+  const wasKilled = party.killed;
   const expired = Boolean(party.expiresAt && Math.floor(Date.now() / 1000) >= party.expiresAt);
-  let status = party.closed || expired ? 'closed' : null;
+  let status = party.killed || expired ? 'killed' : (party.closed ? 'closed' : null);
+  const practice = interaction.channel_id === testChannelId;
+  const poster = practice || (party.posterId && actorId(interaction) === party.posterId);
 
-  if (closing && !status) {
-    const practice = interaction.channel_id === testChannelId;
-    if (!practice && (!party.posterId || actorId(interaction) !== party.posterId)) {
-      return ephemeral('Only the person who posted this can close it.');
-    }
+  if (finishing && !party.killed && !expired) {
+    if (!poster) return ephemeral('Only the person who posted this can mark it killed.');
+    status = 'killed';
+  } else if (locking && !status) {
+    if (!poster) return ephemeral('Only the person who posted this can close it.');
     status = 'closed';
-  } else if (customId === 'warden:going' && status && party.closed) {
+  } else if (locking && party.closed) {
+    return ephemeral('This one is already closed.');
+  } else if (finishing && party.killed) {
+    return ephemeral('This one is already killed.');
+  } else if (customId === 'warden:going' && party.killed) {
+    return ephemeral('This one is already killed.');
+  } else if (customId === 'warden:going' && status === 'closed') {
     return ephemeral('This one is already closed.');
   } else if (customId === 'warden:going' && !status) {
     if (party.posterId && actorId(interaction) === party.posterId) {
@@ -233,10 +241,8 @@ function updateParty(interaction, testChannelId) {
       name: hunterName(interaction),
     });
     if (result === 'full') return ephemeral('The going list is full (25).');
-  } else if (customId === 'warden:check' && !status) {
+  } else if (customId === 'warden:check' && status !== 'killed') {
     applyCheck(party.going, interaction.data.values?.[0]);
-  } else if (closing && party.closed) {
-    return ephemeral('This one is already closed.');
   }
 
   const components = [
@@ -250,13 +256,28 @@ function updateParty(interaction, testChannelId) {
       allowed_mentions: allowedMentions(components),
       components,
     },
-    ...(status === 'closed' && !wasClosed ? {
+    ...(status === 'killed' && !wasKilled ? {
       caught: {
         monsterName: huntName(container),
         userIds: party.going.map((person) => person.id),
       },
     } : {}),
   };
+}
+
+function killsOnClose(container) {
+  const button = findButton(container, 'warden:close');
+  return button?.label !== 'Close';
+}
+
+function findButton(container, customId) {
+  for (const component of container?.components ?? []) {
+    if (component.type !== ComponentType.ActionRow) continue;
+    for (const child of component.components ?? []) {
+      if ((child.custom_id ?? child.customId) === customId) return child;
+    }
+  }
+  return null;
 }
 
 function randomReporterId(realId) {

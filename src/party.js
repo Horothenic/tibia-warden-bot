@@ -10,6 +10,7 @@ export const ComponentType = {
 };
 
 export const ButtonStyle = {
+  Primary: 1,
   Success: 3,
   Danger: 4,
 };
@@ -22,6 +23,7 @@ export const MessageFlags = {
 const GOING_ID = 'warden:going';
 const CHECK_ID = 'warden:check';
 const CLOSE_ID = 'warden:close';
+const KILL_ID = 'warden:killed';
 const LIST_LIMIT = 25;
 
 export function actorId(interaction) {
@@ -67,7 +69,7 @@ function statusOf(component) {
   if (component?.type !== ComponentType.TextDisplay) return null;
   const content = String(component.content ?? '');
   if (content.startsWith('**Closed**') || content.startsWith('**Killed**') || content.startsWith('**Poofed**')) {
-    return 'closed';
+    return 'killed';
   }
   return null;
 }
@@ -92,13 +94,15 @@ export function readParty(container) {
   const going = [];
   const names = new Map();
   let posterId = null;
+  let killed = false;
   let closed = false;
+  const buttonIds = [];
 
   for (const component of container.components ?? []) {
     if (component.type === ComponentType.TextDisplay && typeof component.content === 'string') {
       const poster = component.content.match(/\*\*Reported by\*\*\n<@!?(\d+)>/);
       if (poster) posterId = poster[1];
-      if (statusOf(component) === 'closed') closed = true;
+      if (statusOf(component) === 'killed') killed = true;
       if (component.content.startsWith('**Going**\n')) {
         for (const line of component.content.split('\n').slice(1)) {
           const match = line.match(/^(?:(✅) )?<@!?(\d+)>(?: (✅))?$/);
@@ -111,18 +115,21 @@ export function readParty(container) {
     if (component.type !== ComponentType.ActionRow) continue;
     for (const child of component.components ?? []) {
       const customId = child.custom_id ?? child.customId;
-      if ((customId === CLOSE_ID || customId === 'warden:killed') && child.disabled) closed = true;
+      if (customId) buttonIds.push(customId);
+      if (child.disabled && (customId === CLOSE_ID || customId === KILL_ID)) killed = true;
       if (customId !== CHECK_ID) continue;
       for (const option of child.options ?? []) names.set(option.value, option.label);
     }
   }
+
+  if (!killed && !buttonIds.includes(GOING_ID) && buttonIds.includes(KILL_ID)) closed = true;
 
   for (const person of going) {
     const name = names.get(person.id);
     if (name) person.name = name;
   }
 
-  return { going, posterId, closed, expiresAt: expiresAtOf(container) };
+  return { going, posterId, closed, killed, expiresAt: expiresAtOf(container) };
 }
 
 export function allowedMentions(components, { everyone = false } = {}) {
@@ -154,7 +161,7 @@ function goingText(going) {
 
 function partyRows(going, status) {
   const rows = [];
-  if (going.length && !status) {
+  if (going.length && status !== 'killed') {
     rows.push({
       type: ComponentType.ActionRow,
       components: [
@@ -171,19 +178,12 @@ function partyRows(going, status) {
       ],
     });
   }
-  if (status) {
-    rows.push({
-      type: ComponentType.ActionRow,
-      components: [
-        {
-          type: ComponentType.Button,
-          style: ButtonStyle.Danger,
-          label: 'Closed',
-          custom_id: CLOSE_ID,
-          disabled: true,
-        },
-      ],
-    });
+  if (status === 'killed') {
+    rows.push(killRow(true));
+    return rows;
+  }
+  if (status === 'closed') {
+    rows.push(killRow(false));
     return rows;
   }
   rows.push({
@@ -197,13 +197,34 @@ function partyRows(going, status) {
       },
       {
         type: ComponentType.Button,
+        style: ButtonStyle.Primary,
+        label: 'Close',
+        custom_id: CLOSE_ID,
+      },
+      {
+        type: ComponentType.Button,
         style: ButtonStyle.Danger,
         label: 'Killed',
-        custom_id: CLOSE_ID,
+        custom_id: KILL_ID,
       },
     ],
   });
   return rows;
+}
+
+function killRow(disabled) {
+  return {
+    type: ComponentType.ActionRow,
+    components: [
+      {
+        type: ComponentType.Button,
+        style: ButtonStyle.Danger,
+        label: 'Killed',
+        custom_id: KILL_ID,
+        disabled,
+      },
+    ],
+  };
 }
 
 function withoutPoof(content) {
@@ -226,7 +247,7 @@ export function withParty(container, going, status = null) {
   for (const component of container.components ?? []) {
     if (isGoingText(component) || statusOf(component)) continue;
     if (component.type === ComponentType.ActionRow) continue;
-    body.push(status ? stripPoof(component) : component);
+    body.push(status === 'killed' ? stripPoof(component) : component);
   }
 
   const at = body.findIndex((component) => (
@@ -261,9 +282,9 @@ export function poofComponents(components) {
   const container = components.find((component) => component.type === ComponentType.Container);
   if (!container) return null;
   const party = readParty(container);
-  if (party.closed) return null;
+  if (party.killed) return null;
   if (!party.expiresAt || Math.floor(Date.now() / 1000) < party.expiresAt) return null;
   const mention = components.find((component) => component.content === '@everyone')
     ?? { type: ComponentType.TextDisplay, content: '@everyone' };
-  return [mention, withParty(container, party.going, 'closed')];
+  return [mention, withParty(container, party.going, 'killed')];
 }

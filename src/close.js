@@ -91,7 +91,7 @@ async function closeSavedCard(env, channelId, messageId) {
   if (message.missing) return true;
   const container = message.components?.find((component) => component.type === ComponentType.Container);
   if (!container) return false;
-  if (readParty(container).closed) {
+  if (readParty(container).killed) {
     await markCaught(env, container);
     return true;
   }

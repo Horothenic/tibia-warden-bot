@@ -88,8 +88,10 @@ test('posting a card attaches the monster gif and the going button', async () =>
   assert.match(JSON.stringify(container), new RegExp(monster.locations[0].name));
   assert.match(JSON.stringify(container), /Poof <t:\d+:R> at <t:\d+:t>/);
   assert.match(JSON.stringify(container), /warden:going/);
+  assert.match(JSON.stringify(container), /"label":"Close"/);
   assert.match(JSON.stringify(container), /"label":"Killed"/);
   assert.match(JSON.stringify(container), /warden:close/);
+  assert.match(JSON.stringify(container), /warden:killed/);
   assert.match(JSON.stringify(container), /<@100>/);
 });
 
@@ -172,7 +174,7 @@ test('w-test posts in #tests as someone else so the caller can join', async () =
   const closed = await handleInteraction({
     type: 3,
     channel_id: TEST_CHANNEL_ID,
-    data: { custom_id: 'warden:close' },
+    data: { custom_id: 'warden:killed' },
     message: { components: joined.data.components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
@@ -224,8 +226,8 @@ test('a card closes when the timer has run out', async () => {
   }, { monsters, loadImage: async () => null });
 
   const card = JSON.stringify(late.data.components);
-  assert.match(card, /"label":"Closed"/);
-  assert.equal(card.includes('**Closed**'), false);
+  assert.match(card, /"label":"Killed"/);
+  assert.match(card, /"disabled":true/);
   assert.equal(card.includes('Poof'), false);
   assert.equal(card.includes('warden:going'), false);
   assert.equal(card.includes('<@200>'), false);
@@ -253,10 +255,12 @@ test('only the poster can close a card, and then nobody can join', async () => {
     ...hunter,
   }, { monsters, loadImage: async () => null });
   const card = JSON.stringify(closed.data.components);
-  assert.match(card, /"label":"Closed"/);
-  assert.equal(card.includes('**Closed**'), false);
-  assert.equal(card.includes('Poof'), false);
+  assert.match(card, /"label":"Killed"/);
+  assert.equal(card.includes('"disabled":true'), false);
+  assert.match(card, /Poof <t:\d+:R>/);
   assert.equal(card.includes('warden:going'), false);
+  assert.equal(card.includes('warden:close'), false);
+  assert.equal(closed.caught, undefined);
 
   const late = await handleInteraction({
     type: 3,
@@ -265,6 +269,17 @@ test('only the poster can close a card, and then nobody can join', async () => {
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
   assert.equal(late.data.content, 'This one is already closed.');
+
+  const killed = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:killed' },
+    message: { components: closed.data.components },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+  const finished = JSON.stringify(killed.data.components);
+  assert.match(finished, /"label":"Killed"/);
+  assert.match(finished, /"disabled":true/);
+  assert.equal(finished.includes('Poof'), false);
 });
 
 test('a typed location that is not on the list still appears on the card', async () => {
@@ -336,11 +351,22 @@ test('another hunter can join and the reporter cannot', async () => {
     ...hunter,
   }, { monsters, loadImage: async () => null });
   const closedCard = JSON.stringify(closed.data.components);
-  assert.match(closedCard, /"label":"Closed"/);
-  assert.equal(closedCard.includes('**Closed**'), false);
+  assert.match(closedCard, /"label":"Killed"/);
+  assert.match(closedCard, /Poof <t:\d+:R>/);
   assert.match(closedCard, /<@200>/);
-  assert.equal(closedCard.includes('Poof'), false);
-  assert.equal(closedCard.includes('warden:check'), false);
+  assert.match(closedCard, /warden:check/);
+  assert.equal(closedCard.includes('warden:going'), false);
+
+  const killed = await handleInteraction({
+    type: 3,
+    data: { custom_id: 'warden:killed' },
+    message: { components: closed.data.components },
+    ...hunter,
+  }, { monsters, loadImage: async () => null });
+  const killedCard = JSON.stringify(killed.data.components);
+  assert.match(killedCard, /"disabled":true/);
+  assert.equal(killedCard.includes('Poof'), false);
+  assert.equal(killedCard.includes('warden:check'), false);
 });
 
 test('a card with a gif keeps the Discord file fields unnamed except the image', async () => {
