@@ -250,11 +250,16 @@ function updateParty(interaction, testChannelId) {
     withParty(container, party.going, status),
   ];
   return {
-    type: ResponseType.UpdateMessage,
-    data: {
-      flags: MessageFlags.IsComponentsV2,
-      allowed_mentions: allowedMentions(components),
-      components,
+    type: ResponseType.ChannelMessage,
+    data: { content: '\u200b', flags: MessageFlags.Ephemeral },
+    edit: {
+      channelId: interaction.channel_id,
+      messageId: interaction.message?.id,
+      data: {
+        flags: MessageFlags.IsComponentsV2,
+        allowed_mentions: allowedMentions(components),
+        components,
+      },
     },
     ...(status === 'killed' && !wasKilled ? {
       caught: {

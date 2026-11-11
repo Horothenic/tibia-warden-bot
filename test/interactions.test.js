@@ -143,6 +143,10 @@ test('a command used in tibia-wardens answers with the card', async () => {
   assert.equal(result.posted, undefined);
 });
 
+function updated(result) {
+  return result.edit.data;
+}
+
 test('w-test posts in #tests as someone else so the caller can join', async () => {
   const posted = await handleInteraction({
     type: 2,
@@ -168,14 +172,15 @@ test('w-test posts in #tests as someone else so the caller can join', async () =
     message: { components: posted.data.components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  assert.equal(joined.type, 7);
-  assert.match(JSON.stringify(joined.data.components), /<@100>/);
+  assert.equal(joined.type, 4);
+  assert.equal(joined.data.flags, 64);
+  assert.match(JSON.stringify(updated(joined).components), /<@100>/);
 
   const closed = await handleInteraction({
     type: 3,
     channel_id: TEST_CHANNEL_ID,
     data: { custom_id: 'warden:killed' },
-    message: { components: joined.data.components },
+    message: { components: updated(joined).components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
   assert.deepEqual(closed.caught, {
@@ -225,7 +230,7 @@ test('a card closes when the timer has run out', async () => {
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
 
-  const card = JSON.stringify(late.data.components);
+  const card = JSON.stringify(updated(late).components);
   assert.match(card, /"label":"Killed"/);
   assert.match(card, /"disabled":true/);
   assert.equal(card.includes('Poof'), false);
@@ -254,7 +259,7 @@ test('only the poster can close a card, and then nobody can join', async () => {
     message: { components: posted.data.components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  const card = JSON.stringify(closed.data.components);
+  const card = JSON.stringify(updated(closed).components);
   assert.match(card, /"label":"Killed"/);
   assert.equal(card.includes('"disabled":true'), false);
   assert.match(card, /Poof <t:\d+:R>/);
@@ -265,7 +270,7 @@ test('only the poster can close a card, and then nobody can join', async () => {
   const late = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:going' },
-    message: { components: closed.data.components },
+    message: { components: updated(closed).components },
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
   assert.equal(late.data.content, 'This one is already closed.');
@@ -273,10 +278,10 @@ test('only the poster can close a card, and then nobody can join', async () => {
   const killed = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:killed' },
-    message: { components: closed.data.components },
+    message: { components: updated(closed).components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  const finished = JSON.stringify(killed.data.components);
+  const finished = JSON.stringify(updated(killed).components);
   assert.match(finished, /"label":"Killed"/);
   assert.match(finished, /"disabled":true/);
   assert.equal(finished.includes('Poof'), false);
@@ -322,35 +327,36 @@ test('another hunter can join and the reporter cannot', async () => {
     member: { user: { id: '200', username: 'ally', global_name: 'Ally' } },
   }, { monsters, loadImage: async () => null });
 
-  assert.equal(joined.type, 7);
-  assert.deepEqual(joined.data.allowed_mentions, { parse: [], users: ['100', '200'] });
-  assert.match(JSON.stringify(joined.data.components), /<@200>/);
-  const select = JSON.stringify(joined.data.components);
+  assert.equal(joined.type, 4);
+  assert.equal(joined.data.flags, 64);
+  assert.deepEqual(updated(joined).allowed_mentions, { parse: [], users: ['100', '200'] });
+  assert.match(JSON.stringify(updated(joined).components), /<@200>/);
+  const select = JSON.stringify(updated(joined).components);
   assert.match(select, /"custom_id":"warden:check"/);
 
   const checked = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:check', values: ['200'] },
-    message: { components: joined.data.components },
+    message: { components: updated(joined).components },
     member: { user: { id: '300', username: 'scout', global_name: 'Scout' } },
   }, { monsters, loadImage: async () => null });
-  assert.match(JSON.stringify(checked.data.components), /✅ <@200>/);
+  assert.match(JSON.stringify(updated(checked).components), /✅ <@200>/);
 
   const unchecked = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:check', values: ['200'] },
-    message: { components: checked.data.components },
+    message: { components: updated(checked).components },
     member: { user: { id: '300', username: 'scout', global_name: 'Scout' } },
   }, { monsters, loadImage: async () => null });
-  assert.equal(JSON.stringify(unchecked.data.components).includes('✅ <@200>'), false);
+  assert.equal(JSON.stringify(updated(unchecked).components).includes('✅ <@200>'), false);
 
   const closed = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:close' },
-    message: { components: joined.data.components },
+    message: { components: updated(joined).components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  const closedCard = JSON.stringify(closed.data.components);
+  const closedCard = JSON.stringify(updated(closed).components);
   assert.match(closedCard, /"label":"Killed"/);
   assert.match(closedCard, /Poof <t:\d+:R>/);
   assert.match(closedCard, /<@200>/);
@@ -360,10 +366,10 @@ test('another hunter can join and the reporter cannot', async () => {
   const killed = await handleInteraction({
     type: 3,
     data: { custom_id: 'warden:killed' },
-    message: { components: closed.data.components },
+    message: { components: updated(closed).components },
     ...hunter,
   }, { monsters, loadImage: async () => null });
-  const killedCard = JSON.stringify(killed.data.components);
+  const killedCard = JSON.stringify(updated(killed).components);
   assert.match(killedCard, /"disabled":true/);
   assert.equal(killedCard.includes('Poof'), false);
   assert.equal(killedCard.includes('warden:check'), false);

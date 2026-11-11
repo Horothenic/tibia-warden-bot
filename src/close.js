@@ -119,6 +119,19 @@ async function markCaught(env, container) {
   await markHuntCaught(env.CARDS, party.going.map((person) => person.id), huntName(container));
 }
 
+export async function editCard(env, edit) {
+  if (!env?.DISCORD_TOKEN || !edit?.channelId || !edit?.messageId) {
+    console.error('could not update the card: missing bot token or message');
+    return false;
+  }
+  const edited = await discord(`/channels/${edit.channelId}/messages/${edit.messageId}`, {
+    method: 'PATCH',
+    headers: { authorization: `Bot ${env.DISCORD_TOKEN}` },
+    body: JSON.stringify(edit.data),
+  });
+  return Boolean(edited && !edited.missing);
+}
+
 export async function editOriginal(interaction, content) {
   if (!interaction?.application_id || !interaction?.token) return;
   const path = `/webhooks/${interaction.application_id}/${interaction.token}/messages/@original`;

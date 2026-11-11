@@ -1,4 +1,4 @@
-import { closeSavedCards, closeWhenDue, dismissInteraction, editOriginal, rememberCard } from './close.js';
+import { closeSavedCards, closeWhenDue, dismissInteraction, editCard, editOriginal, rememberCard } from './close.js';
 import { missingWardens } from './draptor.js';
 import { handleInteraction, postCardMessage, toHttpResponse, TEST_CHANNEL_ID, WARDEN_CHANNEL_ID } from './interactions.js';
 import { notifyIfNeeded, markHuntCaught, huntersToNotify } from './hunters.js';
@@ -47,6 +47,7 @@ export default {
         fetchMissing: (account, character) => missingWardens(account, character),
       });
       const jobs = [];
+      if (result.edit) jobs.push(applyCardEdit(env, interaction, result.edit));
       if (result.job) {
         jobs.push(finishJob(interaction, result.job));
       }
@@ -75,6 +76,20 @@ export default {
     ctx.waitUntil(closeSavedCards(env));
   },
 };
+
+async function applyCardEdit(env, interaction, edit) {
+  try {
+    const updated = await editCard(env, edit);
+    if (!updated) {
+      await editOriginal(interaction, 'Could not update the card.');
+      return;
+    }
+    await dismissInteraction(interaction);
+  } catch (error) {
+    console.error(error);
+    await editOriginal(interaction, 'Could not update the card.');
+  }
+}
 
 async function finishJob(interaction, job) {
   try {
